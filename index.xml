@@ -2,28 +2,28 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Opensource projects</title>
-    <link>http://danibram.github.io/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on Opensource projects</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 19 Feb 2016 18:16:26 +0100</lastBuildDate>
-    <atom:link href="http://danibram.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>First Post</title>
-      <link>http://danibram.github.io/post/firsts-steps/</link>
+      <link>http://localhost:1313/post/firsts-steps/</link>
       <pubDate>Fri, 19 Feb 2016 18:16:26 +0100</pubDate>
       
-      <guid>http://danibram.github.io/post/firsts-steps/</guid>
+      <guid>http://localhost:1313/post/firsts-steps/</guid>
       <description></description>
     </item>
     
     <item>
       <title>time tracker cli</title>
-      <link>http://danibram.github.io/project/time-tracker-cli/</link>
+      <link>http://localhost:1313/project/time-tracker-cli/</link>
       <pubDate>Sun, 07 Feb 2016 20:13:19 +0100</pubDate>
       
-      <guid>http://danibram.github.io/project/time-tracker-cli/</guid>
+      <guid>http://localhost:1313/project/time-tracker-cli/</guid>
       <description>
 
 &lt;p&gt;Super tiny and ligthway time tracker for all cli lovers.&lt;/p&gt;
@@ -115,409 +115,10 @@ Run &lt;code&gt;npm build&lt;/code&gt; to build the module.&lt;/p&gt;
     
     <item>
       <title>mocker data generator</title>
-      <link>http://danibram.github.io/project/mocker-data-generator/</link>
+      <link>http://localhost:1313/project/mocker-data-generator/</link>
       <pubDate>Tue, 29 Dec 2015 17:37:56 +0100</pubDate>
       
-      <guid>http://danibram.github.io/project/mocker-data-generator/</guid>
-      <description>
-
-&lt;p&gt;A simplified way to generate massive mock data based on a schema, using the awesome fake/random data generators like (FakerJs, ChanceJs, CasualJs and RandExpJs), all in one tool to generate your fake data for testing.&lt;/p&gt;
-
-&lt;h2 id=&#34;getting-started:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;Getting started&lt;/h2&gt;
-
-&lt;p&gt;Install the module with: &lt;code&gt;npm install mocker-data-generator&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var user = {
-    firstName: {
-        faker: &#39;name.firstName&#39;
-    },
-    lastName: {
-        faker: &#39;name.lastName&#39;
-    },
-    country: {
-        faker: &#39;address.country&#39;
-    },
-    createdAt: {
-        faker: &#39;date.past&#39;
-    },
-    username:{
-        function: function() {
-            return this.object.lastName.substring(0, 5) + this.object.firstName.substring(0, 3) + Math.floor(Math.random() * 10)
-        }
-    }
-};
-var group = {
-    description: {
-        faker: &#39;lorem.paragraph&#39;
-    },
-    users: [{
-        function: function() {
-            return this.faker.random.arrayElement(this.db.users).username
-        },
-        length: 10,
-        fixedLength: false
-    }]
-};
-var conditionalField = {
-    type:{
-        values: [&#39;HOUSE&#39;, &#39;CAR&#39;, &#39;MOTORBIKE&#39;]
-    },
-    &#39;object.type==&amp;quot;HOUSE&amp;quot;,location&#39;:{
-        faker: &#39;address.city&#39;
-    },
-    &#39;object.type==&amp;quot;CAR&amp;quot;||object.type==&amp;quot;MOTORBIKE&amp;quot;,speed&#39;:{
-        faker: &#39;random.number&#39;
-    }
-};
-
-mocker()
-    .schema(&#39;user&#39;, user, 2)
-    .schema(&#39;group&#39;, group, 2)
-    .schema(&#39;conditionalField&#39;, conditionalField, 2)
-    .build(function(data) {
-        console.log(util.inspect(data, { depth: 10 }))
-//This returns an object
-// {
-//      user:[array of users],
-//      group: [array of groups],
-//      conditionalField: [array of conditionalFields]
-// }
-        })
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;documentation:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;Documentation&lt;/h2&gt;
-
-&lt;p&gt;Data generation goes with model based composed by generators, the generators can have access to the data generated and to the entity generated. &lt;strong&gt;&lt;em&gt;Generators run syncronously, take care of the related entities!!&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;methods:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;Methods&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;schema(name, schema, generationType)&lt;/em&gt;&lt;/strong&gt;: Add a new schema, you must specify this params:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;name (String): Name of the schema.&lt;/li&gt;
-&lt;li&gt;schema (JSON): The schema you define&lt;/li&gt;
-&lt;li&gt;generationType (integer or JSON): In this field you specify how you will generate this schema. 2 ways:&lt;/li&gt;
-&lt;li&gt;Integer to specify how many of this you want.&lt;/li&gt;
-&lt;li&gt;JSON with this object &lt;code&gt;{uniqueField: &#39;&amp;lt;yourUniqueField&amp;gt;&#39;}&lt;/code&gt; this means that this field (&lt;yourUniqueField&gt;) is an array and you want to generate entities with this unique values&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;reset()&lt;/em&gt;&lt;/strong&gt;: Clean the internal DB.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;restart()&lt;/em&gt;&lt;/strong&gt;: Clean the internal DB and all the schemas inside.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;build(callback)&lt;/em&gt;&lt;/strong&gt;: This methods start to produce the data and wrap it to the callback&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;schema-definition:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;Schema definition&lt;/h3&gt;
-
-&lt;h4 id=&#34;every-schema-should-contains-the-specified-fields-key-can-be-2-types:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;Every schema should contains the specified fields. Key can be 2 types:&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;em&gt;Normal string&lt;/em&gt;&lt;/strong&gt; key: indicates the key.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;em&gt;Commaseparated string&lt;/em&gt;&lt;/strong&gt; key: indicates that there is a conditional, before the comma you must specify a conditional (you have all level fields generated in this moment), then you must specify the field if the conditional is true see the example.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;inside-every-value-you-can-put:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;Inside every value you can put:&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;em&gt;static&lt;/em&gt;&lt;/strong&gt;: For fixed fields&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;        { static: &#39;hello im fixed field&#39; }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;em&gt;self&lt;/em&gt;&lt;/strong&gt;: get himself object, and evaluate the string, so you can get calculated fields.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;        { self: &#39;id&#39; } //will get the id of the generated entity
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;em&gt;db&lt;/em&gt;&lt;/strong&gt;: get the db, and evaluate the string, so you can access to this entities.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;        { db: &#39;user[0].id&#39; } //will get the first user id
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;em&gt;eval&lt;/em&gt;&lt;/strong&gt;: evaluate the current string, remember that i inject all the awesome methods, faker, chance, casual, randexp, and also the db and object methods. With this eval field, &lt;strong&gt;&lt;em&gt;you must pass an exactly JSON syntax&lt;/em&gt;&lt;/strong&gt;:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;        { eval: &#39;object.id&#39; }
-
-        //OR
-
-        { eval: &#39;db.user[0]&#39; }
-
-        //OR
-
-        { eval: &#39;faker.lorem.words()&#39; }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;hasOne&lt;/em&gt;&lt;/strong&gt;: You can pass 2 parameters:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;em&gt;hasOne&lt;/em&gt;&lt;/strong&gt;: the name of the related entity, get one random.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;em&gt;get&lt;/em&gt;&lt;/strong&gt; (Optional): String that will be evaluated over the random related entity.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;    {
-        hasOne: &#39;user&#39; //this populate the field with one random user
-    }
-
-
-    //OR:
-
-
-    {
-        hasOne: &#39;user&#39;,
-        get: &#39;id&#39; //this populate the field with one id of a random user
-    }
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;hasMany&lt;/em&gt;&lt;/strong&gt;: You can pass 4 parameters:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;em&gt;hasMany&lt;/em&gt;&lt;/strong&gt;: the name of the related entity, get one random.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;em&gt;amount&lt;/em&gt;&lt;/strong&gt; (Optional): Fixed number of related entities to get.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;em&gt;min&lt;/em&gt;&lt;/strong&gt; (Optional): Minimum entities to get.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;em&gt;max&lt;/em&gt;&lt;/strong&gt; (Optional): Maximum entities to get.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;    {
-        hasMany: &#39;user&#39; //this populate the field with one random user
-    }
-
-
-    //OR:
-
-
-    {
-        hasMany: &#39;user&#39;,
-        amount: 1, //optional
-        min: 1, //optional
-        max: 1 //optional
-    }
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;incrementalId&lt;/em&gt;&lt;/strong&gt;: For incremental numeric ids, pass the start number to increment. If you put incrementalId = true it takes from 0 the ids.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;        { incrementalId: 0 }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;em&gt;funcion&lt;/em&gt;&lt;/strong&gt;: No params are passed, only context (&lt;code&gt;this&lt;/code&gt;), in this you have &lt;code&gt;{db, object, faker, chance}&lt;/code&gt;, and you can use faker or chance functions, object (the specified model), db (actual data generated)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;        { function: function(){
-            //this.db
-            //this.object
-            //this.faker
-            //this.chance
-            //this.casual
-            return yourValue
-        } }
-
-        //OR:
-
-        { function(){
-            //this.db
-            //this.object
-            //this.faker
-            //this.chance
-            //this.casual
-            return yourValue
-        } }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;em&gt;faker&lt;/em&gt;&lt;/strong&gt;: you can use directly faker functions like: (note that, db (actual entities generated), object (actual entity generated) are injected), &lt;strong&gt;&lt;em&gt;you must pass an exactly JSON syntax&lt;/em&gt;&lt;/strong&gt;:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;        { faker: &#39;lorem.words&#39; }                            //Run faker.lorem.words()
-        { faker: &#39;lorem.words()&#39; }                          //Run faker.lorem.words()
-        { faker: &#39;lorem.words(1)&#39; }                         //Run faker.lorem.words(1)
-        { faker: &#39;integer({&amp;quot;min&amp;quot;: 1, &amp;quot;max&amp;quot;: 10})&#39; }         //Run faker.lorem.words(1) and take the first
-        { faker: &#39;random.arrayElement(db.users)&#39; }          //Run faker.arrayElement over a generated user entity
-        { faker: &#39;random.arrayElement(db.users)[&amp;quot;userId&amp;quot;]&#39; }  //Run faker.arrayElement over a generated user entity and take the userId only
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;em&gt;chance&lt;/em&gt;&lt;/strong&gt;: you can use directly chance functions, you can do: (note that, db (actual entities generated), object (actual entity generated) are injected), &lt;strong&gt;&lt;em&gt;you must pass an exactly JSON syntax&lt;/em&gt;&lt;/strong&gt;:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;        { chance: &#39;integer&#39; }                                //Run chance.integer()
-        { chance: &#39;integer()&#39; }                              //Run chance.integer()
-        { chance: &#39;integer({&amp;quot;min&amp;quot;: 1, &amp;quot;max&amp;quot;: 10})&#39; }         //Run chance.integer({&amp;quot;min&amp;quot;: 1, &amp;quot;max&amp;quot;: 10})
-        { chance: &#39;street_suffixes()[0][&amp;quot;name&amp;quot;]&#39; }           //Run chance.street_suffixes() takes first result and the name inside
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;em&gt;casual&lt;/em&gt;&lt;/strong&gt;: you can use directly use casualJs functions, you can do: (note that, db (actual entities generated), object (actual entity generated) are injected), &lt;strong&gt;&lt;em&gt;you must pass an exactly JSON syntax&lt;/em&gt;&lt;/strong&gt;:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;        { casual: &#39;country&#39; }
-        { chance: &#39;array_of_digits()&#39; }
-        { casual: &#39;array_of_digits(3)[0]&#39; }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;em&gt;randexp&lt;/em&gt;&lt;/strong&gt;: pass a regexp string to use randexp generator.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;        { randexp: /hello+ (world|to you)/ }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;[Array]&lt;/em&gt;&lt;/strong&gt;: you can pass an array that indicates an array of data you can create, passing in the first field the generator (function, faker, or array(not Tested)), and in the second field pass a config object (length, fixedLentgh)&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;em&gt;length&lt;/em&gt;&lt;/strong&gt;: to know how many values&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;em&gt;fixedLength&lt;/em&gt;&lt;/strong&gt; (Optional): true to create always same amount of values in the array, false to generate a random number between 0 and &amp;lsquo;length&amp;rsquo; value. False by default.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;em&gt;concat&lt;/em&gt;&lt;/strong&gt; (Optional): An stringuified array ex: &amp;lsquo;[object.id, db.users.id]&amp;lsquo;. This should be an evaluable string to concat with the array that are generating. Also takes in mind that if you have a fixedLength, should not increase the length.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;em&gt;strictConcat&lt;/em&gt;&lt;/strong&gt; (Optional): true to remove duplicates in the concatenated string array, when it is calculated. False by default.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;[{
-   //Any generator
-       //Faker  
-   faker: &#39;random.arrayElement(db.users).userId&#39;
-       //Chance  
-   chance: &#39;integer&#39;
-       //Function  
-   function: function (){ return /**/ }
-
-
-   //Array config
-   length: 10,
-   fixedLength: true
-
-
-   //Concat
-   concat: &#39;[db.users[0].userId, db.users[1].userId]&#39;
-   strictConcat: true
-}]
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;optional-fields:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;Optional fields&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;em&gt;[virtual]&lt;/em&gt;&lt;/strong&gt;: Boolean, if you pass this option, this mean that this field will not appear at the output entity. But you can use during the generation.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;    {
-        //Any generator
-            //Faker  
-        faker: &#39;random.arrayElement(db.users)[userId]&#39;
-            //Chance  
-        chance: &#39;integer&#39;
-            //static
-        static: &#39;any static field&#39;
-            //Function  
-        function: function (){ return /**/ }
-
-        //with the virtual option
-        virtual: true
-
-    }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;data-generation:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;Data generation&lt;/h3&gt;
-
-&lt;p&gt;Initialize mocker with the config, and then generate any entity with promises style, use generate function that accepts the name of the model and the amount of data to generate. Like the example:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;mocker()
-    .schema(&#39;user&#39;, user, 2)
-    .schema(&#39;group&#39;, group, 2)
-    .schema(&#39;conditionalField&#39;, conditionalField, 2)
-    .build(function(data) {
-        console.log(util.inspect(data, { depth: 10 }))
-//This returns an object
-// {
-//      user:[array of users],
-//      group: [array of groups],
-//      conditionalField: [array of conditionalFields]
-// }
-        })
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;You can also pass instead of the number, an object with the a config, from now &lt;code&gt;{uniqueField}&lt;/code&gt;. If this field exists tells to the generator that instead of init a fixed length of data, generate an amount of data depending of the values of the field you will specify. You have 2 way to deal with this, check the examples See the output of this example:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;//
-// First way, using an &#39;values&#39; embedded object
-//
-
-var cat = {
-    name: {
-        values: [&#39;txuri&#39;, &#39;pitxi&#39;, &#39;kitty&#39;]
-    }
-};
-var m = mocker()
-    .schema(&#39;cat&#39;, cat, 10)
-    .schema(&#39;cat2&#39;, cat, {uniqueField: &#39;name&#39;})
-    .build(function(data){
-        console.log(util.inspect(data, {depth:10}))
-    })
-
-//
-// Second way, without &#39;values&#39; embedded.
-//
-
-var cat = {
-    name: [&#39;txuri&#39;, &#39;pitxi&#39;, &#39;kitty&#39;]
-};
-var m = mocker()
-    .schema(&#39;cat&#39;, cat, 10)
-    .schema(&#39;cat2&#39;, cat, {uniqueField: &#39;name&#39;})
-    .build(function(data){
-        console.log(util.inspect(data, {depth:10}))
-    })
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;more-coming-soon:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;More, Coming soon&lt;/h3&gt;
-
-&lt;h2 id=&#34;online-api:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;Online API&lt;/h2&gt;
-
-&lt;p&gt;You can visit the repo url here: &lt;a href=&#34;https://github.com/danibram/mocker-api-tester&#34;&gt;https://github.com/danibram/mocker-api-tester&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Or visit the api directly: &lt;a href=&#34;https://mocker-api.herokuapp.com/&#34;&gt;https://mocker-api.herokuapp.com/&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;development:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;Development&lt;/h2&gt;
-
-&lt;p&gt;Run &lt;code&gt;npm install;npm run dev&lt;/code&gt; to watch the project, webpack compile the code automatically. Run &lt;code&gt;npm build&lt;/code&gt; to build the normal and minified version.&lt;/p&gt;
-
-&lt;h2 id=&#34;why-not-use-json-schema-faker:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;Why not use json-schema-faker?&lt;/h2&gt;
-
-&lt;p&gt;json-schema-faker is awesome and works really nice, but i need a simplified and fast way to generate mock data for my projects, so i created this.&lt;/p&gt;
-
-&lt;h2 id=&#34;credits:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;Credits&lt;/h2&gt;
-
-&lt;p&gt;I couldn&amp;rsquo;t do this without this awesome libraries, so thanks to all:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Faker:  &lt;a href=&#34;https://github.com/Marak/faker.js&#34;&gt;https://github.com/Marak/faker.js&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Chance:  &lt;a href=&#34;https://github.com/victorquinn/chancejs&#34;&gt;https://github.com/victorquinn/chancejs&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Casual:  &lt;a href=&#34;https://github.com/boo1ean/casual&#34;&gt;https://github.com/boo1ean/casual&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;RandExpJs: &lt;a href=&#34;https://github.com/fent/randexp.js&#34;&gt;https://github.com/fent/randexp.js&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;license:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;License&lt;/h2&gt;
-
-&lt;p&gt;Licensed under the MIT license. 2015&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>mocker-data-generator</title>
-      <link>http://danibram.github.io/projects/mocker-data-generator/</link>
-      <pubDate>Tue, 29 Dec 2015 17:37:56 +0100</pubDate>
-      
-      <guid>http://danibram.github.io/projects/mocker-data-generator/</guid>
+      <guid>http://localhost:1313/project/mocker-data-generator/</guid>
       <description>
 
 &lt;p&gt;A simplified way to generate massive mock data based on a schema, using the awesome fake/random data generators like (FakerJs, ChanceJs, CasualJs and RandExpJs), all in one tool to generate your fake data for testing.&lt;/p&gt;
@@ -913,10 +514,10 @@ var m = mocker()
     
     <item>
       <title>adyen client</title>
-      <link>http://danibram.github.io/project/adyen-client/</link>
+      <link>http://localhost:1313/project/adyen-client/</link>
       <pubDate>Thu, 29 Oct 2015 20:18:35 +0100</pubDate>
       
-      <guid>http://danibram.github.io/project/adyen-client/</guid>
+      <guid>http://localhost:1313/project/adyen-client/</guid>
       <description>
 
 &lt;p&gt;Adyen client&lt;/p&gt;
@@ -1123,10 +724,10 @@ Run &lt;code&gt;npm build&lt;/code&gt; to build the module.&lt;/p&gt;
     
     <item>
       <title>flat ui syntax</title>
-      <link>http://danibram.github.io/project/flat-ui-syntax/</link>
+      <link>http://localhost:1313/project/flat-ui-syntax/</link>
       <pubDate>Tue, 29 Sep 2015 20:33:43 +0100</pubDate>
       
-      <guid>http://danibram.github.io/project/flat-ui-syntax/</guid>
+      <guid>http://localhost:1313/project/flat-ui-syntax/</guid>
       <description>&lt;p&gt;An Atom ui syntax&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/danibram/flat-ui-syntax-atom/master/ScreenShot.png&#34; alt=&#34;Flat-ui-syntax&#34; /&gt;&lt;/p&gt;
@@ -1139,10 +740,10 @@ Run &lt;code&gt;npm build&lt;/code&gt; to build the module.&lt;/p&gt;
     
     <item>
       <title>trustly client</title>
-      <link>http://danibram.github.io/project/trustly-client/</link>
+      <link>http://localhost:1313/project/trustly-client/</link>
       <pubDate>Fri, 05 Jun 2015 20:24:40 +0100</pubDate>
       
-      <guid>http://danibram.github.io/project/trustly-client/</guid>
+      <guid>http://localhost:1313/project/trustly-client/</guid>
       <description>
 
 &lt;p&gt;Node.js client for trusty integrations. Right now it doesn´t includes the withdrawal, feel free to submit a pull request. You can use callback style or promises.&lt;/p&gt;
@@ -1282,10 +883,10 @@ More information about the errors &lt;a href=&#34;https://trustly.com/en/develop
     
     <item>
       <title>translator helper dustjs</title>
-      <link>http://danibram.github.io/project/translator-helper-dustjs/</link>
+      <link>http://localhost:1313/project/translator-helper-dustjs/</link>
       <pubDate>Tue, 17 Mar 2015 20:35:49 +0100</pubDate>
       
-      <guid>http://danibram.github.io/project/translator-helper-dustjs/</guid>
+      <guid>http://localhost:1313/project/translator-helper-dustjs/</guid>
       <description>
 
 &lt;p&gt;A little helper for dustjs to load i18n translations dynamically, with variables, based on &lt;a href=&#34;https://github.com/mikesparr/Kraken_Example_i18n_Helper&#34;&gt;https://github.com/mikesparr/Kraken_Example_i18n_Helper&lt;/a&gt;. Feel free to comment, copy or burn this code =P&lt;/p&gt;
@@ -1353,10 +954,10 @@ Licensed under the MIT license.&lt;/p&gt;
     
     <item>
       <title>bumblebee object transformation</title>
-      <link>http://danibram.github.io/project/bumblebee-object-transformation/</link>
+      <link>http://localhost:1313/project/bumblebee-object-transformation/</link>
       <pubDate>Sun, 30 Nov 2014 20:30:04 +0100</pubDate>
       
-      <guid>http://danibram.github.io/project/bumblebee-object-transformation/</guid>
+      <guid>http://localhost:1313/project/bumblebee-object-transformation/</guid>
       <description>
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/danibram/bumblebee&#34;&gt;&lt;img src=&#34;http://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Bumblebee_%288023382295%29.jpg/320px-Bumblebee_%288023382295%29.jpg&#34; alt=&#34;Bumblebee javascript object transformation tool&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
@@ -1640,10 +1241,10 @@ Licensed under the MIT license.&lt;/p&gt;
     
     <item>
       <title>object cleaner</title>
-      <link>http://danibram.github.io/project/object-cleaner/</link>
+      <link>http://localhost:1313/project/object-cleaner/</link>
       <pubDate>Sun, 30 Nov 2014 20:27:44 +0100</pubDate>
       
-      <guid>http://danibram.github.io/project/object-cleaner/</guid>
+      <guid>http://localhost:1313/project/object-cleaner/</guid>
       <description>
 
 &lt;p&gt;A little function to clean dirty Objects, find any array with lenght one and and put his content without array.&lt;/p&gt;

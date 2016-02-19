@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Opensource projects</title>
-    <link>http://danibram.github.io/post/</link>
+    <link>http://localhost:1313/post/</link>
     <description>Recent content in Posts on Opensource projects</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 19 Feb 2016 18:16:26 +0100</lastBuildDate>
-    <atom:link href="http://danibram.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>First Post</title>
-      <link>http://danibram.github.io/post/firsts-steps/</link>
+      <link>http://localhost:1313/post/firsts-steps/</link>
       <pubDate>Fri, 19 Feb 2016 18:16:26 +0100</pubDate>
       
-      <guid>http://danibram.github.io/post/firsts-steps/</guid>
+      <guid>http://localhost:1313/post/firsts-steps/</guid>
       <description></description>
     </item>
     

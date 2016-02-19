@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on Opensource projects</title>
-    <link>http://danibram.github.io/project/</link>
+    <link>http://localhost:1313/project/</link>
     <description>Recent content in Projects on Opensource projects</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 07 Feb 2016 20:13:19 +0100</lastBuildDate>
-    <atom:link href="http://danibram.github.io/project/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/project/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>time tracker cli</title>
-      <link>http://danibram.github.io/project/time-tracker-cli/</link>
+      <link>http://localhost:1313/project/time-tracker-cli/</link>
       <pubDate>Sun, 07 Feb 2016 20:13:19 +0100</pubDate>
       
-      <guid>http://danibram.github.io/project/time-tracker-cli/</guid>
+      <guid>http://localhost:1313/project/time-tracker-cli/</guid>
       <description>
 
 &lt;p&gt;Super tiny and ligthway time tracker for all cli lovers.&lt;/p&gt;
@@ -106,10 +106,10 @@ Run &lt;code&gt;npm build&lt;/code&gt; to build the module.&lt;/p&gt;
     
     <item>
       <title>mocker data generator</title>
-      <link>http://danibram.github.io/project/mocker-data-generator/</link>
+      <link>http://localhost:1313/project/mocker-data-generator/</link>
       <pubDate>Tue, 29 Dec 2015 17:37:56 +0100</pubDate>
       
-      <guid>http://danibram.github.io/project/mocker-data-generator/</guid>
+      <guid>http://localhost:1313/project/mocker-data-generator/</guid>
       <description>
 
 &lt;p&gt;A simplified way to generate massive mock data based on a schema, using the awesome fake/random data generators like (FakerJs, ChanceJs, CasualJs and RandExpJs), all in one tool to generate your fake data for testing.&lt;/p&gt;
@@ -505,10 +505,10 @@ var m = mocker()
     
     <item>
       <title>adyen client</title>
-      <link>http://danibram.github.io/project/adyen-client/</link>
+      <link>http://localhost:1313/project/adyen-client/</link>
       <pubDate>Thu, 29 Oct 2015 20:18:35 +0100</pubDate>
       
-      <guid>http://danibram.github.io/project/adyen-client/</guid>
+      <guid>http://localhost:1313/project/adyen-client/</guid>
       <description>
 
 &lt;p&gt;Adyen client&lt;/p&gt;
@@ -715,10 +715,10 @@ Run &lt;code&gt;npm build&lt;/code&gt; to build the module.&lt;/p&gt;
     
     <item>
       <title>flat ui syntax</title>
-      <link>http://danibram.github.io/project/flat-ui-syntax/</link>
+      <link>http://localhost:1313/project/flat-ui-syntax/</link>
       <pubDate>Tue, 29 Sep 2015 20:33:43 +0100</pubDate>
       
-      <guid>http://danibram.github.io/project/flat-ui-syntax/</guid>
+      <guid>http://localhost:1313/project/flat-ui-syntax/</guid>
       <description>&lt;p&gt;An Atom ui syntax&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/danibram/flat-ui-syntax-atom/master/ScreenShot.png&#34; alt=&#34;Flat-ui-syntax&#34; /&gt;&lt;/p&gt;
@@ -731,10 +731,10 @@ Run &lt;code&gt;npm build&lt;/code&gt; to build the module.&lt;/p&gt;
     
     <item>
       <title>trustly client</title>
-      <link>http://danibram.github.io/project/trustly-client/</link>
+      <link>http://localhost:1313/project/trustly-client/</link>
       <pubDate>Fri, 05 Jun 2015 20:24:40 +0100</pubDate>
       
-      <guid>http://danibram.github.io/project/trustly-client/</guid>
+      <guid>http://localhost:1313/project/trustly-client/</guid>
       <description>
 
 &lt;p&gt;Node.js client for trusty integrations. Right now it doesn´t includes the withdrawal, feel free to submit a pull request. You can use callback style or promises.&lt;/p&gt;
@@ -874,10 +874,10 @@ More information about the errors &lt;a href=&#34;https://trustly.com/en/develop
     
     <item>
       <title>translator helper dustjs</title>
-      <link>http://danibram.github.io/project/translator-helper-dustjs/</link>
+      <link>http://localhost:1313/project/translator-helper-dustjs/</link>
       <pubDate>Tue, 17 Mar 2015 20:35:49 +0100</pubDate>
       
-      <guid>http://danibram.github.io/project/translator-helper-dustjs/</guid>
+      <guid>http://localhost:1313/project/translator-helper-dustjs/</guid>
       <description>
 
 &lt;p&gt;A little helper for dustjs to load i18n translations dynamically, with variables, based on &lt;a href=&#34;https://github.com/mikesparr/Kraken_Example_i18n_Helper&#34;&gt;https://github.com/mikesparr/Kraken_Example_i18n_Helper&lt;/a&gt;. Feel free to comment, copy or burn this code =P&lt;/p&gt;
@@ -945,10 +945,10 @@ Licensed under the MIT license.&lt;/p&gt;
     
     <item>
       <title>bumblebee object transformation</title>
-      <link>http://danibram.github.io/project/bumblebee-object-transformation/</link>
+      <link>http://localhost:1313/project/bumblebee-object-transformation/</link>
       <pubDate>Sun, 30 Nov 2014 20:30:04 +0100</pubDate>
       
-      <guid>http://danibram.github.io/project/bumblebee-object-transformation/</guid>
+      <guid>http://localhost:1313/project/bumblebee-object-transformation/</guid>
       <description>
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/danibram/bumblebee&#34;&gt;&lt;img src=&#34;http://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Bumblebee_%288023382295%29.jpg/320px-Bumblebee_%288023382295%29.jpg&#34; alt=&#34;Bumblebee javascript object transformation tool&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
@@ -1232,10 +1232,10 @@ Licensed under the MIT license.&lt;/p&gt;
     
     <item>
       <title>object cleaner</title>
-      <link>http://danibram.github.io/project/object-cleaner/</link>
+      <link>http://localhost:1313/project/object-cleaner/</link>
       <pubDate>Sun, 30 Nov 2014 20:27:44 +0100</pubDate>
       
-      <guid>http://danibram.github.io/project/object-cleaner/</guid>
+      <guid>http://localhost:1313/project/object-cleaner/</guid>
       <description>
 
 &lt;p&gt;A little function to clean dirty Objects, find any array with lenght one and and put his content without array.&lt;/p&gt;

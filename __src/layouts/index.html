@@ -8,12 +8,10 @@
     <ul id="post-list">
         {{ range where .Data.Pages "Section" "project" }}
         {{ $url := replace .Permalink .Site.BaseURL "" }}
-            {{ if ne $url "about/" }}
-                <li>
-                    <a href='{{ .Permalink }}'><aside class="dates">{{ .Date.Format "Jan 2" }}</aside></a>
-                    <a href='{{ .Permalink }}'>{{ .Title }} <h2>{{ .Description | markdownify }}</h2></a>
-                </li>
-            {{ end }}
+            <li>
+                <a href='{{ .Permalink }}'><aside class="dates">{{ .Date.Format "Jan 2" }}</aside></a>
+                <a href='{{ .Permalink }}'>{{ .Title }} <span class="headline h2">{{ index .Params "version" }}</span> <h2>{{ .Description | markdownify }}</h2></a>
+            </li>
         {{ end }}
     </ul>
     {{ partial "footer.html" . }}

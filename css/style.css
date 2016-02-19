@@ -161,7 +161,7 @@ nav.main-nav a.cta {
 /*Accent color*/
 a,
 #title,
-#post-list a:hover,
+-list a:hover,
 #post-list li:hover .dates,
 #title:hover {
 	text-decoration: none;
@@ -181,7 +181,10 @@ a,
 	-o-transition: all 0.15s ease;
 	transition: all 0.15s ease;
 }
-
+#post-list li .headline{
+    color: #ccc;
+    font-weight: 300;
+}
 ul 	{ margin:0; padding:0; }
 li	{ list-style-type:circle; list-style-position:inside; }
 
