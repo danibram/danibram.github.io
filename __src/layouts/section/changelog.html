@@ -1,0 +1,22 @@
+{{ partial "head.html" . }}
+<body>
+{{ partial "nav.html" . }}
+{{ partial "profile.html" . }}
+
+<section id="wrapper" class="home">
+    <h1 id="title">{{ .Title }}</h1>
+    <ul id="post-list">
+        {{ range where .Data.Pages "Section" "changelog" }}
+        {{ $url := replace .Permalink .Site.BaseURL "" }}
+            <li>
+                <a href='{{ .Permalink }}'><aside class="dates">{{ .Date.Format "Jan 2" }}</aside></a>
+                <a href='{{ .Permalink }}'>{{ .Title }} <span class="headline h2">{{ index .Params "version" }}</span> <h2>{{ .Description | markdownify }}</h2></a>
+            </li>
+        {{ end }}
+    </ul>
+    {{ partial "footer.html" . }}
+</section>
+
+{{ partial "js.html" . }}
+</body>
+</html>
