@@ -70,15 +70,13 @@ h2 {
 }
 
 .profile #wrapper {
-	padding: 100px 40px 0px;
+	padding: 30px 40px 0px;
 	max-width: 600px;
 	margin: 0 auto;
 }
 
 .profile #header {
-	border-bottom: 1px solid #eee;
 	margin-bottom: 40px;
-	padding-bottom: 40px;
 	text-align: center;
 	position: relative;
 }
@@ -143,6 +141,13 @@ nav.main-nav a.cta {
   margin: 0 auto;
   padding: 60px 40px 100px 40px;
 }
+
+#wrapper #title{
+    margin-top: 20px;
+    border-bottom: 1px solid #aaa;
+    width: 100%;
+}
+
 
 #wrapper.home {
 	max-width: 600px;
@@ -376,7 +381,7 @@ img {
 Post List
 =========================================== */
 #post-list,#archive-list {
-	margin-top: 100px;
+    margin: 20px 0;
 }
 
 #post-list li,#archive-list li {
@@ -440,7 +445,7 @@ Post List
 }
 
 /* Post Page */
-#header {
+header h1.post {
 	border-bottom: 1px solid #eee;
 }
 
@@ -636,7 +641,7 @@ h2.month {
 /* Media Queries */
 @media screen and (max-width: 540px) {
 	#wrapper { padding:20px 20px 20px 20px;}
-	#header { margin-bottom: 60px; border-bottom: 1px solid #eee; }
+	#header {  }
 	.post { margin: 40px 0; }
 	#footer { margin-top: 60px; }
 
