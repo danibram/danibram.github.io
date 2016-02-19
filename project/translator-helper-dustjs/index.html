@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="Daniel Biedma">
+		<meta name="description" content="My opensource projects">
+		<meta name="generator" content="Hugo 0.15" />
+		<title>translator helper dustjs &middot; Opensource projects</title>
+		<link rel="shortcut icon" href="http://localhost:1313/images/favicon.ico">
+		<link rel="stylesheet" href="http://localhost:1313/css/style.css">
+		<link rel="stylesheet" href="http://localhost:1313/css/highlight.css">
+		<link rel="stylesheet" href="http://localhost:1313/css/monosocialiconsfont.css">
+		
+		<link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="Opensource projects" />
+		
+	</head>
+
+<body>
+   <nav class="main-nav">
+	
+	
+		<a href='http://localhost:1313/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a class="cta" href='https://dbr.io'>About</a>
+	
+
+</nav>
+
+
+    <section id="wrapper">
+        <article class="post">
+            <header>
+                <h1>
+                    translator helper dustjs
+                    <span class="headline h2">v1.0.1</span>
+                </h1>
+            </header>
+            <section id="post-body">
+                
+
+<p>A little helper for dustjs to load i18n translations dynamically, with variables, based on <a href="https://github.com/mikesparr/Kraken_Example_i18n_Helper">https://github.com/mikesparr/Kraken_Example_i18n_Helper</a>. Feel free to comment, copy or burn this code =P</p>
+
+<h2 id="getting-started:cd718ded1b1b17aff7f40f42c5bfd82c">Getting Started</h2>
+
+<p>Install the module with: <code>npm install translator-helper-dustjs</code></p>
+
+<p>Its important to add a global variable to pass the kraken config to the module, i put in my index.js this after load kraken config</p>
+
+<pre><code class="language-javascript">...
+app = module.exports = express();
+app.use(kraken(options));
+GLOBAL._app = app;
+...
+</code></pre>
+
+<p>On your controllers file or wethever you load dust, add the helper like another.</p>
+
+<pre><code class="language-javascript">...
+var dust = require('dustjs-linkedin');
+require('dustjs-helpers');
+require('translator-helper-dustjs');
+...
+</code></pre>
+
+<h2 id="examples:cd718ded1b1b17aff7f40f42c5bfd82c">Examples</h2>
+
+<p>On your properties files (index.properties)</p>
+
+<pre><code class="language-javascript">...
+jobs.acme.title=Company Acme
+jobs.hernes.title=Company Hernes
+...
+</code></pre>
+
+<p>On your dust template files, pass to the t helper the key (jobs.acme.title -&gt; companyName = &ldquo;acme&rdquo;), the properties file (index in this case), and the lang (in my case &ldquo;EN_us&rdquo;)</p>
+
+<pre><code class="language-javascript">...
+{@t key=&quot;jobs.{companyName}.title&quot; bundle=&quot;index&quot; lang=&quot;{lang}&quot; /}
+...
+</code></pre>
+
+<p>And the result will be</p>
+
+<pre><code class="language-javascript">...
+Company Acme
+...
+</code></pre>
+
+<h2 id="contributing:cd718ded1b1b17aff7f40f42c5bfd82c">Contributing</h2>
+
+<p>Please fell free to contribute, i´m not a real expert of dustJs</p>
+
+<h2 id="release-history:cd718ded1b1b17aff7f40f42c5bfd82c">Release History</h2>
+
+<p><em>(Nothing yet)</em></p>
+
+<h2 id="license:cd718ded1b1b17aff7f40f42c5bfd82c">License</h2>
+
+<p>Copyright &copy; 2014 Daniel Biedma Ramos
+Licensed under the MIT license.</p>
+
+            </section>
+        </article>
+        <footer id="post-meta" class="clearfix">
+            <a href="https://twitter.com/danibram">
+                    <img class="avatar" src="http://localhost:1313/images/avatar.jpg">
+                    <div>
+                        <span class="dark">Daniel Biedma</span>
+                        <span>Overpowered full-stack developer</span>
+
+                    </div>
+                </a>
+            <section id="sharing">
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2flocalhost%3a1313%2fproject%2ftranslator-helper-dustjs%2f - translator%20helper%20dustjs by @danibram"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            </section>
+        </footer>
+
+        
+
+        <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+        <li>
+            <a href="http://localhost:1313/post/firsts-steps/">First Post<aside class="dates">Feb 19</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/project/time-tracker-cli/">time tracker cli<aside class="dates">Feb 7</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/project/mocker-data-generator/">mocker data generator<aside class="dates">Dec 29</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/projects/mocker-data-generator/">mocker-data-generator<aside class="dates">Dec 29</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/project/adyen-client/">adyen client<aside class="dates">Oct 29</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/project/flat-ui-syntax/">flat ui syntax<aside class="dates">Sep 29</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/project/trustly-client/">trustly client<aside class="dates">Jun 5</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/project/translator-helper-dustjs/">translator helper dustjs<aside class="dates">Mar 17</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/project/bumblebee-object-transformation/">bumblebee object transformation<aside class="dates">Nov 30</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/project/object-cleaner/">object cleaner<aside class="dates">Nov 30</aside></a>
+        </li>
+        
+   
+</ul>
+
+        <footer id="footer">
+    
+        
+<div id="social">
+    
+    <a class="symbol" href="https://dbr.io">
+        
+            https://dbr.io&nbsp;&nbsp;
+        
+    </a>
+    
+    <a class="symbol" href="https://www.facebook.com/danibram">
+        
+            circlefacebook
+        
+    </a>
+    
+    <a class="symbol" href="https://www.github.com/danibram">
+        
+            circlegithub
+        
+    </a>
+    
+    <a class="symbol" href="https://www.linkedin.com/in/danielbiedma">
+        
+            circlelinkedin
+        
+    </a>
+    
+    <a class="symbol" href="./index.xml">
+        
+            circlerss
+        
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/danibram">
+        
+            circletwitterbird
+        
+    </a>
+    
+</div>
+
+    
+    <p class="small">
+    
+        © Copyright 2016 Daniel Biedma
+    
+    </p>
+</footer>
+
+    </section>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://localhost:1313/js/main.js"></script>
+<script src="http://localhost:1313/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script data-no-instant>document.write('<script src="/livereload.js?mindelay=10"></' + 'script>')</script></body>
+</html>

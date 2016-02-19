@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2016-02-19T18:16:26+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/post/firsts-steps/</loc>
+    <lastmod>2016-02-19T18:16:26+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/project/time-tracker-cli/</loc>
+    <lastmod>2016-02-07T20:13:19+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/project/mocker-data-generator/</loc>
+    <lastmod>2015-12-29T17:37:56+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/projects/mocker-data-generator/</loc>
+    <lastmod>2015-12-29T17:37:56+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/project/adyen-client/</loc>
+    <lastmod>2015-10-29T20:18:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/project/flat-ui-syntax/</loc>
+    <lastmod>2015-09-29T20:33:43+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/project/trustly-client/</loc>
+    <lastmod>2015-06-05T20:24:40+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/project/translator-helper-dustjs/</loc>
+    <lastmod>2015-03-17T20:35:49+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/project/bumblebee-object-transformation/</loc>
+    <lastmod>2014-11-30T20:30:04+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/project/object-cleaner/</loc>
+    <lastmod>2014-11-30T20:27:44+01:00</lastmod>
+  </url>
+  
+</urlset>

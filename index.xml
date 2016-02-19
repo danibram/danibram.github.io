@@ -1,0 +1,1680 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Opensource projects</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Opensource projects</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 19 Feb 2016 18:16:26 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>First Post</title>
+      <link>http://localhost:1313/post/firsts-steps/</link>
+      <pubDate>Fri, 19 Feb 2016 18:16:26 +0100</pubDate>
+      
+      <guid>http://localhost:1313/post/firsts-steps/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>time tracker cli</title>
+      <link>http://localhost:1313/project/time-tracker-cli/</link>
+      <pubDate>Sun, 07 Feb 2016 20:13:19 +0100</pubDate>
+      
+      <guid>http://localhost:1313/project/time-tracker-cli/</guid>
+      <description>
+
+&lt;p&gt;Super tiny and ligthway time tracker for all cli lovers.&lt;/p&gt;
+
+&lt;h2 id=&#34;usage:ea25401390a1c55dd6d300003f1b6086&#34;&gt;Usage&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/dzegwhnwxvv28q84u8uvsgyas&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/dzegwhnwxvv28q84u8uvsgyas.png&#34; alt=&#34;asciicast&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;±❩❩❩ timer --help
+
+    Usage: timer [options]
+
+    Tiny time tracker for projects
+
+    Options:
+
+      -h, --help                         output usage information
+      -V, --version                      output the version number
+      -s, --start &amp;lt;task&amp;gt; &amp;lt;description&amp;gt;   Start the timer task.
+      -f, --finish &amp;lt;task&amp;gt; &amp;lt;description&amp;gt;  Stops the timer task.
+      -d, --description &amp;lt;description&amp;gt;    Adds a description for the task only in start/stop methods.
+      -a, --add &amp;lt;task&amp;gt; &amp;lt;timeString&amp;gt;      Adds time to a task. Example: &amp;quot;1h2m3s&amp;quot;
+      --remove &amp;lt;task&amp;gt; &amp;lt;timeString&amp;gt;       Subtract time from a task. Example: &amp;quot;1h2m3s&amp;quot;
+      -l, --log &amp;lt;task&amp;gt;                   Logs the timer task.
+      -r, --report &amp;lt;task&amp;gt; &amp;lt;rate&amp;gt;         Report time of the tasks, searched by key, you can report all using all as key. Also you can pass a rate to calc an amount ex: 20h, calc the hours and mulpitly by 20
+      -e, --export                       Prints the json of all tasks.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;To start a task run:
+&lt;code&gt;
+$ timer -s &amp;lt;key of the task&amp;gt; -d  &amp;lt;description&amp;gt;
+&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;To finish a task run:
+&lt;code&gt;
+$ timer -s &amp;lt;key of the task&amp;gt; -d  &amp;lt;description&amp;gt;
+&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;You can add a description adding:
+&lt;code&gt;
+$ timer -s &amp;lt;key of the task&amp;gt; -d  &amp;lt;description&amp;gt;
+$ timer -h &amp;lt;key of the task&amp;gt; -d  &amp;lt;description&amp;gt;
+&lt;/code&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;You can also see the timer running:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ timer -l &amp;lt;key of the task&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;how-it-works:ea25401390a1c55dd6d300003f1b6086&#34;&gt;How it works&lt;/h2&gt;
+
+&lt;p&gt;The data are stored inside ~/.config/time-tracker-cli.json
+If you open you should see:&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;{
+	&amp;quot;tasks&amp;quot;: {
+		&amp;quot;work1.website.design&amp;quot;: {
+			&amp;quot;start&amp;quot;: &amp;quot;2016-02-19T10:00:36.393Z&amp;quot;,
+			&amp;quot;stop&amp;quot;: &amp;quot;2016-02-19T18:01:50.921Z&amp;quot;
+		},
+		&amp;quot;work1.website.deployServer&amp;quot;: {
+			&amp;quot;start&amp;quot;: &amp;quot;2016-02-19T10:01:59.116Z&amp;quot;,
+			&amp;quot;stop&amp;quot;: &amp;quot;2016-02-19T10:32:10.687Z&amp;quot;
+		},
+		&amp;quot;work1.api.develop.userController&amp;quot;: {
+			&amp;quot;start&amp;quot;: &amp;quot;2016-02-19T10:04:23.060Z&amp;quot;,
+			&amp;quot;stop&amp;quot;: &amp;quot;2016-02-19T20:04:36.836Z&amp;quot;
+		},
+		&amp;quot;work1.api.develop.loginController&amp;quot;: {
+			&amp;quot;start&amp;quot;: &amp;quot;2016-02-19T10:09:41.848Z&amp;quot;,
+			&amp;quot;stop&amp;quot;: &amp;quot;2016-02-19T13:11:54.059Z&amp;quot;
+		}
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The -r method, simply finds by regex and count the time.&lt;/p&gt;
+
+&lt;h2 id=&#34;development:ea25401390a1c55dd6d300003f1b6086&#34;&gt;Development&lt;/h2&gt;
+
+&lt;p&gt;Run &lt;code&gt;npm install;npm run dev&lt;/code&gt; to watch the proyect, and compile the code automatically.
+Run &lt;code&gt;npm build&lt;/code&gt; to build the module.&lt;/p&gt;
+
+&lt;h2 id=&#34;license:ea25401390a1c55dd6d300003f1b6086&#34;&gt;License&lt;/h2&gt;
+
+&lt;p&gt;Licensed under the MIT license. 2015&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>mocker data generator</title>
+      <link>http://localhost:1313/project/mocker-data-generator/</link>
+      <pubDate>Tue, 29 Dec 2015 17:37:56 +0100</pubDate>
+      
+      <guid>http://localhost:1313/project/mocker-data-generator/</guid>
+      <description>
+
+&lt;p&gt;A simplified way to generate massive mock data based on a schema, using the awesome fake/random data generators like (FakerJs, ChanceJs, CasualJs and RandExpJs), all in one tool to generate your fake data for testing.&lt;/p&gt;
+
+&lt;h2 id=&#34;getting-started:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;Getting started&lt;/h2&gt;
+
+&lt;p&gt;Install the module with: &lt;code&gt;npm install mocker-data-generator&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var user = {
+    firstName: {
+        faker: &#39;name.firstName&#39;
+    },
+    lastName: {
+        faker: &#39;name.lastName&#39;
+    },
+    country: {
+        faker: &#39;address.country&#39;
+    },
+    createdAt: {
+        faker: &#39;date.past&#39;
+    },
+    username:{
+        function: function() {
+            return this.object.lastName.substring(0, 5) + this.object.firstName.substring(0, 3) + Math.floor(Math.random() * 10)
+        }
+    }
+};
+var group = {
+    description: {
+        faker: &#39;lorem.paragraph&#39;
+    },
+    users: [{
+        function: function() {
+            return this.faker.random.arrayElement(this.db.users).username
+        },
+        length: 10,
+        fixedLength: false
+    }]
+};
+var conditionalField = {
+    type:{
+        values: [&#39;HOUSE&#39;, &#39;CAR&#39;, &#39;MOTORBIKE&#39;]
+    },
+    &#39;object.type==&amp;quot;HOUSE&amp;quot;,location&#39;:{
+        faker: &#39;address.city&#39;
+    },
+    &#39;object.type==&amp;quot;CAR&amp;quot;||object.type==&amp;quot;MOTORBIKE&amp;quot;,speed&#39;:{
+        faker: &#39;random.number&#39;
+    }
+};
+
+mocker()
+    .schema(&#39;user&#39;, user, 2)
+    .schema(&#39;group&#39;, group, 2)
+    .schema(&#39;conditionalField&#39;, conditionalField, 2)
+    .build(function(data) {
+        console.log(util.inspect(data, { depth: 10 }))
+//This returns an object
+// {
+//      user:[array of users],
+//      group: [array of groups],
+//      conditionalField: [array of conditionalFields]
+// }
+        })
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;documentation:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;Documentation&lt;/h2&gt;
+
+&lt;p&gt;Data generation goes with model based composed by generators, the generators can have access to the data generated and to the entity generated. &lt;strong&gt;&lt;em&gt;Generators run syncronously, take care of the related entities!!&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;methods:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;Methods&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;schema(name, schema, generationType)&lt;/em&gt;&lt;/strong&gt;: Add a new schema, you must specify this params:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;name (String): Name of the schema.&lt;/li&gt;
+&lt;li&gt;schema (JSON): The schema you define&lt;/li&gt;
+&lt;li&gt;generationType (integer or JSON): In this field you specify how you will generate this schema. 2 ways:&lt;/li&gt;
+&lt;li&gt;Integer to specify how many of this you want.&lt;/li&gt;
+&lt;li&gt;JSON with this object &lt;code&gt;{uniqueField: &#39;&amp;lt;yourUniqueField&amp;gt;&#39;}&lt;/code&gt; this means that this field (&lt;yourUniqueField&gt;) is an array and you want to generate entities with this unique values&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;reset()&lt;/em&gt;&lt;/strong&gt;: Clean the internal DB.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;restart()&lt;/em&gt;&lt;/strong&gt;: Clean the internal DB and all the schemas inside.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;build(callback)&lt;/em&gt;&lt;/strong&gt;: This methods start to produce the data and wrap it to the callback&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;schema-definition:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;Schema definition&lt;/h3&gt;
+
+&lt;h4 id=&#34;every-schema-should-contains-the-specified-fields-key-can-be-2-types:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;Every schema should contains the specified fields. Key can be 2 types:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;Normal string&lt;/em&gt;&lt;/strong&gt; key: indicates the key.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;Commaseparated string&lt;/em&gt;&lt;/strong&gt; key: indicates that there is a conditional, before the comma you must specify a conditional (you have all level fields generated in this moment), then you must specify the field if the conditional is true see the example.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;inside-every-value-you-can-put:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;Inside every value you can put:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;static&lt;/em&gt;&lt;/strong&gt;: For fixed fields&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;        { static: &#39;hello im fixed field&#39; }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;self&lt;/em&gt;&lt;/strong&gt;: get himself object, and evaluate the string, so you can get calculated fields.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;        { self: &#39;id&#39; } //will get the id of the generated entity
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;db&lt;/em&gt;&lt;/strong&gt;: get the db, and evaluate the string, so you can access to this entities.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;        { db: &#39;user[0].id&#39; } //will get the first user id
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;eval&lt;/em&gt;&lt;/strong&gt;: evaluate the current string, remember that i inject all the awesome methods, faker, chance, casual, randexp, and also the db and object methods. With this eval field, &lt;strong&gt;&lt;em&gt;you must pass an exactly JSON syntax&lt;/em&gt;&lt;/strong&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;        { eval: &#39;object.id&#39; }
+
+        //OR
+
+        { eval: &#39;db.user[0]&#39; }
+
+        //OR
+
+        { eval: &#39;faker.lorem.words()&#39; }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;hasOne&lt;/em&gt;&lt;/strong&gt;: You can pass 2 parameters:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;hasOne&lt;/em&gt;&lt;/strong&gt;: the name of the related entity, get one random.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;get&lt;/em&gt;&lt;/strong&gt; (Optional): String that will be evaluated over the random related entity.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;    {
+        hasOne: &#39;user&#39; //this populate the field with one random user
+    }
+
+
+    //OR:
+
+
+    {
+        hasOne: &#39;user&#39;,
+        get: &#39;id&#39; //this populate the field with one id of a random user
+    }
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;hasMany&lt;/em&gt;&lt;/strong&gt;: You can pass 4 parameters:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;hasMany&lt;/em&gt;&lt;/strong&gt;: the name of the related entity, get one random.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;amount&lt;/em&gt;&lt;/strong&gt; (Optional): Fixed number of related entities to get.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;min&lt;/em&gt;&lt;/strong&gt; (Optional): Minimum entities to get.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;max&lt;/em&gt;&lt;/strong&gt; (Optional): Maximum entities to get.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;    {
+        hasMany: &#39;user&#39; //this populate the field with one random user
+    }
+
+
+    //OR:
+
+
+    {
+        hasMany: &#39;user&#39;,
+        amount: 1, //optional
+        min: 1, //optional
+        max: 1 //optional
+    }
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;incrementalId&lt;/em&gt;&lt;/strong&gt;: For incremental numeric ids, pass the start number to increment. If you put incrementalId = true it takes from 0 the ids.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;        { incrementalId: 0 }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;funcion&lt;/em&gt;&lt;/strong&gt;: No params are passed, only context (&lt;code&gt;this&lt;/code&gt;), in this you have &lt;code&gt;{db, object, faker, chance}&lt;/code&gt;, and you can use faker or chance functions, object (the specified model), db (actual data generated)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;        { function: function(){
+            //this.db
+            //this.object
+            //this.faker
+            //this.chance
+            //this.casual
+            return yourValue
+        } }
+
+        //OR:
+
+        { function(){
+            //this.db
+            //this.object
+            //this.faker
+            //this.chance
+            //this.casual
+            return yourValue
+        } }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;faker&lt;/em&gt;&lt;/strong&gt;: you can use directly faker functions like: (note that, db (actual entities generated), object (actual entity generated) are injected), &lt;strong&gt;&lt;em&gt;you must pass an exactly JSON syntax&lt;/em&gt;&lt;/strong&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;        { faker: &#39;lorem.words&#39; }                            //Run faker.lorem.words()
+        { faker: &#39;lorem.words()&#39; }                          //Run faker.lorem.words()
+        { faker: &#39;lorem.words(1)&#39; }                         //Run faker.lorem.words(1)
+        { faker: &#39;integer({&amp;quot;min&amp;quot;: 1, &amp;quot;max&amp;quot;: 10})&#39; }         //Run faker.lorem.words(1) and take the first
+        { faker: &#39;random.arrayElement(db.users)&#39; }          //Run faker.arrayElement over a generated user entity
+        { faker: &#39;random.arrayElement(db.users)[&amp;quot;userId&amp;quot;]&#39; }  //Run faker.arrayElement over a generated user entity and take the userId only
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;chance&lt;/em&gt;&lt;/strong&gt;: you can use directly chance functions, you can do: (note that, db (actual entities generated), object (actual entity generated) are injected), &lt;strong&gt;&lt;em&gt;you must pass an exactly JSON syntax&lt;/em&gt;&lt;/strong&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;        { chance: &#39;integer&#39; }                                //Run chance.integer()
+        { chance: &#39;integer()&#39; }                              //Run chance.integer()
+        { chance: &#39;integer({&amp;quot;min&amp;quot;: 1, &amp;quot;max&amp;quot;: 10})&#39; }         //Run chance.integer({&amp;quot;min&amp;quot;: 1, &amp;quot;max&amp;quot;: 10})
+        { chance: &#39;street_suffixes()[0][&amp;quot;name&amp;quot;]&#39; }           //Run chance.street_suffixes() takes first result and the name inside
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;casual&lt;/em&gt;&lt;/strong&gt;: you can use directly use casualJs functions, you can do: (note that, db (actual entities generated), object (actual entity generated) are injected), &lt;strong&gt;&lt;em&gt;you must pass an exactly JSON syntax&lt;/em&gt;&lt;/strong&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;        { casual: &#39;country&#39; }
+        { chance: &#39;array_of_digits()&#39; }
+        { casual: &#39;array_of_digits(3)[0]&#39; }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;randexp&lt;/em&gt;&lt;/strong&gt;: pass a regexp string to use randexp generator.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;        { randexp: /hello+ (world|to you)/ }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;[Array]&lt;/em&gt;&lt;/strong&gt;: you can pass an array that indicates an array of data you can create, passing in the first field the generator (function, faker, or array(not Tested)), and in the second field pass a config object (length, fixedLentgh)&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;length&lt;/em&gt;&lt;/strong&gt;: to know how many values&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;fixedLength&lt;/em&gt;&lt;/strong&gt; (Optional): true to create always same amount of values in the array, false to generate a random number between 0 and &amp;lsquo;length&amp;rsquo; value. False by default.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;concat&lt;/em&gt;&lt;/strong&gt; (Optional): An stringuified array ex: &amp;lsquo;[object.id, db.users.id]&amp;lsquo;. This should be an evaluable string to concat with the array that are generating. Also takes in mind that if you have a fixedLength, should not increase the length.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;strictConcat&lt;/em&gt;&lt;/strong&gt; (Optional): true to remove duplicates in the concatenated string array, when it is calculated. False by default.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;[{
+   //Any generator
+       //Faker  
+   faker: &#39;random.arrayElement(db.users).userId&#39;
+       //Chance  
+   chance: &#39;integer&#39;
+       //Function  
+   function: function (){ return /**/ }
+
+
+   //Array config
+   length: 10,
+   fixedLength: true
+
+
+   //Concat
+   concat: &#39;[db.users[0].userId, db.users[1].userId]&#39;
+   strictConcat: true
+}]
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;optional-fields:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;Optional fields&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;[virtual]&lt;/em&gt;&lt;/strong&gt;: Boolean, if you pass this option, this mean that this field will not appear at the output entity. But you can use during the generation.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;    {
+        //Any generator
+            //Faker  
+        faker: &#39;random.arrayElement(db.users)[userId]&#39;
+            //Chance  
+        chance: &#39;integer&#39;
+            //static
+        static: &#39;any static field&#39;
+            //Function  
+        function: function (){ return /**/ }
+
+        //with the virtual option
+        virtual: true
+
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;data-generation:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;Data generation&lt;/h3&gt;
+
+&lt;p&gt;Initialize mocker with the config, and then generate any entity with promises style, use generate function that accepts the name of the model and the amount of data to generate. Like the example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;mocker()
+    .schema(&#39;user&#39;, user, 2)
+    .schema(&#39;group&#39;, group, 2)
+    .schema(&#39;conditionalField&#39;, conditionalField, 2)
+    .build(function(data) {
+        console.log(util.inspect(data, { depth: 10 }))
+//This returns an object
+// {
+//      user:[array of users],
+//      group: [array of groups],
+//      conditionalField: [array of conditionalFields]
+// }
+        })
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can also pass instead of the number, an object with the a config, from now &lt;code&gt;{uniqueField}&lt;/code&gt;. If this field exists tells to the generator that instead of init a fixed length of data, generate an amount of data depending of the values of the field you will specify. You have 2 way to deal with this, check the examples See the output of this example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;//
+// First way, using an &#39;values&#39; embedded object
+//
+
+var cat = {
+    name: {
+        values: [&#39;txuri&#39;, &#39;pitxi&#39;, &#39;kitty&#39;]
+    }
+};
+var m = mocker()
+    .schema(&#39;cat&#39;, cat, 10)
+    .schema(&#39;cat2&#39;, cat, {uniqueField: &#39;name&#39;})
+    .build(function(data){
+        console.log(util.inspect(data, {depth:10}))
+    })
+
+//
+// Second way, without &#39;values&#39; embedded.
+//
+
+var cat = {
+    name: [&#39;txuri&#39;, &#39;pitxi&#39;, &#39;kitty&#39;]
+};
+var m = mocker()
+    .schema(&#39;cat&#39;, cat, 10)
+    .schema(&#39;cat2&#39;, cat, {uniqueField: &#39;name&#39;})
+    .build(function(data){
+        console.log(util.inspect(data, {depth:10}))
+    })
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;more-coming-soon:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;More, Coming soon&lt;/h3&gt;
+
+&lt;h2 id=&#34;online-api:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;Online API&lt;/h2&gt;
+
+&lt;p&gt;You can visit the repo url here: &lt;a href=&#34;https://github.com/danibram/mocker-api-tester&#34;&gt;https://github.com/danibram/mocker-api-tester&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Or visit the api directly: &lt;a href=&#34;https://mocker-api.herokuapp.com/&#34;&gt;https://mocker-api.herokuapp.com/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;development:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;Development&lt;/h2&gt;
+
+&lt;p&gt;Run &lt;code&gt;npm install;npm run dev&lt;/code&gt; to watch the project, webpack compile the code automatically. Run &lt;code&gt;npm build&lt;/code&gt; to build the normal and minified version.&lt;/p&gt;
+
+&lt;h2 id=&#34;why-not-use-json-schema-faker:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;Why not use json-schema-faker?&lt;/h2&gt;
+
+&lt;p&gt;json-schema-faker is awesome and works really nice, but i need a simplified and fast way to generate mock data for my projects, so i created this.&lt;/p&gt;
+
+&lt;h2 id=&#34;credits:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;Credits&lt;/h2&gt;
+
+&lt;p&gt;I couldn&amp;rsquo;t do this without this awesome libraries, so thanks to all:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Faker:  &lt;a href=&#34;https://github.com/Marak/faker.js&#34;&gt;https://github.com/Marak/faker.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Chance:  &lt;a href=&#34;https://github.com/victorquinn/chancejs&#34;&gt;https://github.com/victorquinn/chancejs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Casual:  &lt;a href=&#34;https://github.com/boo1ean/casual&#34;&gt;https://github.com/boo1ean/casual&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;RandExpJs: &lt;a href=&#34;https://github.com/fent/randexp.js&#34;&gt;https://github.com/fent/randexp.js&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;license:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;License&lt;/h2&gt;
+
+&lt;p&gt;Licensed under the MIT license. 2015&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>mocker-data-generator</title>
+      <link>http://localhost:1313/projects/mocker-data-generator/</link>
+      <pubDate>Tue, 29 Dec 2015 17:37:56 +0100</pubDate>
+      
+      <guid>http://localhost:1313/projects/mocker-data-generator/</guid>
+      <description>
+
+&lt;p&gt;A simplified way to generate massive mock data based on a schema, using the awesome fake/random data generators like (FakerJs, ChanceJs, CasualJs and RandExpJs), all in one tool to generate your fake data for testing.&lt;/p&gt;
+
+&lt;h2 id=&#34;getting-started:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;Getting started&lt;/h2&gt;
+
+&lt;p&gt;Install the module with: &lt;code&gt;npm install mocker-data-generator&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var user = {
+    firstName: {
+        faker: &#39;name.firstName&#39;
+    },
+    lastName: {
+        faker: &#39;name.lastName&#39;
+    },
+    country: {
+        faker: &#39;address.country&#39;
+    },
+    createdAt: {
+        faker: &#39;date.past&#39;
+    },
+    username:{
+        function: function() {
+            return this.object.lastName.substring(0, 5) + this.object.firstName.substring(0, 3) + Math.floor(Math.random() * 10)
+        }
+    }
+};
+var group = {
+    description: {
+        faker: &#39;lorem.paragraph&#39;
+    },
+    users: [{
+        function: function() {
+            return this.faker.random.arrayElement(this.db.users).username
+        },
+        length: 10,
+        fixedLength: false
+    }]
+};
+var conditionalField = {
+    type:{
+        values: [&#39;HOUSE&#39;, &#39;CAR&#39;, &#39;MOTORBIKE&#39;]
+    },
+    &#39;object.type==&amp;quot;HOUSE&amp;quot;,location&#39;:{
+        faker: &#39;address.city&#39;
+    },
+    &#39;object.type==&amp;quot;CAR&amp;quot;||object.type==&amp;quot;MOTORBIKE&amp;quot;,speed&#39;:{
+        faker: &#39;random.number&#39;
+    }
+};
+
+mocker()
+    .schema(&#39;user&#39;, user, 2)
+    .schema(&#39;group&#39;, group, 2)
+    .schema(&#39;conditionalField&#39;, conditionalField, 2)
+    .build(function(data) {
+        console.log(util.inspect(data, { depth: 10 }))
+//This returns an object
+// {
+//      user:[array of users],
+//      group: [array of groups],
+//      conditionalField: [array of conditionalFields]
+// }
+        })
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;documentation:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;Documentation&lt;/h2&gt;
+
+&lt;p&gt;Data generation goes with model based composed by generators, the generators can have access to the data generated and to the entity generated. &lt;strong&gt;&lt;em&gt;Generators run syncronously, take care of the related entities!!&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;methods:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;Methods&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;schema(name, schema, generationType)&lt;/em&gt;&lt;/strong&gt;: Add a new schema, you must specify this params:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;name (String): Name of the schema.&lt;/li&gt;
+&lt;li&gt;schema (JSON): The schema you define&lt;/li&gt;
+&lt;li&gt;generationType (integer or JSON): In this field you specify how you will generate this schema. 2 ways:&lt;/li&gt;
+&lt;li&gt;Integer to specify how many of this you want.&lt;/li&gt;
+&lt;li&gt;JSON with this object &lt;code&gt;{uniqueField: &#39;&amp;lt;yourUniqueField&amp;gt;&#39;}&lt;/code&gt; this means that this field (&lt;yourUniqueField&gt;) is an array and you want to generate entities with this unique values&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;reset()&lt;/em&gt;&lt;/strong&gt;: Clean the internal DB.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;restart()&lt;/em&gt;&lt;/strong&gt;: Clean the internal DB and all the schemas inside.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;build(callback)&lt;/em&gt;&lt;/strong&gt;: This methods start to produce the data and wrap it to the callback&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;schema-definition:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;Schema definition&lt;/h3&gt;
+
+&lt;h4 id=&#34;every-schema-should-contains-the-specified-fields-key-can-be-2-types:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;Every schema should contains the specified fields. Key can be 2 types:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;Normal string&lt;/em&gt;&lt;/strong&gt; key: indicates the key.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;Commaseparated string&lt;/em&gt;&lt;/strong&gt; key: indicates that there is a conditional, before the comma you must specify a conditional (you have all level fields generated in this moment), then you must specify the field if the conditional is true see the example.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;inside-every-value-you-can-put:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;Inside every value you can put:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;static&lt;/em&gt;&lt;/strong&gt;: For fixed fields&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;        { static: &#39;hello im fixed field&#39; }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;self&lt;/em&gt;&lt;/strong&gt;: get himself object, and evaluate the string, so you can get calculated fields.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;        { self: &#39;id&#39; } //will get the id of the generated entity
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;db&lt;/em&gt;&lt;/strong&gt;: get the db, and evaluate the string, so you can access to this entities.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;        { db: &#39;user[0].id&#39; } //will get the first user id
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;eval&lt;/em&gt;&lt;/strong&gt;: evaluate the current string, remember that i inject all the awesome methods, faker, chance, casual, randexp, and also the db and object methods. With this eval field, &lt;strong&gt;&lt;em&gt;you must pass an exactly JSON syntax&lt;/em&gt;&lt;/strong&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;        { eval: &#39;object.id&#39; }
+
+        //OR
+
+        { eval: &#39;db.user[0]&#39; }
+
+        //OR
+
+        { eval: &#39;faker.lorem.words()&#39; }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;hasOne&lt;/em&gt;&lt;/strong&gt;: You can pass 2 parameters:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;hasOne&lt;/em&gt;&lt;/strong&gt;: the name of the related entity, get one random.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;get&lt;/em&gt;&lt;/strong&gt; (Optional): String that will be evaluated over the random related entity.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;    {
+        hasOne: &#39;user&#39; //this populate the field with one random user
+    }
+
+
+    //OR:
+
+
+    {
+        hasOne: &#39;user&#39;,
+        get: &#39;id&#39; //this populate the field with one id of a random user
+    }
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;hasMany&lt;/em&gt;&lt;/strong&gt;: You can pass 4 parameters:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;hasMany&lt;/em&gt;&lt;/strong&gt;: the name of the related entity, get one random.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;amount&lt;/em&gt;&lt;/strong&gt; (Optional): Fixed number of related entities to get.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;min&lt;/em&gt;&lt;/strong&gt; (Optional): Minimum entities to get.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;max&lt;/em&gt;&lt;/strong&gt; (Optional): Maximum entities to get.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;    {
+        hasMany: &#39;user&#39; //this populate the field with one random user
+    }
+
+
+    //OR:
+
+
+    {
+        hasMany: &#39;user&#39;,
+        amount: 1, //optional
+        min: 1, //optional
+        max: 1 //optional
+    }
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;incrementalId&lt;/em&gt;&lt;/strong&gt;: For incremental numeric ids, pass the start number to increment. If you put incrementalId = true it takes from 0 the ids.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;        { incrementalId: 0 }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;funcion&lt;/em&gt;&lt;/strong&gt;: No params are passed, only context (&lt;code&gt;this&lt;/code&gt;), in this you have &lt;code&gt;{db, object, faker, chance}&lt;/code&gt;, and you can use faker or chance functions, object (the specified model), db (actual data generated)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;        { function: function(){
+            //this.db
+            //this.object
+            //this.faker
+            //this.chance
+            //this.casual
+            return yourValue
+        } }
+
+        //OR:
+
+        { function(){
+            //this.db
+            //this.object
+            //this.faker
+            //this.chance
+            //this.casual
+            return yourValue
+        } }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;faker&lt;/em&gt;&lt;/strong&gt;: you can use directly faker functions like: (note that, db (actual entities generated), object (actual entity generated) are injected), &lt;strong&gt;&lt;em&gt;you must pass an exactly JSON syntax&lt;/em&gt;&lt;/strong&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;        { faker: &#39;lorem.words&#39; }                            //Run faker.lorem.words()
+        { faker: &#39;lorem.words()&#39; }                          //Run faker.lorem.words()
+        { faker: &#39;lorem.words(1)&#39; }                         //Run faker.lorem.words(1)
+        { faker: &#39;integer({&amp;quot;min&amp;quot;: 1, &amp;quot;max&amp;quot;: 10})&#39; }         //Run faker.lorem.words(1) and take the first
+        { faker: &#39;random.arrayElement(db.users)&#39; }          //Run faker.arrayElement over a generated user entity
+        { faker: &#39;random.arrayElement(db.users)[&amp;quot;userId&amp;quot;]&#39; }  //Run faker.arrayElement over a generated user entity and take the userId only
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;chance&lt;/em&gt;&lt;/strong&gt;: you can use directly chance functions, you can do: (note that, db (actual entities generated), object (actual entity generated) are injected), &lt;strong&gt;&lt;em&gt;you must pass an exactly JSON syntax&lt;/em&gt;&lt;/strong&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;        { chance: &#39;integer&#39; }                                //Run chance.integer()
+        { chance: &#39;integer()&#39; }                              //Run chance.integer()
+        { chance: &#39;integer({&amp;quot;min&amp;quot;: 1, &amp;quot;max&amp;quot;: 10})&#39; }         //Run chance.integer({&amp;quot;min&amp;quot;: 1, &amp;quot;max&amp;quot;: 10})
+        { chance: &#39;street_suffixes()[0][&amp;quot;name&amp;quot;]&#39; }           //Run chance.street_suffixes() takes first result and the name inside
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;casual&lt;/em&gt;&lt;/strong&gt;: you can use directly use casualJs functions, you can do: (note that, db (actual entities generated), object (actual entity generated) are injected), &lt;strong&gt;&lt;em&gt;you must pass an exactly JSON syntax&lt;/em&gt;&lt;/strong&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;        { casual: &#39;country&#39; }
+        { chance: &#39;array_of_digits()&#39; }
+        { casual: &#39;array_of_digits(3)[0]&#39; }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;randexp&lt;/em&gt;&lt;/strong&gt;: pass a regexp string to use randexp generator.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;        { randexp: /hello+ (world|to you)/ }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;[Array]&lt;/em&gt;&lt;/strong&gt;: you can pass an array that indicates an array of data you can create, passing in the first field the generator (function, faker, or array(not Tested)), and in the second field pass a config object (length, fixedLentgh)&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;length&lt;/em&gt;&lt;/strong&gt;: to know how many values&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;fixedLength&lt;/em&gt;&lt;/strong&gt; (Optional): true to create always same amount of values in the array, false to generate a random number between 0 and &amp;lsquo;length&amp;rsquo; value. False by default.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;concat&lt;/em&gt;&lt;/strong&gt; (Optional): An stringuified array ex: &amp;lsquo;[object.id, db.users.id]&amp;lsquo;. This should be an evaluable string to concat with the array that are generating. Also takes in mind that if you have a fixedLength, should not increase the length.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;strictConcat&lt;/em&gt;&lt;/strong&gt; (Optional): true to remove duplicates in the concatenated string array, when it is calculated. False by default.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;[{
+   //Any generator
+       //Faker  
+   faker: &#39;random.arrayElement(db.users).userId&#39;
+       //Chance  
+   chance: &#39;integer&#39;
+       //Function  
+   function: function (){ return /**/ }
+
+
+   //Array config
+   length: 10,
+   fixedLength: true
+
+
+   //Concat
+   concat: &#39;[db.users[0].userId, db.users[1].userId]&#39;
+   strictConcat: true
+}]
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;optional-fields:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;Optional fields&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;[virtual]&lt;/em&gt;&lt;/strong&gt;: Boolean, if you pass this option, this mean that this field will not appear at the output entity. But you can use during the generation.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;    {
+        //Any generator
+            //Faker  
+        faker: &#39;random.arrayElement(db.users)[userId]&#39;
+            //Chance  
+        chance: &#39;integer&#39;
+            //static
+        static: &#39;any static field&#39;
+            //Function  
+        function: function (){ return /**/ }
+
+        //with the virtual option
+        virtual: true
+
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;data-generation:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;Data generation&lt;/h3&gt;
+
+&lt;p&gt;Initialize mocker with the config, and then generate any entity with promises style, use generate function that accepts the name of the model and the amount of data to generate. Like the example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;mocker()
+    .schema(&#39;user&#39;, user, 2)
+    .schema(&#39;group&#39;, group, 2)
+    .schema(&#39;conditionalField&#39;, conditionalField, 2)
+    .build(function(data) {
+        console.log(util.inspect(data, { depth: 10 }))
+//This returns an object
+// {
+//      user:[array of users],
+//      group: [array of groups],
+//      conditionalField: [array of conditionalFields]
+// }
+        })
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can also pass instead of the number, an object with the a config, from now &lt;code&gt;{uniqueField}&lt;/code&gt;. If this field exists tells to the generator that instead of init a fixed length of data, generate an amount of data depending of the values of the field you will specify. You have 2 way to deal with this, check the examples See the output of this example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;//
+// First way, using an &#39;values&#39; embedded object
+//
+
+var cat = {
+    name: {
+        values: [&#39;txuri&#39;, &#39;pitxi&#39;, &#39;kitty&#39;]
+    }
+};
+var m = mocker()
+    .schema(&#39;cat&#39;, cat, 10)
+    .schema(&#39;cat2&#39;, cat, {uniqueField: &#39;name&#39;})
+    .build(function(data){
+        console.log(util.inspect(data, {depth:10}))
+    })
+
+//
+// Second way, without &#39;values&#39; embedded.
+//
+
+var cat = {
+    name: [&#39;txuri&#39;, &#39;pitxi&#39;, &#39;kitty&#39;]
+};
+var m = mocker()
+    .schema(&#39;cat&#39;, cat, 10)
+    .schema(&#39;cat2&#39;, cat, {uniqueField: &#39;name&#39;})
+    .build(function(data){
+        console.log(util.inspect(data, {depth:10}))
+    })
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;more-coming-soon:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;More, Coming soon&lt;/h3&gt;
+
+&lt;h2 id=&#34;online-api:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;Online API&lt;/h2&gt;
+
+&lt;p&gt;You can visit the repo url here: &lt;a href=&#34;https://github.com/danibram/mocker-api-tester&#34;&gt;https://github.com/danibram/mocker-api-tester&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Or visit the api directly: &lt;a href=&#34;https://mocker-api.herokuapp.com/&#34;&gt;https://mocker-api.herokuapp.com/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;development:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;Development&lt;/h2&gt;
+
+&lt;p&gt;Run &lt;code&gt;npm install;npm run dev&lt;/code&gt; to watch the project, webpack compile the code automatically. Run &lt;code&gt;npm build&lt;/code&gt; to build the normal and minified version.&lt;/p&gt;
+
+&lt;h2 id=&#34;why-not-use-json-schema-faker:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;Why not use json-schema-faker?&lt;/h2&gt;
+
+&lt;p&gt;json-schema-faker is awesome and works really nice, but i need a simplified and fast way to generate mock data for my projects, so i created this.&lt;/p&gt;
+
+&lt;h2 id=&#34;credits:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;Credits&lt;/h2&gt;
+
+&lt;p&gt;I couldn&amp;rsquo;t do this without this awesome libraries, so thanks to all:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Faker:  &lt;a href=&#34;https://github.com/Marak/faker.js&#34;&gt;https://github.com/Marak/faker.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Chance:  &lt;a href=&#34;https://github.com/victorquinn/chancejs&#34;&gt;https://github.com/victorquinn/chancejs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Casual:  &lt;a href=&#34;https://github.com/boo1ean/casual&#34;&gt;https://github.com/boo1ean/casual&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;RandExpJs: &lt;a href=&#34;https://github.com/fent/randexp.js&#34;&gt;https://github.com/fent/randexp.js&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;license:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;License&lt;/h2&gt;
+
+&lt;p&gt;Licensed under the MIT license. 2015&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>adyen client</title>
+      <link>http://localhost:1313/project/adyen-client/</link>
+      <pubDate>Thu, 29 Oct 2015 20:18:35 +0100</pubDate>
+      
+      <guid>http://localhost:1313/project/adyen-client/</guid>
+      <description>
+
+&lt;p&gt;Adyen client&lt;/p&gt;
+
+&lt;h2 id=&#34;getting-started:75a5fd5372c64e32c6254a1cbf4a6d2a&#34;&gt;Getting started&lt;/h2&gt;
+
+&lt;p&gt;Install the module with: &lt;code&gt;npm install adyen-client&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var adyenClient = require(&#39;adyen-client&#39;)
+var aClient = adyenClient({
+    frontKey: &#39;YOUR FRONT END KEY&#39;, //Only used for the initCCForm
+    merchantAccount: &#39;YOUR MERCHANT ACCOUNT&#39;
+    username: &#39;YOUR USERNAME&#39;,
+    password: &#39;YOUR PASSWORD&#39;,
+    development: true
+});
+aClient
+    .getRecurringData({
+        &amp;quot;shopperReference&amp;quot;: &amp;quot;SimonHopper1&amp;quot;,
+        &amp;quot;recurring&amp;quot;: {
+            &amp;quot;contract&amp;quot;: &amp;quot;RECURRING&amp;quot;
+        }
+    }).then(function (response) {
+        console.log(util.inspect(response, false, 20, true));
+    })
+    .fail(function (error) {
+        console.log(util.inspect(error, false, 20, true));
+    });
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;documentation:75a5fd5372c64e32c6254a1cbf4a6d2a&#34;&gt;Documentation&lt;/h2&gt;
+
+&lt;p&gt;First of all you need to initialize the client passing your merchant account, username, password and front end key (only if you need to do the frontend initialization).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var adyenClient = require(&#39;adyen-client&#39;)
+
+/*
+    opts = {
+        frontKey: &#39;YOUR FRONT END KEY&#39;, //Only used for the initCCForm
+        merchantAccount: &#39;YOUR MERCHANT ACCOUNT&#39;
+        username: &#39;YOUR USERNAME&#39;,
+        password: &#39;YOUR PASSWORD&#39;
+        development: Boolean //TRUE or FALSE indicates that your are on development, for production is not neccesary
+    }
+
+*/
+var aClient = adyenClient(opts);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then you have the client initialized, now you have access to this methods, every method return a promise, and you need to follow the adyen documentation to know how pass the data:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;initCCForm&lt;/em&gt;&lt;/strong&gt;: Promise that returns the structure you need for the CSE encryption in frontend.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;aClient.initCCForm()
+    .then(function(data){
+        console.log(data)
+        /*
+        {
+            &amp;quot;key&amp;quot;: &#39;10008|927D950...&#39;, // your Front-end key
+            &amp;quot;generationTime&amp;quot;: &#39;2016-01-01T00:00:00.000Z&#39; // ISO date string
+        }
+         */
+    })
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;authorizePayment&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;aClient.authorizePayment({
+    &amp;quot;shopperEmail&amp;quot;: &amp;quot;s.hopper@test.com&amp;quot;,
+    &amp;quot;shopperReference&amp;quot;: &amp;quot;SimonHopper1&amp;quot;,
+    &amp;quot;recurring&amp;quot;: {
+        &amp;quot;contract&amp;quot;: &amp;quot;RECURRING&amp;quot;
+    },
+    &amp;quot;reference&amp;quot;:&amp;quot;authorize-simonhopper1&amp;quot;,
+    &amp;quot;amount&amp;quot;: {
+        &amp;quot;value&amp;quot;: &amp;quot;0&amp;quot;,
+        &amp;quot;currency&amp;quot;: &amp;quot;EUR&amp;quot;
+    },
+    &amp;quot;additionalData&amp;quot;: {
+        &amp;quot;card.encrypted.json&amp;quot;: &amp;quot;adyenjs_0_1_15$......&amp;quot;
+    }
+})
+    .then(function(data){
+        console.log(data)
+    })
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;getRecurringData&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;aClient.getRecurringData({
+    &#39;shopperReference&#39;: &#39;SimonHopper1&#39;,
+    &#39;recurring&#39;: {
+        &amp;quot;contract&amp;quot;: &amp;quot;RECURRING&amp;quot;
+    }
+})
+    .then(function(data){
+        console.log(data)
+    })
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;disableRecurring&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;aClient.disableRecurring({
+    &amp;quot;shopperReference&amp;quot;: &#39;SimonHopper1&#39;,
+    &amp;quot;recurringDetailReference&amp;quot;: &#39;CC TOKENIZED&#39; //if you need to remove a specific one
+})
+    .then(function(data){
+        console.log(data)
+    })
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;capture&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;aClient.capture({
+    &amp;quot;modificationAmount&amp;quot;: {
+        &amp;quot;currency&amp;quot;: &#39;EUR&#39;,
+        &amp;quot;value&amp;quot;: &#39;0&#39;
+    },
+    &amp;quot;originalReference&amp;quot;: &#39;YOUR AUTH REFERENCE&#39;,
+    &amp;quot;reference&amp;quot;: &amp;quot;capture-&amp;quot; + data.transactionId
+})
+    .then(function(data){
+        console.log(data)
+    })
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;refund&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;aClient.refund( {
+    &amp;quot;modificationAmount&amp;quot;: {
+        &amp;quot;currency&amp;quot;: &#39;EUR&#39;,
+        &amp;quot;value&amp;quot;: &#39;0&#39;
+    },
+    &amp;quot;originalReference&amp;quot;: &#39;YOUR REFERENCE&#39;
+})
+    .then(function(data){
+        console.log(data)
+    })
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;cancelOrRefund&lt;/em&gt;&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;aClient.cancelOrRefund({
+    &amp;quot;originalReference&amp;quot;: &#39;YOUR REFERENCE&#39;,
+})
+    .then(function(data){
+        console.log(data)
+    })
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;responses:75a5fd5372c64e32c6254a1cbf4a6d2a&#34;&gt;Responses&lt;/h2&gt;
+
+&lt;p&gt;The initCCForm returns the data example and the others returns this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;{   
+    success: Boolean, //TRUE or FALSE
+    data: {},//The Response from Adyen
+    lastResponse: {}, //Axios RAW response
+    lastRequest: {} //Axios RAW request
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;development:75a5fd5372c64e32c6254a1cbf4a6d2a&#34;&gt;Development&lt;/h2&gt;
+
+&lt;p&gt;Run &lt;code&gt;npm install;npm run dev&lt;/code&gt; to watch the proyect, and compile the code automatically.
+Run &lt;code&gt;npm build&lt;/code&gt; to build the module.&lt;/p&gt;
+
+&lt;h2 id=&#34;release-history:75a5fd5372c64e32c6254a1cbf4a6d2a&#34;&gt;Release History&lt;/h2&gt;
+
+&lt;h4 id=&#34;2-0-7:75a5fd5372c64e32c6254a1cbf4a6d2a&#34;&gt;(2.0.7)&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Update dependencies&lt;/li&gt;
+&lt;li&gt;Added success field in response&lt;/li&gt;
+&lt;li&gt;Fix issues&lt;/li&gt;
+&lt;li&gt;Internal refractor (ES6)&lt;/li&gt;
+&lt;li&gt;Docs Changed&lt;/li&gt;
+&lt;li&gt;Responses now returns the RAW request, and response&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;1-0-8:75a5fd5372c64e32c6254a1cbf4a6d2a&#34;&gt;(1.0.8)&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Internal Refactor&lt;/li&gt;
+&lt;li&gt;Added more methods&lt;/li&gt;
+&lt;li&gt;Better docs&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;1-0-7:75a5fd5372c64e32c6254a1cbf4a6d2a&#34;&gt;(1.0.7)&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Fix dependencies&lt;/li&gt;
+&lt;li&gt;Firsts step.&lt;/li&gt;
+&lt;li&gt;Added basic methods&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;license:75a5fd5372c64e32c6254a1cbf4a6d2a&#34;&gt;License&lt;/h2&gt;
+
+&lt;p&gt;Licensed under the MIT license. 2015&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>flat ui syntax</title>
+      <link>http://localhost:1313/project/flat-ui-syntax/</link>
+      <pubDate>Tue, 29 Sep 2015 20:33:43 +0100</pubDate>
+      
+      <guid>http://localhost:1313/project/flat-ui-syntax/</guid>
+      <description>&lt;p&gt;An Atom ui syntax&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/danibram/flat-ui-syntax-atom/master/ScreenShot.png&#34; alt=&#34;Flat-ui-syntax&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The font used in the screenshot is Source Code Pro.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>trustly client</title>
+      <link>http://localhost:1313/project/trustly-client/</link>
+      <pubDate>Fri, 05 Jun 2015 20:24:40 +0100</pubDate>
+      
+      <guid>http://localhost:1313/project/trustly-client/</guid>
+      <description>
+
+&lt;p&gt;Node.js client for trusty integrations. Right now it doesn´t includes the withdrawal, feel free to submit a pull request. You can use callback style or promises.&lt;/p&gt;
+
+&lt;p&gt;##Getting started&lt;/p&gt;
+
+&lt;p&gt;Install the module with: &lt;code&gt;npm install trustly-client&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;    var client = require(&#39;trustly-client&#39;);
+    var tClientKP = client(configuration);
+    //Promise style
+    tClientKP.init()
+    .then(function () {
+        return tClientKP.deposit({
+            NotificationURL: &#39;http://127.0.0.1:4343/notification&#39;,
+            EndUserID: &#39;john.doe@example.com&#39;,
+            MessageID: &#39;111112111221&#39;,
+            Locale: &#39;es_ES&#39;,
+            Amount: &#39;1.00&#39;,
+            Currency: &#39;EUR&#39;,
+            SuccessURL: &#39;http://127.0.0.1:4343/success&#39;,
+            FailURL: &#39;http://127.0.0.1:4343/fail&#39;,
+            HoldNotifications: 1
+        });
+    })
+    .then(function (response) {
+        console.log(util.inspect(response, false, 20, true));
+    })
+    .fail(function (error) {
+        console.log(util.inspect(error, false, 20, true));
+    });
+    //Callback style
+    tClientKP.init(function(){
+        tClientKP.deposit({
+            NotificationURL: &#39;http://127.0.0.1:4343/notification&#39;,
+            EndUserID: &#39;john.doe@example.com&#39;,
+            MessageID: &#39;111112111221&#39;,
+            Locale: &#39;es_ES&#39;,
+            Amount: &#39;1.00&#39;,
+            Currency: &#39;EUR&#39;,
+            SuccessURL: &#39;http://127.0.0.1:4343/success&#39;,
+            FailURL: &#39;http://127.0.0.1:4343/fail&#39;,
+            HoldNotifications: 1
+        },function(err, response){
+            if (err){
+                console.log(util.inspect(err, false, 20, true));
+            }
+            console.log(util.inspect(response, false, 20, true));
+        });
+    })
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You should init, and it is a asyncronous process. This init loads your private and the trustly public keys, neccesary for all the request and responses, creation and verification.&lt;/p&gt;
+
+&lt;h2 id=&#34;documentation:dfd05ee4cd41395536b9e745687722a2&#34;&gt;Documentation&lt;/h2&gt;
+
+&lt;p&gt;Basically to initialize, you should pass, the config object composed by:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;[required] &amp;lsquo;privateKeyPath&amp;rsquo;: Path to you private key&lt;/li&gt;
+&lt;li&gt;[required] &amp;lsquo;username&amp;rsquo;: Your trustly api username&lt;/li&gt;
+&lt;li&gt;[required] &amp;lsquo;password&amp;rsquo;: Your trustly api password&lt;/li&gt;
+&lt;li&gt;[optional] &amp;lsquo;publicKeyPath&amp;rsquo;: Path to a public key (for the general cases you don&amp;rsquo;t need it, i package the trusty public key)&lt;/li&gt;
+&lt;li&gt;[optional] &amp;lsquo;endpoint&amp;rsquo;: By default it is autoselected depending of the environment, you can always send the endpoint you want.&lt;/li&gt;
+&lt;li&gt;[optional] &amp;lsquo;environment&amp;rsquo;: By default i fill with development&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The module have this 3 basic methods:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&amp;lsquo;deposit&amp;rsquo;&lt;/strong&gt; : Create a deposit request.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;lsquo;refund&amp;rsquo;&lt;/strong&gt; : Create a refund request.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;lsquo;createNotificationResponse&amp;rsquo;&lt;/strong&gt; : Helper that verifies the data from truistly using the keys, and returns the data you need to response to every notification, returns an &lt;em&gt;object&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The 2 basic methods are: &lt;strong&gt;deposit&lt;/strong&gt;, &lt;strong&gt;refund&lt;/strong&gt;. They uses the parameters described in trusty documentation. &lt;a href=&#34;https://trustly.com/en/developer/api#/introduction&#34;&gt;here (trustly docs)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Then you have a method to handle the notifications: &lt;strong&gt;&amp;lsquo;createNotificationResponse&amp;rsquo;&lt;/strong&gt;. Accepts a Json string or a Json with the notification, and returns you the correct data, then you simply need to send as a reponse in you notification listener. (see &lt;strong&gt;test/test-notification-server.js&lt;/strong&gt; you have an example about it)&lt;/p&gt;
+
+&lt;p&gt;Also there are other functions to sign, verify the data, compose the request. Feel free to explore the code.&lt;/p&gt;
+
+&lt;h2 id=&#34;errors:dfd05ee4cd41395536b9e745687722a2&#34;&gt;Errors&lt;/h2&gt;
+
+&lt;p&gt;It will return always the same structure if an error happens:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;    var error = {
+        lastRequest: self._lastRequest,
+        lastResponse: self._lastResponse,
+        trustlyError: null,
+        clientError: null
+    };
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Always you will have last request and response.
+If &lt;em&gt;clientError&lt;/em&gt; is filled, mean all errors except trustly errors.
+If &lt;em&gt;trustlyError&lt;/em&gt; is filled, it will catch all information about the trustly error in this format (Example):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;    trustlyError = {
+        method: &#39;Deposit&#39;,
+        uuid: &#39;dba2d98c-6c4e-4b9e-aa46-90027793aa14&#39;,
+        message: &#39;ERROR_DUPLICATE_MESSAGE_ID&#39;,
+        code: 637
+    };
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Note: method and uuid can be null if the request contains a malformed JSON&lt;/em&gt;
+More information about the errors &lt;a href=&#34;https://trustly.com/en/developer/api#/errormessages&#34;&gt;here (trustly docs)&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;release-history:dfd05ee4cd41395536b9e745687722a2&#34;&gt;Release History&lt;/h2&gt;
+
+&lt;p&gt;####(1.1.3 Lastest)
+- Working for Deposit, Refund and management of notifications.
+- Better management of the errors.
+- Correct and fix refund.&lt;/p&gt;
+
+&lt;p&gt;####(1.1.1)
+- Fix problems with notifications some example updates.&lt;/p&gt;
+
+&lt;p&gt;####(1.1.0)
+- Correct notifications handling, remove &amp;ldquo;handleNotification&amp;rdquo; is replaced by &amp;ldquo;createNotificationResponse&amp;rdquo;, more correct, and added an express server as example.&lt;/p&gt;
+
+&lt;p&gt;####(1.0.1 - 1.0.4)
+- Updates in packages.
+- Update the load method.
+- Added callback example.
+- Fix paths, problems with the keys.&lt;/p&gt;
+
+&lt;p&gt;####(1.0.0)
+- Firsts steps. Basic usage finishes: Deposit, refund and handleNotification functions.
+- Sign, verify and compose requests, and responses done.&lt;/p&gt;
+
+&lt;h2 id=&#34;license:dfd05ee4cd41395536b9e745687722a2&#34;&gt;License&lt;/h2&gt;
+
+&lt;p&gt;Licensed under the MIT license. 2015&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>translator helper dustjs</title>
+      <link>http://localhost:1313/project/translator-helper-dustjs/</link>
+      <pubDate>Tue, 17 Mar 2015 20:35:49 +0100</pubDate>
+      
+      <guid>http://localhost:1313/project/translator-helper-dustjs/</guid>
+      <description>
+
+&lt;p&gt;A little helper for dustjs to load i18n translations dynamically, with variables, based on &lt;a href=&#34;https://github.com/mikesparr/Kraken_Example_i18n_Helper&#34;&gt;https://github.com/mikesparr/Kraken_Example_i18n_Helper&lt;/a&gt;. Feel free to comment, copy or burn this code =P&lt;/p&gt;
+
+&lt;h2 id=&#34;getting-started:cd718ded1b1b17aff7f40f42c5bfd82c&#34;&gt;Getting Started&lt;/h2&gt;
+
+&lt;p&gt;Install the module with: &lt;code&gt;npm install translator-helper-dustjs&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Its important to add a global variable to pass the kraken config to the module, i put in my index.js this after load kraken config&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;...
+app = module.exports = express();
+app.use(kraken(options));
+GLOBAL._app = app;
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;On your controllers file or wethever you load dust, add the helper like another.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;...
+var dust = require(&#39;dustjs-linkedin&#39;);
+require(&#39;dustjs-helpers&#39;);
+require(&#39;translator-helper-dustjs&#39;);
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;examples:cd718ded1b1b17aff7f40f42c5bfd82c&#34;&gt;Examples&lt;/h2&gt;
+
+&lt;p&gt;On your properties files (index.properties)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;...
+jobs.acme.title=Company Acme
+jobs.hernes.title=Company Hernes
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;On your dust template files, pass to the t helper the key (jobs.acme.title -&amp;gt; companyName = &amp;ldquo;acme&amp;rdquo;), the properties file (index in this case), and the lang (in my case &amp;ldquo;EN_us&amp;rdquo;)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;...
+{@t key=&amp;quot;jobs.{companyName}.title&amp;quot; bundle=&amp;quot;index&amp;quot; lang=&amp;quot;{lang}&amp;quot; /}
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And the result will be&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;...
+Company Acme
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;contributing:cd718ded1b1b17aff7f40f42c5bfd82c&#34;&gt;Contributing&lt;/h2&gt;
+
+&lt;p&gt;Please fell free to contribute, i´m not a real expert of dustJs&lt;/p&gt;
+
+&lt;h2 id=&#34;release-history:cd718ded1b1b17aff7f40f42c5bfd82c&#34;&gt;Release History&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;(Nothing yet)&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;license:cd718ded1b1b17aff7f40f42c5bfd82c&#34;&gt;License&lt;/h2&gt;
+
+&lt;p&gt;Copyright &amp;copy; 2014 Daniel Biedma Ramos
+Licensed under the MIT license.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>bumblebee object transformation</title>
+      <link>http://localhost:1313/project/bumblebee-object-transformation/</link>
+      <pubDate>Sun, 30 Nov 2014 20:30:04 +0100</pubDate>
+      
+      <guid>http://localhost:1313/project/bumblebee-object-transformation/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/danibram/bumblebee&#34;&gt;&lt;img src=&#34;http://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Bumblebee_%288023382295%29.jpg/320px-Bumblebee_%288023382295%29.jpg&#34; alt=&#34;Bumblebee javascript object transformation tool&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Object transformation tool inspired on mongoose models. The basic idea is to contruct a result object, form a model and a reference object (and also you can pass an object as base).&lt;/p&gt;
+
+&lt;h2 id=&#34;getting-started:d9f33437d60c95456b7d51e07943df9d&#34;&gt;Getting Started&lt;/h2&gt;
+
+&lt;p&gt;Install the module with: &lt;code&gt;npm install bumblebee&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;    var bumblebee = require(&#39;bumblebee-object-transformation&#39;);
+    bumblebee(initialObject, referenceObject, model, function(err, result){
+        console.log(result);
+        //Your code....
+    });
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;documentation:d9f33437d60c95456b7d51e07943df9d&#34;&gt;Documentation&lt;/h2&gt;
+
+&lt;p&gt;Basically you should use as model the final object, and field by field you can speficy:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;__format&lt;/code&gt; : (to specify the default format)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;__default&lt;/code&gt; : (if bumblebee dont find the field you can specify a default field)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;__composer&lt;/code&gt; : (to make some operations predefined)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;__scheema&lt;/code&gt; : (to compose the scheema of this field)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;__originField&lt;/code&gt;: (to specify the orifinal field inside the object, remeber that any scheema that you define inside the composer use their own element or subobject as reference)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;__clean&lt;/code&gt; : (to use over the object selected my object cleaner, that removes innecesarry arrays with lenght 0, really usefull when you convert from xml to js.)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For now the operations are:
+- RegEx : to find inside the object a fields and put in an array.
+- everyElement : to loop over the elements of an array and make the transformations
+- everyElementToArray : to loop over the elements of an array and create an object, you need to specify the key of the every element (__key)&lt;/p&gt;
+
+&lt;p&gt;Remember that this module is underconstruction, if you have some needs try to follow the essential structure of the application, and i try to merge all request. Usully i use this module, so im adapting frecuently, and sometimes wont be really well optimized, all suggestions are welcome.&lt;/p&gt;
+
+&lt;p&gt;Thanks!&lt;/p&gt;
+
+&lt;h2 id=&#34;examples:d9f33437d60c95456b7d51e07943df9d&#34;&gt;Examples&lt;/h2&gt;
+
+&lt;p&gt;###&lt;em&gt;(From 0.3.X Examples)&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;    initialObject = {};
+    var referenceObject = {
+        &#39;title&#39; : &#39;title&#39;,
+        &#39;text&#39;: &#39;hey im a text&#39;,
+        &#39;position&#39; : [ 41.3901566, 2.1355214 ],
+        &#39;you&#39; : {
+            &#39;video&#39; : {
+                &#39;active&#39;: true,
+                &#39;times&#39;: 4,
+                &#39;information&#39;:{
+                    &#39;duration&#39;: 10,
+                    &#39;format&#39;: &#39;min&#39;
+                }
+            }
+        },
+        &#39;youtube&#39;:{
+            &#39;expiration&#39;: &#39;DATE&#39;,
+            &#39;expirationTimezone&#39;: &#39;GMT+1&#39;
+        },
+        &#39;buyNowConfig&#39;: {
+            &#39;price&#39;: 100
+        },
+        &#39;product&#39;:{
+            &#39;images&#39;:[
+                { url: &#39;http://lkjljklkj/123&#39;},
+                { url: &#39;http://lkjljklkj/456&#39;},
+                { url: &#39;http://lkjljklkj/678&#39;},
+                { url: &#39;http://lkjljklkj/999&#39;},
+            ]
+        },
+        providers:[{
+            &#39;$&#39;: {
+                key: &#39;acme&#39;,
+                type: &#39;company&#39;
+            },
+            ids: [&#39;123&#39;]
+        },{
+            &#39;$&#39;: {
+                key: &#39;octo&#39;,
+                type: &#39;company&#39;
+            },
+            ids: &#39;345&#39;
+        }]
+    };
+    var model = {
+        &#39;position&#39;: {
+            __format: &#39;Object&#39;,
+            __scheema: {
+                lat: { __format: &#39;Float&#39;, __originField: &#39;position.0&#39; },
+                lng: { __format: &#39;Float&#39;, __originField: &#39;position.1&#39; }
+            }
+        },
+        &#39;youtube&#39;: {
+            __scheema:{
+                &#39;active&#39;: { __format: &#39;Boolean&#39;, __originField: &#39;you.video.active&#39;},
+                &#39;times&#39;: { __format: &#39;Integer&#39;, __originField: &#39;you.video.times&#39;},
+                &#39;duration&#39;: { __format: &#39;Integer&#39;, __originField: &#39;you.video.information.duration&#39;},
+                &#39;expiration&#39;: { __format: &#39;String&#39;, __originField: &#39;youtube.expiration&#39;},
+                &#39;expirationTimezone&#39;: { __format: &#39;String&#39;, __originField: &#39;youtube.expirationTimezone&#39;},
+            }
+        },
+        &#39;products&#39;: {
+            __format: &#39;Array&#39;,
+            __scheema: {
+                &#39;title&#39;: { __format: &#39;Object&#39; },
+                &#39;text&#39;: { __format: &#39;Object&#39; },
+                &#39;imagePath&#39;: { __format: &#39;String&#39;, __originField: &#39;images.0.url&#39;, __outputMod: function (url) { return url+ &amp;quot;.jpg&amp;quot; } },
+                &#39;buyNowPrice&#39;: { __format: &#39;Float&#39;, __originField: &#39;buyNowConfig.price&#39; }
+            }
+        },
+        &#39;images&#39; : {
+            __format: &#39;Array&#39;,
+            __originField: &#39;product.images&#39;,
+            __composer:{
+                __type: &#39;everyElement&#39;,
+                __scheema: {
+                    &#39;type&#39;: { __format: &#39;String&#39;, __default: &#39;internal&#39; },
+                    &#39;fullUrl&#39;: { __format: &#39;String&#39;, __originField: &#39;url&#39;, __outputMod: function (url) { return url+ &amp;quot;.jpg&amp;quot; } }
+                }
+            }
+        },
+        &#39;providers&#39; : {
+            __format: &amp;quot;Object&amp;quot;,
+            __composer:{
+                __type: &#39;everyElementToObject&#39;,
+                __originField: &#39;providers&#39;,
+                __key: &#39;$.key&#39;,
+                __scheema: {
+                    type:{
+                        __format: &#39;String&#39;,
+                        __originField: &#39;$.type&#39;
+                    },
+                    codes: {
+                        __format: &#39;Array&#39;,
+                        __originField: &#39;ids&#39;
+                    }
+                },
+            }
+        }
+    };
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Passing this 2 objects the module reconstruct this in the output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;
+result = {
+    position: {
+        lat: 41.3901566,
+        lng: 2.1355214
+    },
+    youtube : {
+        active: true,
+        times: 4,
+        duration: 10,
+        expiration: &#39;DATE&#39;,
+        expirationTimezone: &#39;GMT+1&#39;
+    },
+    products: [
+        {
+        title: &#39;title&#39;,
+        text: &#39;hey im a text&#39;,
+        imagePath: &#39;http://lkjljklkj/123.jpg&#39;,
+        buyNowPrice: 100
+        }
+    ],
+    images: [
+        { type: &#39;internal&#39;, fullUrl: &#39;http://lkjljklkj/123.jpg&#39; },
+        { type: &#39;internal&#39;, fullUrl: &#39;http://lkjljklkj/456.jpg&#39; },
+        { type: &#39;internal&#39;, fullUrl: &#39;http://lkjljklkj/678.jpg&#39; },
+        { type: &#39;internal&#39;, fullUrl: &#39;http://lkjljklkj/999.jpg&#39; }
+    ],
+    providers:{
+        acme: {
+            type: &#39;company&#39;,
+            codes: [&#39;123&#39;]
+        },
+        octo: {
+            type: &#39;company&#39;,
+            codes: [&#39;345&#39;]
+        }
+    }
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;###&lt;em&gt;(From 0.2.1 Examples)&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;    initialObject = {
+        _id: &amp;quot;000001&amp;quot;
+    };
+    referenceObject = {
+        Name: &#39;dummy&#39;,
+        number: &#39;1243&#39;,
+        latitud: &#39;12.43&#39;,
+        Active: &#39;true&#39;,
+        image1: &#39;http://urltoimage1&#39;,
+        image2: &#39;http://urltoimage2&#39;,
+        image3: &#39;http://urltoimage3&#39;,
+        image4: &#39;http://urltoimage4&#39;,
+        codes:[
+            {cod1: &#39;111&#39;, cod2:&#39;11&#39;},
+            {cod1: &#39;333&#39;, cod2:&#39;11&#39;},
+            {cod1: &#39;444&#39;, cod2:&#39;22&#39;},
+            {cod1: &#39;555&#39;, cod2:&#39;22&#39;}
+        ]
+    };
+    model = {
+        name: {type: &#39;String&#39;, originField: &#39;Name&#39;},
+        code: {type: &#39;Integer&#39;, originField: &#39;number&#39;},
+        active: {type: &#39;Boolean&#39;, originField: &#39;Active&#39;},
+        images: {type: &#39;Array&#39;, composer:{type: &#39;RegEx&#39;, reg: &#39;image&#39;, use: &#39;value&#39;}},
+        latitud: {type: &#39;Float&#39;},
+        maybeValue: {type: &#39;Integer&#39;, default: 0},
+        propertyCodes: {
+            type: &#39;Array&#39;,
+            originField: &#39;codes&#39;,
+            composer:{
+                type: &#39;everyElement&#39;,
+                scheema: {
+                    providerCode: {type: &#39;String&#39;, originField: &#39;cod1&#39;},
+                    providerType: {type: &#39;String&#39;, originField: &#39;cod2&#39;}
+                }
+            }
+        }
+    };
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Passing this 2 objects the module reconstruct this in the output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;  result = {
+    _id: &amp;quot;000001&amp;quot;,
+      name: &#39;dummy&#39;,
+      code: 1243,
+      active: true,
+      images: [
+        &#39;http://urltoimage1&#39;,
+        &#39;http://urltoimage2&#39;,
+        &#39;http://urltoimage3&#39;,
+        &#39;http://urltoimage4&#39;
+     ],
+      latitud: 12.43,
+      maybeValue: 0,
+      propertyCodes:[
+        { providerCode: &#39;111&#39;, providerType: &#39;11&#39; },
+        { providerCode: &#39;333&#39;, providerType: &#39;11&#39; },
+        { providerCode: &#39;444&#39;, providerType: &#39;22&#39; },
+        { providerCode: &#39;555&#39;, providerType: &#39;22&#39; }
+    ]
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;contributing:d9f33437d60c95456b7d51e07943df9d&#34;&gt;Contributing&lt;/h2&gt;
+
+&lt;p&gt;In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using &lt;a href=&#34;http://gruntjs.com/&#34;&gt;Grunt&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;release-history:d9f33437d60c95456b7d51e07943df9d&#34;&gt;Release History&lt;/h2&gt;
+
+&lt;p&gt;####(0.3.9 Lastest)
+- Added everyElementToObject basically its the same that every element and you need to specify the key of the object for every element
+- Added inside the everyElement of an array the posibilty to use a &amp;ldquo;__outputMod&amp;rdquo; function
+- Added inside the everyElement with __scheema the __condition function, if true the element should be inject on the final everyElement array
+- Fixed little problem with composer and array without __scheema field.&lt;/p&gt;
+
+&lt;p&gt;####(0.3.0)
+Models:
+- (0.3.0) &lt;em&gt;(From 0.2.1 to 0.3)&lt;/em&gt; Not more type to define the output format, simply format.
+- (0.3.0) &lt;em&gt;(From 0.2.1 to 0.3)&lt;/em&gt; All internal operators are rewrite with &amp;ldquo;__&amp;rdquo; to remove comflicts&lt;/p&gt;
+
+&lt;p&gt;Operations:
+- (0.3.0) Now added the scheema operation that allows you to compose objects.&lt;/p&gt;
+
+&lt;h2 id=&#34;license:d9f33437d60c95456b7d51e07943df9d&#34;&gt;License&lt;/h2&gt;
+
+&lt;p&gt;Copyright &amp;copy; 2014 Daniel Biedma Ramos
+Licensed under the MIT license.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>object cleaner</title>
+      <link>http://localhost:1313/project/object-cleaner/</link>
+      <pubDate>Sun, 30 Nov 2014 20:27:44 +0100</pubDate>
+      
+      <guid>http://localhost:1313/project/object-cleaner/</guid>
+      <description>
+
+&lt;p&gt;A little function to clean dirty Objects, find any array with lenght one and and put his content without array.&lt;/p&gt;
+
+&lt;h2 id=&#34;getting-started:b25a58f83f9b4fd442c83d8d414f1c7d&#34;&gt;Getting Started&lt;/h2&gt;
+
+&lt;p&gt;Install the module with: &lt;code&gt;npm install object-cleaner&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var objCleaner = new require(&#39;object-cleaner&#39;);
+objCleaner(Object_to_clean); // Object_cleaned
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;examples:b25a58f83f9b4fd442c83d8d414f1c7d&#34;&gt;Examples&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var test = [{
+    property1: &#39;&#39;,
+    property2: &#39;&#39;
+}];
+var result = objCleaner(test);
+var result = {
+    property1: &#39;&#39;,
+    property2: &#39;&#39;
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;license:b25a58f83f9b4fd442c83d8d414f1c7d&#34;&gt;License&lt;/h2&gt;
+
+&lt;p&gt;Copyright &amp;copy; 2014 Daniel Biedma Ramos
+Licensed under the MIT license.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

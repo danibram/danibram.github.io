@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="Daniel Biedma">
+		<meta name="description" content="My opensource projects">
+		<meta name="generator" content="Hugo 0.15" />
+		<title>adyen client &middot; Opensource projects</title>
+		<link rel="shortcut icon" href="http://localhost:1313/images/favicon.ico">
+		<link rel="stylesheet" href="http://localhost:1313/css/style.css">
+		<link rel="stylesheet" href="http://localhost:1313/css/highlight.css">
+		<link rel="stylesheet" href="http://localhost:1313/css/monosocialiconsfont.css">
+		
+		<link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="Opensource projects" />
+		
+	</head>
+
+<body>
+   <nav class="main-nav">
+	
+	
+		<a href='http://localhost:1313/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a class="cta" href='https://dbr.io'>About</a>
+	
+
+</nav>
+
+
+    <section id="wrapper">
+        <article class="post">
+            <header>
+                <h1>
+                    adyen client
+                    <span class="headline h2">v2.0.6</span>
+                </h1>
+            </header>
+            <section id="post-body">
+                
+
+<p>Adyen client</p>
+
+<h2 id="getting-started:75a5fd5372c64e32c6254a1cbf4a6d2a">Getting started</h2>
+
+<p>Install the module with: <code>npm install adyen-client</code></p>
+
+<pre><code class="language-javascript">var adyenClient = require('adyen-client')
+var aClient = adyenClient({
+    frontKey: 'YOUR FRONT END KEY', //Only used for the initCCForm
+    merchantAccount: 'YOUR MERCHANT ACCOUNT'
+    username: 'YOUR USERNAME',
+    password: 'YOUR PASSWORD',
+    development: true
+});
+aClient
+    .getRecurringData({
+        &quot;shopperReference&quot;: &quot;SimonHopper1&quot;,
+        &quot;recurring&quot;: {
+            &quot;contract&quot;: &quot;RECURRING&quot;
+        }
+    }).then(function (response) {
+        console.log(util.inspect(response, false, 20, true));
+    })
+    .fail(function (error) {
+        console.log(util.inspect(error, false, 20, true));
+    });
+</code></pre>
+
+<h2 id="documentation:75a5fd5372c64e32c6254a1cbf4a6d2a">Documentation</h2>
+
+<p>First of all you need to initialize the client passing your merchant account, username, password and front end key (only if you need to do the frontend initialization).</p>
+
+<pre><code class="language-javascript">var adyenClient = require('adyen-client')
+
+/*
+    opts = {
+        frontKey: 'YOUR FRONT END KEY', //Only used for the initCCForm
+        merchantAccount: 'YOUR MERCHANT ACCOUNT'
+        username: 'YOUR USERNAME',
+        password: 'YOUR PASSWORD'
+        development: Boolean //TRUE or FALSE indicates that your are on development, for production is not neccesary
+    }
+
+*/
+var aClient = adyenClient(opts);
+</code></pre>
+
+<p>Then you have the client initialized, now you have access to this methods, every method return a promise, and you need to follow the adyen documentation to know how pass the data:</p>
+
+<ul>
+<li><p><strong><em>initCCForm</em></strong>: Promise that returns the structure you need for the CSE encryption in frontend.</p>
+
+<pre><code class="language-javascript">aClient.initCCForm()
+    .then(function(data){
+        console.log(data)
+        /*
+        {
+            &quot;key&quot;: '10008|927D950...', // your Front-end key
+            &quot;generationTime&quot;: '2016-01-01T00:00:00.000Z' // ISO date string
+        }
+         */
+    })
+</code></pre></li>
+
+<li><p><strong><em>authorizePayment</em></strong></p>
+
+<pre><code class="language-javascript">aClient.authorizePayment({
+    &quot;shopperEmail&quot;: &quot;s.hopper@test.com&quot;,
+    &quot;shopperReference&quot;: &quot;SimonHopper1&quot;,
+    &quot;recurring&quot;: {
+        &quot;contract&quot;: &quot;RECURRING&quot;
+    },
+    &quot;reference&quot;:&quot;authorize-simonhopper1&quot;,
+    &quot;amount&quot;: {
+        &quot;value&quot;: &quot;0&quot;,
+        &quot;currency&quot;: &quot;EUR&quot;
+    },
+    &quot;additionalData&quot;: {
+        &quot;card.encrypted.json&quot;: &quot;adyenjs_0_1_15$......&quot;
+    }
+})
+    .then(function(data){
+        console.log(data)
+    })
+</code></pre></li>
+
+<li><p><strong><em>getRecurringData</em></strong></p>
+
+<pre><code class="language-javascript">aClient.getRecurringData({
+    'shopperReference': 'SimonHopper1',
+    'recurring': {
+        &quot;contract&quot;: &quot;RECURRING&quot;
+    }
+})
+    .then(function(data){
+        console.log(data)
+    })
+</code></pre></li>
+
+<li><p><strong><em>disableRecurring</em></strong></p>
+
+<pre><code class="language-javascript">aClient.disableRecurring({
+    &quot;shopperReference&quot;: 'SimonHopper1',
+    &quot;recurringDetailReference&quot;: 'CC TOKENIZED' //if you need to remove a specific one
+})
+    .then(function(data){
+        console.log(data)
+    })
+</code></pre></li>
+
+<li><p><strong><em>capture</em></strong></p>
+
+<pre><code class="language-javascript">aClient.capture({
+    &quot;modificationAmount&quot;: {
+        &quot;currency&quot;: 'EUR',
+        &quot;value&quot;: '0'
+    },
+    &quot;originalReference&quot;: 'YOUR AUTH REFERENCE',
+    &quot;reference&quot;: &quot;capture-&quot; + data.transactionId
+})
+    .then(function(data){
+        console.log(data)
+    })
+</code></pre></li>
+
+<li><p><strong><em>refund</em></strong></p>
+
+<pre><code class="language-javascript">aClient.refund( {
+    &quot;modificationAmount&quot;: {
+        &quot;currency&quot;: 'EUR',
+        &quot;value&quot;: '0'
+    },
+    &quot;originalReference&quot;: 'YOUR REFERENCE'
+})
+    .then(function(data){
+        console.log(data)
+    })
+</code></pre></li>
+
+<li><p><strong><em>cancelOrRefund</em></strong>:</p>
+
+<pre><code class="language-javascript">aClient.cancelOrRefund({
+    &quot;originalReference&quot;: 'YOUR REFERENCE',
+})
+    .then(function(data){
+        console.log(data)
+    })
+</code></pre></li>
+</ul>
+
+<h2 id="responses:75a5fd5372c64e32c6254a1cbf4a6d2a">Responses</h2>
+
+<p>The initCCForm returns the data example and the others returns this:</p>
+
+<pre><code class="language-javascript">{   
+    success: Boolean, //TRUE or FALSE
+    data: {},//The Response from Adyen
+    lastResponse: {}, //Axios RAW response
+    lastRequest: {} //Axios RAW request
+}
+</code></pre>
+
+<h2 id="development:75a5fd5372c64e32c6254a1cbf4a6d2a">Development</h2>
+
+<p>Run <code>npm install;npm run dev</code> to watch the proyect, and compile the code automatically.
+Run <code>npm build</code> to build the module.</p>
+
+<h2 id="release-history:75a5fd5372c64e32c6254a1cbf4a6d2a">Release History</h2>
+
+<h4 id="2-0-7:75a5fd5372c64e32c6254a1cbf4a6d2a">(2.0.7)</h4>
+
+<ul>
+<li>Update dependencies</li>
+<li>Added success field in response</li>
+<li>Fix issues</li>
+<li>Internal refractor (ES6)</li>
+<li>Docs Changed</li>
+<li>Responses now returns the RAW request, and response</li>
+</ul>
+
+<h4 id="1-0-8:75a5fd5372c64e32c6254a1cbf4a6d2a">(1.0.8)</h4>
+
+<ul>
+<li>Internal Refactor</li>
+<li>Added more methods</li>
+<li>Better docs</li>
+</ul>
+
+<h4 id="1-0-7:75a5fd5372c64e32c6254a1cbf4a6d2a">(1.0.7)</h4>
+
+<ul>
+<li>Fix dependencies</li>
+<li>Firsts step.</li>
+<li>Added basic methods</li>
+</ul>
+
+<h2 id="license:75a5fd5372c64e32c6254a1cbf4a6d2a">License</h2>
+
+<p>Licensed under the MIT license. 2015</p>
+
+            </section>
+        </article>
+        <footer id="post-meta" class="clearfix">
+            <a href="https://twitter.com/danibram">
+                    <img class="avatar" src="http://localhost:1313/images/avatar.jpg">
+                    <div>
+                        <span class="dark">Daniel Biedma</span>
+                        <span>Overpowered full-stack developer</span>
+
+                    </div>
+                </a>
+            <section id="sharing">
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2flocalhost%3a1313%2fproject%2fadyen-client%2f - adyen%20client by @danibram"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            </section>
+        </footer>
+
+        
+
+        <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+        <li>
+            <a href="http://localhost:1313/post/firsts-steps/">First Post<aside class="dates">Feb 19</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/project/time-tracker-cli/">time tracker cli<aside class="dates">Feb 7</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/project/mocker-data-generator/">mocker data generator<aside class="dates">Dec 29</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/projects/mocker-data-generator/">mocker-data-generator<aside class="dates">Dec 29</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/project/adyen-client/">adyen client<aside class="dates">Oct 29</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/project/flat-ui-syntax/">flat ui syntax<aside class="dates">Sep 29</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/project/trustly-client/">trustly client<aside class="dates">Jun 5</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/project/translator-helper-dustjs/">translator helper dustjs<aside class="dates">Mar 17</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/project/bumblebee-object-transformation/">bumblebee object transformation<aside class="dates">Nov 30</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/project/object-cleaner/">object cleaner<aside class="dates">Nov 30</aside></a>
+        </li>
+        
+   
+</ul>
+
+        <footer id="footer">
+    
+        
+<div id="social">
+    
+    <a class="symbol" href="https://dbr.io">
+        
+            https://dbr.io&nbsp;&nbsp;
+        
+    </a>
+    
+    <a class="symbol" href="https://www.facebook.com/danibram">
+        
+            circlefacebook
+        
+    </a>
+    
+    <a class="symbol" href="https://www.github.com/danibram">
+        
+            circlegithub
+        
+    </a>
+    
+    <a class="symbol" href="https://www.linkedin.com/in/danielbiedma">
+        
+            circlelinkedin
+        
+    </a>
+    
+    <a class="symbol" href="./index.xml">
+        
+            circlerss
+        
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/danibram">
+        
+            circletwitterbird
+        
+    </a>
+    
+</div>
+
+    
+    <p class="small">
+    
+        © Copyright 2016 Daniel Biedma
+    
+    </p>
+</footer>
+
+    </section>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://localhost:1313/js/main.js"></script>
+<script src="http://localhost:1313/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script data-no-instant>document.write('<script src="/livereload.js?mindelay=10"></' + 'script>')</script></body>
+</html>
