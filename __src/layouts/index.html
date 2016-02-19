@@ -14,6 +14,16 @@
             </li>
         {{ end }}
     </ul>
+    <h1 id="title">Changelogs</h1>
+    <ul id="post-list">
+        {{ range where .Data.Pages "Section" "changelog" }}
+        {{ $url := replace .Permalink .Site.BaseURL "" }}
+            <li>
+                <a href='{{ .Permalink }}'><aside class="dates">{{ .Date.Format "Jan 2" }}</aside></a>
+                <a href='{{ .Permalink }}'>{{ .Title }} <span class="headline h2">{{ index .Params "version" }}</span> <h2>{{ .Description | markdownify }}</h2></a>
+            </li>
+        {{ end }}
+    </ul>
     {{ partial "footer.html" . }}
 </section>
 
