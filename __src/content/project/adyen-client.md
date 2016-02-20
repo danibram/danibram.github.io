@@ -3,10 +3,9 @@ date = "2015-10-29T20:18:35+01:00"
 description = "Basic adyen client for nodeJs Integrations"
 project_url = ""
 title = "adyen client"
-version = "v2.0.6"
+version = "v2.0.7"
 
 +++
-
 Adyen client
 
 
