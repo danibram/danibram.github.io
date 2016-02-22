@@ -1,5 +1,5 @@
 # Site settings
-baseurl = "http://danibram.github.io/"
+baseurl = "http://blog.danibram.es/"
 languageCode = "en-us"
 title = "Opensource projects"
 

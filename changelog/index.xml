@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Changelogs on Opensource projects</title>
-    <link>http://danibram.github.io/changelog/</link>
+    <link>http://blog.danibram.es/changelog/</link>
     <description>Recent content in Changelogs on Opensource projects</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 07 Feb 2016 20:13:19 +0100</lastBuildDate>
-    <atom:link href="http://danibram.github.io/changelog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://blog.danibram.es/changelog/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>time tracker cli</title>
-      <link>http://danibram.github.io/changelog/time-tracker-cli/</link>
+      <link>http://blog.danibram.es/changelog/time-tracker-cli/</link>
       <pubDate>Sun, 07 Feb 2016 20:13:19 +0100</pubDate>
       
-      <guid>http://danibram.github.io/changelog/time-tracker-cli/</guid>
+      <guid>http://blog.danibram.es/changelog/time-tracker-cli/</guid>
       <description>
 
 &lt;h2 id=&#34;v1-1-2-feb-11-2016:ea25401390a1c55dd6d300003f1b6086&#34;&gt;&lt;a href=&#34;https://github.com/danibram/time-tracker-cli/compare/v1.1.1...v1.1.2&#34;&gt;v1.1.2&lt;/a&gt; - Feb 11, 2016&lt;/h2&gt;
@@ -46,10 +46,10 @@
     
     <item>
       <title>mocker data generator</title>
-      <link>http://danibram.github.io/changelog/mocker-data-generator/</link>
+      <link>http://blog.danibram.es/changelog/mocker-data-generator/</link>
       <pubDate>Tue, 29 Dec 2015 17:37:56 +0100</pubDate>
       
-      <guid>http://danibram.github.io/changelog/mocker-data-generator/</guid>
+      <guid>http://blog.danibram.es/changelog/mocker-data-generator/</guid>
       <description>
 
 &lt;h2 id=&#34;1-2-2:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;(1.2.2)&lt;/h2&gt;
