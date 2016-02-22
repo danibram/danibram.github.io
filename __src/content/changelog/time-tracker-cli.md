@@ -2,9 +2,9 @@
 date = "2016-02-07T20:13:19+01:00"
 title = "time tracker cli"
 version = "v1.1.2"
+project_url = "https://github.com/danibram/time-tracker-cli"
+section= "changelog"
 +++
-
-# Release History
 
 ## [v1.1.2] - Feb 11, 2016
 

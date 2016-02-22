@@ -26,8 +26,6 @@
       <guid>http://danibram.github.io/changelog/time-tracker-cli/</guid>
       <description>
 
-&lt;h1 id=&#34;release-history:ea25401390a1c55dd6d300003f1b6086&#34;&gt;Release History&lt;/h1&gt;
-
 &lt;h2 id=&#34;v1-1-2-feb-11-2016:ea25401390a1c55dd6d300003f1b6086&#34;&gt;&lt;a href=&#34;https://github.com/danibram/time-tracker-cli/compare/v1.1.1...v1.1.2&#34;&gt;v1.1.2&lt;/a&gt; - Feb 11, 2016&lt;/h2&gt;
 
 &lt;ul&gt;
@@ -157,8 +155,6 @@ Run &lt;code&gt;npm build&lt;/code&gt; to build the module.&lt;/p&gt;
       
       <guid>http://danibram.github.io/changelog/mocker-data-generator/</guid>
       <description>
-
-&lt;h1 id=&#34;release-history:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;Release History&lt;/h1&gt;
 
 &lt;h2 id=&#34;1-2-2:61d9ea6aafd3833dee3243d6f0a4abf1&#34;&gt;(1.2.2)&lt;/h2&gt;
 
@@ -794,8 +790,6 @@ var m = mocker()
       
       <guid>http://danibram.github.io/project/adyen-client/</guid>
       <description>
-
-&lt;p&gt;Adyen client&lt;/p&gt;
 
 &lt;h2 id=&#34;getting-started:75a5fd5372c64e32c6254a1cbf4a6d2a&#34;&gt;Getting started&lt;/h2&gt;
 

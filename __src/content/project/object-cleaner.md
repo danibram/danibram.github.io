@@ -1,7 +1,7 @@
 +++
 date = "2014-11-30T20:27:44+01:00"
 description = "A little function to clean dirty arrays inside objects "
-project_url = ""
+project_url = "https://github.com/danibram/object-cleaner"
 title = "object cleaner"
 version = "v0.1.3"
 

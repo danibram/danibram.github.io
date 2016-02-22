@@ -1,0 +1,15 @@
+<footer class="footer">
+	<section class="container">
+        {{ if .Site.Social }}
+            {{ partial "social-footer.html" . }}
+        {{ end }}
+
+        <p>
+        {{ with .Site.Params.copyright }}
+            {{ . | markdownify }}
+        {{ else }}
+            © Copyright {{.Now.Format "2006"}} {{ .Site.Params.name }}
+        {{ end }}
+        </p>
+	</section>
+</footer>

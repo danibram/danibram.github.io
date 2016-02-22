@@ -1,0 +1,39 @@
+{{ partial "head.html" . }}
+<body>
+
+    <main class="wrapper">
+        {{ partial "nav.html" . }}
+
+        <section class="container" >
+            <article class="post">
+                <header>
+                    <h1 class="title">{{ .Title }}</h1>
+                    <h2 class="headline">{{ .Date.Format "January 2, 2006" }}</h2>
+                </header>
+                <section id="post-body">
+                    {{ .Content }}
+                </section>
+            </article>
+        </section>
+
+        <section class="container">
+            <img class="avatar" src="{{ .Site.BaseURL }}images/avatar.jpg">
+            <div>
+                <span class="dark">{{ .Site.Params.name }}</span>
+                <span>{{ .Site.Params.aboutAuthor }}</span>
+
+            </div>
+            {{ partial "share.html" . }}
+        </section>
+
+        <section class="container">
+            {{ template "_internal/disqus.html" . }}
+        </section>
+
+        {{ partial "footer.html" . }}
+
+    </main>
+
+    {{ partial "js.html" . }}
+</body>
+</html>

@@ -511,8 +511,6 @@ var m = mocker()
       <guid>http://danibram.github.io/project/adyen-client/</guid>
       <description>
 
-&lt;p&gt;Adyen client&lt;/p&gt;
-
 &lt;h2 id=&#34;getting-started:75a5fd5372c64e32c6254a1cbf4a6d2a&#34;&gt;Getting started&lt;/h2&gt;
 
 &lt;p&gt;Install the module with: &lt;code&gt;npm install adyen-client&lt;/code&gt;&lt;/p&gt;

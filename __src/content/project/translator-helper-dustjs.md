@@ -1,7 +1,7 @@
 +++
 date = "2015-03-17T20:35:49+01:00"
 description = "A little helper for dustjs to load your i18n translations in a dynamic way."
-project_url = ""
+project_url = "https://github.com/danibram/translator-helper-dustjs"
 title = "translator helper dustjs"
 version = "v1.0.1"
 

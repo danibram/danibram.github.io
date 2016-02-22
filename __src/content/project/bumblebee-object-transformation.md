@@ -1,7 +1,7 @@
 +++
 date = "2014-11-30T20:30:04+01:00"
 description = "Object transformation tool "
-project_url = ""
+project_url = "https://github.com/danibram/bumblebee"
 title = "bumblebee object transformation"
 version = "v0.3.9"
 

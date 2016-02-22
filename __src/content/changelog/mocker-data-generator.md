@@ -2,9 +2,9 @@
 date = "2015-12-29T17:37:56+01:00"
 title = "mocker data generator"
 version = "v1.2.2"
+project_url = "https://github.com/danibram/mocker-data-generator"
+section= "changelog"
 +++
-
-# Release History
 
 ## (1.2.2)
 - Better error management

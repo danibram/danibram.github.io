@@ -638,6 +638,17 @@ h2.month {
     justify-content: center;
 }
 
+
+.btn a {
+    color: #fff;
+    background: #5badf0;
+    top: 8px;
+    right: 6px;
+    padding: 8px 12px;
+    font-size: 15px;
+    border-radius: 3px;
+    margin-left: 12px;
+}
 /* Media Queries */
 @media screen and (max-width: 540px) {
 	#wrapper { padding:20px 20px 20px 20px;}

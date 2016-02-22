@@ -1,7 +1,7 @@
 +++
 date = "2015-06-05T20:24:40+01:00"
 description = "A node client to comunicate with trustly."
-project_url = ""
+project_url = "https://github.com/danibram/trustly-client"
 title = "trustly client"
 version = "v1.1.3"
 

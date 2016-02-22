@@ -1,0 +1,12 @@
+{{ $iconStyle := .Site.Params.socialIconStyle }}
+<p id="social">
+    {{ range $key, $val := .Site.Social }}
+    <a class="symbol" href="{{$val}}">
+        {{ if ne $key "dbr"  }}
+            {{ $iconStyle }}{{ if eq $key "twitter" }}twitterbird{{ else }}{{ $key }}{{ end }}
+        {{ else }}
+            {{$val}}&nbsp;&nbsp;
+        {{ end }}
+    </a>
+    {{ end }}
+</p>

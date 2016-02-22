@@ -1,0 +1,46 @@
+{{ partial "head.html" . }}
+<body>
+    <main class="wrapper">
+        {{ partial "nav.html" . }}
+
+        <section class="container" >
+            <article class="post">
+                <header>
+                    <h2 class="post">
+                        {{ .Title }}
+                        <span class="headline h2">{{ index .Params "version" }}</span>
+                    </h2>
+                    <div class="buttons">
+
+
+                    <a class="button button-outline" href="{{ .Site.BaseURL }}project/{{ .Title | urlize }}">Project</a>
+
+                    {{ if index .Params "project_url" }}
+                        <a class="button button-outline" href="{{ index .Params "project_url" }}">More Info</a>
+                    {{ end }}
+                    </div>
+                </header>
+                <section id="post-body">
+                    {{ .Content }}
+                </section>
+            </article>
+
+            <div class="row post-meta">
+                <div class="column column-25">
+                    <img class="avatar" src="{{ .Site.BaseURL }}images/avatar.jpg">
+                </div>
+                <div class="column">
+                    <span class="dark">{{ .Site.Params.name }}</span>
+                    <span>{{ .Site.Params.aboutAuthor }}</span>
+                </div>
+                <div class="column column-33">{{ partial "share.html" . }}</div>
+            </div>
+
+            {{ template "_internal/disqus.html" . }}
+
+            {{ partial "footer.html" . }}
+        </section>
+
+    {{ partial "js.html" . }}
+</body>
+</html>

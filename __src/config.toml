@@ -7,8 +7,9 @@ title = "Opensource projects"
 googleAnalytics = ""
 # Disable comments by leaving disqusShortname empty
 disqusShortname = "dbropensource"
-
 canonifyurls = true
+
+theme = "miligram"
 
 [params]
 	name = "Daniel Biedma"

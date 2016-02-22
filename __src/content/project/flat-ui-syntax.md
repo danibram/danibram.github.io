@@ -1,7 +1,7 @@
 +++
 date = "2015-09-29T20:33:43+01:00"
 description = "An Atom ui syntax"
-project_url = ""
+project_url = "https://github.com/danibram/flat-ui-syntax-atom"
 title = "flat ui syntax"
 version = "v0.4.0"
 

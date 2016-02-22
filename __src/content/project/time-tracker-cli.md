@@ -1,10 +1,10 @@
 +++
 date = "2016-02-07T20:13:19+01:00"
 description = "Super tiny and ligthway time tracker for all cli lovers."
-project_url = ""
+project_url = "https://github.com/danibram/time-tracker-cli"
 title = "time tracker cli"
 version = "v1.1.2"
-
+changelog = true
 +++
 
 Super tiny and ligthway time tracker for all cli lovers.

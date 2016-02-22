@@ -8,6 +8,16 @@
                 <h1 class="post">
                     {{ .Title }}
                     <span class="headline h2">{{ index .Params "version" }}</span>
+
+                    <span class="h2 btn">
+                        <a href="{{ .Site.BaseURL }}project/{{ .Title | urlize }}">Project</a>
+                    </span>
+
+                    {{ if index .Params "project_url" }}
+                    <span class="h2 btn">
+                        <a href="{{ index .Params "project_url" }}">More Info</a>
+                    </span>
+                    {{ end }}
                 </h1>
             </header>
             <section id="post-body">

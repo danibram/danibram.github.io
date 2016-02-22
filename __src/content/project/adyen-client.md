@@ -1,13 +1,11 @@
 +++
 date = "2015-10-29T20:18:35+01:00"
 description = "Basic adyen client for nodeJs Integrations"
-project_url = ""
+project_url = "https://github.com/danibram/adyen-client"
 title = "adyen client"
 version = "v2.0.7"
-
+section= "project"
 +++
-Adyen client
-
 
 ## Getting started
 

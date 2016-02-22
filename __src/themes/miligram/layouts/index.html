@@ -1,0 +1,26 @@
+    {{ partial "head.html" . }}
+	<body>
+
+		<main class="wrapper">
+            {{ partial "nav.html" . }}
+            <section class="container">
+                <h5 id="title">{{.Title}}</h5>
+                <ul id="post-list">
+                    {{ range where .Data.Pages "Section" "project" }}
+                    {{ $url := replace .Permalink .Site.BaseURL "" }}
+                        <li>
+                            <a href='{{ .Permalink }}'><aside class="dates">{{ .Date.Format "Jan 2" }}</aside></a>
+                            <a href='{{ .Permalink }}'>{{ .Title }} <span class="headline">{{ index .Params "version" }}</span> <h6>{{ .Description | markdownify }}</h6></a>
+                        </li>
+                    {{ end }}
+                </ul>
+
+            </section>
+
+			{{ partial "footer.html" . }}
+
+		</main>
+
+    {{ partial "js.html" . }}
+	</body>
+</html>
