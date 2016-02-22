@@ -1,26 +1,26 @@
 <ul class="share-list">
 <li class="share-item">
-    <a class="share-dialog" href="https://www.facebook.com/sharer/sharer.php?u={{.Permalink}}" title="Share Milligram on Facebook" target="blank">
+    <a class="share-dialog" href="https://www.facebook.com/sharer/sharer.php?u={{.Permalink}}" title="Share {{.Title}} on Facebook" target="blank">
         <i class="icon fa fa-facebook share-icon"></i>
     </a>
 </li>
 <li class="share-item">
-    <a class="share-dialog" href="https://twitter.com/intent/tweet?text={{ .Permalink }} - {{ .Title }} {{ with .Site.Params.twitter }}by @{{ . }}{{ end }}" title="Share Milligram on Twitter" target="blank">
+    <a class="share-dialog" href="https://twitter.com/intent/tweet?text={{ .Permalink }} - {{ .Title }} {{ with .Site.Params.twitter }}by @{{ . }}{{ end }}" title="Share {{.Title}} on Twitter" target="blank">
         <i class="icon fa fa-twitter share-icon"></i>
     </a>
 </li>
 <li class="share-item">
-    <a class="share-dialog" href="https://plus.google.com/share?url=https://github.com/milligram/milligram" title="Share Milligram on Google+" target="blank">
+    <a class="share-dialog" href="https://plus.google.com/share?url={{.Permalink}}" title="Share {{.Title}} on Google+" target="blank">
         <i class="icon fa fa-google-plus share-icon"></i>
     </a>
 </li>
 <li class="share-item only-mobile">
-    <a href="whatsapp://send?text={{.Title}} {{.Permalink}}" title="Share Milligram on Whatsapp" target="blank">
+    <a href="whatsapp://send?text={{.Title}} {{.Permalink}}" title="Share {{.Title}} on Whatsapp" target="blank">
         <i class="icon fa fa-whatsapp share-icon"></i>
     </a>
 </li>
 <li class="share-item">
-    <a class="share-dialog" href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{.Permalink}}&amp;title={{.Title}}" title="Share Milligram on LinkedIn" target="blank">
+    <a class="share-dialog" href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{.Permalink}}&amp;title={{.Title}}" title="Share {{.Title}} on LinkedIn" target="blank">
         <i class="icon fa fa-linkedin share-icon"></i>
     </a>
 </li>
