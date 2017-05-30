@@ -6,10 +6,23 @@
     <description>Recent content in Projects on Opensource projects</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 07 Feb 2016 20:13:19 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 30 May 2017 17:37:56 +0100</lastBuildDate>
     
 	<atom:link href="https://blog.dbr.io/project/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>mocker data generator</title>
+      <link>https://blog.dbr.io/project/mocker-data-generator/</link>
+      <pubDate>Tue, 30 May 2017 17:37:56 +0100</pubDate>
+      
+      <guid>https://blog.dbr.io/project/mocker-data-generator/</guid>
+      <description>A simplified way to generate massive mock data based on a schema, using the awesome fake/random data generators like (FakerJs, ChanceJs, CasualJs and RandExpJs), all in one tool to generate your fake data for testing.
+Now the library has been migrated 100% to typescript typing are included.
+Getting started Install the module with: npm install mocker-data-generator
+Import it
+var mocker = require(&#39;mocker-data-generator&#39;).default (vainilla way) or import mocker from &#39;mocker-data-generator&#39; (ES6 or Typescript way)  Then use it:</description>
+    </item>
     
     <item>
       <title>time tracker cli</title>
@@ -21,19 +34,6 @@
 yarn global add time-tracker-cli  Now you can start to call timercommand
 Usage 
 └┘#! timer Usage: timer [options] [command] Commands: start|s &amp;lt;task_key&amp;gt; [description] Start task with a description. pause|p &amp;lt;task_key&amp;gt; Pause task unpause|up &amp;lt;task_key&amp;gt; Unpause task finish|f &amp;lt;task_key&amp;gt; [description] Stop task, you can add a description description|d &amp;lt;task_key&amp;gt; &amp;lt;descriptionText...&amp;gt; Add description to your task. add &amp;lt;task_key&amp;gt; &amp;lt;stringTime&amp;gt; Adds time to a task.</description>
-    </item>
-    
-    <item>
-      <title>mocker data generator</title>
-      <link>https://blog.dbr.io/project/mocker-data-generator/</link>
-      <pubDate>Tue, 29 Dec 2015 17:37:56 +0100</pubDate>
-      
-      <guid>https://blog.dbr.io/project/mocker-data-generator/</guid>
-      <description>A simplified way to generate massive mock data based on a schema, using the awesome fake/random data generators like (FakerJs, ChanceJs, CasualJs and RandExpJs), all in one tool to generate your fake data for testing.
-Now the library has been migrated 100% to typescript typing are included.
-Getting started Install the module with: npm install mocker-data-generator
-Import it
-var mocker = require(&#39;mocker-data-generator&#39;).default (vainilla way) or import mocker from &#39;mocker-data-generator&#39; (ES6 or Typescript way)  Then use it:</description>
     </item>
     
     <item>

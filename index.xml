@@ -6,10 +6,23 @@
     <description>Recent content on Opensource projects</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 19 Feb 2016 18:16:26 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 30 May 2017 17:37:56 +0100</lastBuildDate>
     
 	<atom:link href="https://blog.dbr.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>mocker data generator</title>
+      <link>https://blog.dbr.io/project/mocker-data-generator/</link>
+      <pubDate>Tue, 30 May 2017 17:37:56 +0100</pubDate>
+      
+      <guid>https://blog.dbr.io/project/mocker-data-generator/</guid>
+      <description>A simplified way to generate massive mock data based on a schema, using the awesome fake/random data generators like (FakerJs, ChanceJs, CasualJs and RandExpJs), all in one tool to generate your fake data for testing.
+Now the library has been migrated 100% to typescript typing are included.
+Getting started Install the module with: npm install mocker-data-generator
+Import it
+var mocker = require(&#39;mocker-data-generator&#39;).default (vainilla way) or import mocker from &#39;mocker-data-generator&#39; (ES6 or Typescript way)  Then use it:</description>
+    </item>
     
     <item>
       <title>First Post</title>
@@ -42,19 +55,6 @@ Usage
 
 2.1.0 (2017-05-27) Features  Added a way to obtain actual array while the generation, @zamnuts suggestion (2588a34) Added length on the array function generator, thanks @zamnuts (1f17519) added PR #16 Add parameter to hasMany generator, thanks @justinbarry (71d947f)  
 2.0.2 (2017-05-24) Bug Fixes  browserify: fix browserify builds changing casual to browserify-casual (de93262)</description>
-    </item>
-    
-    <item>
-      <title>mocker data generator</title>
-      <link>https://blog.dbr.io/project/mocker-data-generator/</link>
-      <pubDate>Tue, 29 Dec 2015 17:37:56 +0100</pubDate>
-      
-      <guid>https://blog.dbr.io/project/mocker-data-generator/</guid>
-      <description>A simplified way to generate massive mock data based on a schema, using the awesome fake/random data generators like (FakerJs, ChanceJs, CasualJs and RandExpJs), all in one tool to generate your fake data for testing.
-Now the library has been migrated 100% to typescript typing are included.
-Getting started Install the module with: npm install mocker-data-generator
-Import it
-var mocker = require(&#39;mocker-data-generator&#39;).default (vainilla way) or import mocker from &#39;mocker-data-generator&#39; (ES6 or Typescript way)  Then use it:</description>
     </item>
     
     <item>

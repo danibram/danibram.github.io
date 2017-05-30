@@ -1,5 +1,5 @@
 +++
-date = "2015-12-29T17:37:56+01:00"
+date = "2017-05-30T17:37:56+01:00"
 title = "mocker data generator"
 description = "A simplified way to generate massive mock data based on a schema, using the awesome fake/random data generators like (FakerJs, ChanceJs, CasualJs and RandExpJs), all in one tool to generate your fake data for testing."
 version = "v2.1.0"
