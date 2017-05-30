@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on Opensource projects</title>
-    <link>http://localhost:1313/project/</link>
+    <link>https://blog.dbr.io/project/</link>
     <description>Recent content in Projects on Opensource projects</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 07 Feb 2016 20:13:19 +0100</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/project/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.dbr.io/project/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>time tracker cli</title>
-      <link>http://localhost:1313/project/time-tracker-cli/</link>
+      <link>https://blog.dbr.io/project/time-tracker-cli/</link>
       <pubDate>Sun, 07 Feb 2016 20:13:19 +0100</pubDate>
       
-      <guid>http://localhost:1313/project/time-tracker-cli/</guid>
+      <guid>https://blog.dbr.io/project/time-tracker-cli/</guid>
       <description>Installation npm install -g time-tracker-cli  or
 yarn global add time-tracker-cli  Now you can start to call timercommand
 Usage 
@@ -25,10 +25,10 @@ Usage
     
     <item>
       <title>mocker data generator</title>
-      <link>http://localhost:1313/project/mocker-data-generator/</link>
+      <link>https://blog.dbr.io/project/mocker-data-generator/</link>
       <pubDate>Tue, 29 Dec 2015 17:37:56 +0100</pubDate>
       
-      <guid>http://localhost:1313/project/mocker-data-generator/</guid>
+      <guid>https://blog.dbr.io/project/mocker-data-generator/</guid>
       <description>A simplified way to generate massive mock data based on a schema, using the awesome fake/random data generators like (FakerJs, ChanceJs, CasualJs and RandExpJs), all in one tool to generate your fake data for testing.
 Now the library has been migrated 100% to typescript typing are included.
 Getting started Install the module with: npm install mocker-data-generator
@@ -38,20 +38,20 @@ var mocker = require(&#39;mocker-data-generator&#39;).default (vainilla way) or 
     
     <item>
       <title>adyen client</title>
-      <link>http://localhost:1313/project/adyen-client/</link>
+      <link>https://blog.dbr.io/project/adyen-client/</link>
       <pubDate>Thu, 29 Oct 2015 20:18:35 +0100</pubDate>
       
-      <guid>http://localhost:1313/project/adyen-client/</guid>
+      <guid>https://blog.dbr.io/project/adyen-client/</guid>
       <description>Getting started Install the module with: npm install adyen-client
 var adyenClient = require(&#39;adyen-client&#39;) var aClient = adyenClient({ frontKey: &#39;YOUR FRONT END KEY&#39;, //Only used for the initCCForm merchantAccount: &#39;YOUR MERCHANT ACCOUNT&#39; username: &#39;YOUR USERNAME&#39;, password: &#39;YOUR PASSWORD&#39;, development: true }); aClient .getRecurringData({ &amp;quot;shopperReference&amp;quot;: &amp;quot;SimonHopper1&amp;quot;, &amp;quot;recurring&amp;quot;: { &amp;quot;contract&amp;quot;: &amp;quot;RECURRING&amp;quot; } }).then(function (response) { console.log(util.inspect(response, false, 20, true)); }) .fail(function (error) { console.log(util.inspect(error, false, 20, true)); });  Documentation First of all you need to initialize the client passing your merchant account, username, password and front end key (only if you need to do the frontend initialization).</description>
     </item>
     
     <item>
       <title>flat ui syntax</title>
-      <link>http://localhost:1313/project/flat-ui-syntax/</link>
+      <link>https://blog.dbr.io/project/flat-ui-syntax/</link>
       <pubDate>Tue, 29 Sep 2015 20:33:43 +0100</pubDate>
       
-      <guid>http://localhost:1313/project/flat-ui-syntax/</guid>
+      <guid>https://blog.dbr.io/project/flat-ui-syntax/</guid>
       <description>An Atom ui syntax
  The font used in the screenshot is Source Code Pro.
  </description>
@@ -59,10 +59,10 @@ var adyenClient = require(&#39;adyen-client&#39;) var aClient = adyenClient({ fr
     
     <item>
       <title>trustly client</title>
-      <link>http://localhost:1313/project/trustly-client/</link>
+      <link>https://blog.dbr.io/project/trustly-client/</link>
       <pubDate>Fri, 05 Jun 2015 20:24:40 +0100</pubDate>
       
-      <guid>http://localhost:1313/project/trustly-client/</guid>
+      <guid>https://blog.dbr.io/project/trustly-client/</guid>
       <description>Node.js client for trusty integrations.
 Getting started Install the module with: npm install trustly-client
 var client = require(&#39;trustly-client&#39;); var tClientKP = client(configuration); //Promise style tClientKP.init() .then(function () { return tClientKP.deposit({ NotificationURL: &#39;http://127.0.0.1:4343/notification&#39;, EndUserID: &#39;john.doe@example.com&#39;, MessageID: &#39;111112111221&#39;, Locale: &#39;es_ES&#39;, Amount: &#39;1.00&#39;, Currency: &#39;EUR&#39;, SuccessURL: &#39;http://127.0.0.1:4343/success&#39;, FailURL: &#39;http://127.0.0.1:4343/fail&#39;, HoldNotifications: 1 }); }) .then(function (response) { console.log(util.inspect(response, false, 20, true)); }) .fail(function (error) { console.log(util.inspect(error, false, 20, true)); }); //Callback style tClientKP.init(function(){ tClientKP.</description>
@@ -70,10 +70,10 @@ var client = require(&#39;trustly-client&#39;); var tClientKP = client(configura
     
     <item>
       <title>translator helper dustjs</title>
-      <link>http://localhost:1313/project/translator-helper-dustjs/</link>
+      <link>https://blog.dbr.io/project/translator-helper-dustjs/</link>
       <pubDate>Tue, 17 Mar 2015 20:35:49 +0100</pubDate>
       
-      <guid>http://localhost:1313/project/translator-helper-dustjs/</guid>
+      <guid>https://blog.dbr.io/project/translator-helper-dustjs/</guid>
       <description>A little helper for dustjs to load i18n translations dynamically, with variables, based on https://github.com/mikesparr/Kraken_Example_i18n_Helper. Feel free to comment, copy or burn this code =P
 New version supporting kraken 2. Check the 1.x for kraken 1 and 2.x for kraken 2. Getting Started Install the module with: npm install translator-helper-dustjs
 Its important to add a global variable to pass the kraken config to the module, i put in my index.</description>
@@ -81,10 +81,10 @@ Its important to add a global variable to pass the kraken config to the module, 
     
     <item>
       <title>bumblebee object transformation</title>
-      <link>http://localhost:1313/project/bumblebee-object-transformation/</link>
+      <link>https://blog.dbr.io/project/bumblebee-object-transformation/</link>
       <pubDate>Sun, 30 Nov 2014 20:30:04 +0100</pubDate>
       
-      <guid>http://localhost:1313/project/bumblebee-object-transformation/</guid>
+      <guid>https://blog.dbr.io/project/bumblebee-object-transformation/</guid>
       <description>Object transformation tool inspired on mongoose models. The basic idea is to contruct a result object, form a model and a reference object (and also you can pass an object as base).
 Getting Started Install the module with: npm install bumblebee
 var bumblebee = require(&#39;bumblebee-object-transformation&#39;); bumblebee(initialObject, referenceObject, model, function(err, result){ console.log(result); //Your code.... });  Documentation Basically you should use as model the final object, and field by field you can speficy:</description>
@@ -92,10 +92,10 @@ var bumblebee = require(&#39;bumblebee-object-transformation&#39;); bumblebee(in
     
     <item>
       <title>object cleaner</title>
-      <link>http://localhost:1313/project/object-cleaner/</link>
+      <link>https://blog.dbr.io/project/object-cleaner/</link>
       <pubDate>Sun, 30 Nov 2014 20:27:44 +0100</pubDate>
       
-      <guid>http://localhost:1313/project/object-cleaner/</guid>
+      <guid>https://blog.dbr.io/project/object-cleaner/</guid>
       <description>A little function to clean dirty Objects, find any array with lenght one and and put his content without array.
 Getting Started Install the module with: npm install object-cleaner
 var objCleaner = new require(&#39;object-cleaner&#39;); objCleaner(Object_to_clean); // Object_cleaned  Examples var test = [{ property1: &#39;&#39;, property2: &#39;&#39; }]; var result = objCleaner(test); var result = { property1: &#39;&#39;, property2: &#39;&#39; };  License Copyright &amp;copy; 2014 Daniel Biedma Ramos Licensed under the MIT license.</description>

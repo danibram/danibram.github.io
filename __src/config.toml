@@ -11,6 +11,8 @@ canonifyurls = true
 
 theme = "miligram"
 
+publishDir = "../"
+
 [params]
     name = "Daniel Biedma"
     description = "My opensource projects"

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Changelogs on Opensource projects</title>
-    <link>http://localhost:1313/changelog/</link>
+    <link>https://blog.dbr.io/changelog/</link>
     <description>Recent content in Changelogs on Opensource projects</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 29 Dec 2015 17:37:56 +0100</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/changelog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.dbr.io/changelog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>mocker data generator</title>
-      <link>http://localhost:1313/changelog/mocker-data-generator/</link>
+      <link>https://blog.dbr.io/changelog/mocker-data-generator/</link>
       <pubDate>Tue, 29 Dec 2015 17:37:56 +0100</pubDate>
       
-      <guid>http://localhost:1313/changelog/mocker-data-generator/</guid>
+      <guid>https://blog.dbr.io/changelog/mocker-data-generator/</guid>
       <description>Change Log All notable changes to this project will be documented in this file. See standard-version for commit guidelines.
 
 2.1.0 (2017-05-27) Features  Added a way to obtain actual array while the generation, @zamnuts suggestion (2588a34) Added length on the array function generator, thanks @zamnuts (1f17519) added PR #16 Add parameter to hasMany generator, thanks @justinbarry (71d947f)  
