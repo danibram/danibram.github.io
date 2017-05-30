@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+        <meta name="robots" content="index, follow">
+		<meta name="theme-color" content="#f4f5f6">
+		<meta name="apple-mobile-web-app-status-bar-style" content="#f4f5f6">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="author" content="Daniel Biedma">
+		<meta name="description" content="My opensource projects">
+        <link rel="canonical" href="http://blog.dbr.io/">
+
+		<meta name="generator" content="Hugo 0.21" />
+		<title>mocker data generator &middot; Opensource projects</title>
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link rel="shortcut icon" href="http://blog.dbr.io/images/favicon.ico">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+        <link rel="stylesheet" href="http://blog.dbr.io/css/milligram.min.css">
+		<link rel="stylesheet" href="http://blog.dbr.io/css/style.css">
+		<link rel="stylesheet" href="http://blog.dbr.io/css/highlight.css">
+		<link rel="stylesheet" href="http://blog.dbr.io/css/monosocialiconsfont.css">
+
+
+		<link rel="icon" href="http://blog.dbr.io/images/favicon.ico">
+
+		
+		<link href="http://blog.dbr.io/index.xml" rel="alternate" type="application/rss+xml" title="Opensource projects" />
+		
+	</head>
+
+<body>
+    <main class="wrapper">
+        
+<nav class="navigation">
+    <section class="container">
+        
+        <div class="navigation-item left-back-arrow">
+            <a class="navigation-link" href='http://blog.dbr.io/'><i class="fa fa-arrow-left"></i></a>
+        </div>
+        
+        <a class="navigation-title" href="http://blog.dbr.io/">
+            <h1 class="title">
+                <span style="font-family: 'Mono Social Icons Font';font-size:40px;">dbr</span>
+                · mocker data generator 
+            </h1>
+        </a>
+
+        <ul class="navigation-list float-right only-desktop">
+
+            <li class="navigation-item">
+                <a class="navigation-link" href="#popover-projects" data-popover>Projects</a>
+                <div class="popover" id="popover-projects">
+                    <ul class="popover-list">
+
+                    
+                        
+                        <li class="popover-item">
+                            <a class="popover-link"  href='project/time-tracker-cli/' title="Project time tracker cli">time tracker cli</a>
+                        </li>
+                    
+                        
+                        <li class="popover-item">
+                            <a class="popover-link"  href='project/mocker-data-generator/' title="Project mocker data generator">mocker data generator</a>
+                        </li>
+                    
+                        
+                        <li class="popover-item">
+                            <a class="popover-link"  href='project/adyen-client/' title="Project adyen client">adyen client</a>
+                        </li>
+                    
+                        
+                        <li class="popover-item">
+                            <a class="popover-link"  href='project/flat-ui-syntax/' title="Project flat ui syntax">flat ui syntax</a>
+                        </li>
+                    
+                        
+                        <li class="popover-item">
+                            <a class="popover-link"  href='project/trustly-client/' title="Project trustly client">trustly client</a>
+                        </li>
+                    
+                        
+                        <li class="popover-item">
+                            <a class="popover-link"  href='project/translator-helper-dustjs/' title="Project translator helper dustjs">translator helper dustjs</a>
+                        </li>
+                    
+                        
+                        <li class="popover-item">
+                            <a class="popover-link"  href='project/bumblebee-object-transformation/' title="Project bumblebee object transformation">bumblebee object transformation</a>
+                        </li>
+                    
+                        
+                        <li class="popover-item">
+                            <a class="popover-link"  href='project/object-cleaner/' title="Project object cleaner">object cleaner</a>
+                        </li>
+                    
+                        
+                        <li class="popover-item">
+                            <a class="popover-link"  href='project/' title="Project Projects">Projects</a>
+                        </li>
+                    
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        <a class="hidden-xs github-corner" href="https://github.com/danibram" title="My personal Github" target="_blank">
+            <svg width="80" height="80" viewBox="0 0 250 250" class="github-corner">
+                <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+                <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+                <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+            </svg>
+        </a>
+    </section>
+</nav>
+
+
+        <section class="container" >
+            <article class="post">
+                <header>
+                    <h2 class="post">
+                        mocker data generator
+                        <span class="headline h2">v2.1.0</span>
+                    </h2>
+                    <div class="buttons">
+
+
+                    
+                        <a class="button button-outline" href="http://blog.dbr.io/changelog/mocker-data-generator">Changelog</a>
+                    
+
+                    
+                        <a class="button button-outline" href="https://github.com/danibram/mocker-data-generator">More Info</a>
+                    
+                    </div>
+                </header>
+                <section id="post-body">
+                    
+
+<p>A simplified way to generate massive mock data based on a schema, using the awesome fake/random data generators like (FakerJs, ChanceJs, CasualJs and RandExpJs), all in one tool to generate your fake data for testing.</p>
+
+<p>Now the library has been migrated 100% to typescript typing are included.</p>
+
+<h2 id="getting-started">Getting started</h2>
+
+<p>Install the module with: <code>npm install mocker-data-generator</code></p>
+
+<p>Import it</p>
+
+<pre><code class="language-javascript">var mocker = require('mocker-data-generator').default (vainilla way)
+
+or
+
+import mocker from 'mocker-data-generator' (ES6 or Typescript way)
+</code></pre>
+
+<p>Then use it:</p>
+
+<pre><code class="language-javascript">var user = {
+    firstName: {
+        faker: 'name.firstName'
+    },
+    lastName: {
+        faker: 'name.lastName'
+    },
+    country: {
+        faker: 'address.country'
+    },
+    createdAt: {
+        faker: 'date.past'
+    },
+    username:{
+        function: function() {
+            return this.object.lastName.substring(0, 5) + this.object.firstName.substring(0, 3) + Math.floor(Math.random() * 10)
+        }
+    }
+};
+var group = {
+    description: {
+        faker: 'lorem.paragraph'
+    },
+    users: [{
+        function: function() {
+            return this.faker.random.arrayElement(this.db.user).username
+        },
+        length: 10,
+        fixedLength: false
+    }]
+};
+var conditionalField = {
+    type:{
+        values: ['HOUSE', 'CAR', 'MOTORBIKE']
+    },
+    'object.type==&quot;HOUSE&quot;,location':{
+        faker: 'address.city'
+    },
+    'object.type==&quot;CAR&quot;||object.type==&quot;MOTORBIKE&quot;,speed':{
+        faker: 'random.number'
+    }
+};
+
+mocker()
+    .schema('user', user, 2)
+    .schema('group', group, 2)
+    .schema('conditionalField', conditionalField, 2)
+    .build(function(data) {
+        console.log(util.inspect(data, { depth: 10 }))
+//This returns an object
+// {
+//      user:[array of users],
+//      group: [array of groups],
+//      conditionalField: [array of conditionalFields]
+// }
+        })
+</code></pre>
+
+<h2 id="documentation">Documentation</h2>
+
+<p>Data generation goes with model based composed by generators, the generators can have access to the data generated and to the entity generated. <strong><em>Generators run syncronously, take care of the related entities!!</em></strong></p>
+
+<h3 id="methods">Methods</h3>
+
+<ul>
+<li><p><strong><em>schema(name, schema, generationType)</em></strong>: Add a new schema, you must specify this params:</p>
+
+<ul>
+<li>name (String): Name of the schema.</li>
+<li>schema (JSON): The schema you define</li>
+<li>generationType (integer or JSON): In this field you specify how you will generate this schema. 2 ways:</li>
+<li>Integer to specify how many of this you want.</li>
+<li>JSON with this object <code>{uniqueField: '&lt;yourUniqueField&gt;'}</code> this means that this field (<yourUniqueField>) is an array and you want to generate entities with this unique values</li>
+</ul></li>
+
+<li><p><strong><em>reset()</em></strong>: Clean the internal DB.</p></li>
+
+<li><p><strong><em>restart()</em></strong>: Clean the internal DB and all the schemas inside.</p></li>
+
+<li><p><strong><em>build(callback)</em></strong>: This methods start to produce the data and wrap it to the callback</p></li>
+</ul>
+
+<h3 id="schema-definition">Schema definition</h3>
+
+<h4 id="every-schema-should-contains-the-specified-fields-key-can-be-2-types">Every schema should contains the specified fields. Key can be 2 types:</h4>
+
+<ul>
+<li><strong><em>Normal string</em></strong> key: indicates the key.</li>
+<li><strong><em>Commaseparated string</em></strong> key: indicates that there is a conditional, before the comma you must specify a conditional (you have all level fields generated in this moment), then you must specify the field if the conditional is true see the example.</li>
+</ul>
+
+<h4 id="inside-every-value-you-can-put">Inside every value you can put:</h4>
+
+<ul>
+<li><strong><em>static</em></strong>: For fixed fields</li>
+</ul>
+
+<pre><code class="language-javascript">        { static: 'hello im fixed field' }
+</code></pre>
+
+<ul>
+<li><strong><em>self</em></strong>: get himself object, and evaluate the string, so you can get calculated fields.</li>
+</ul>
+
+<pre><code class="language-javascript">        { self: 'id' } //will get the id of the generated entity
+</code></pre>
+
+<ul>
+<li><strong><em>db</em></strong>: get the db, and evaluate the string, so you can access to this entities.</li>
+</ul>
+
+<pre><code class="language-javascript">        { db: 'user[0].id' } //will get the first user id
+</code></pre>
+
+<ul>
+<li><strong><em>eval</em></strong>: evaluate the current string, remember that i inject all the awesome methods, faker, chance, casual, randexp, and also the db and object methods. With this eval field, <strong><em>you must pass an exactly JSON syntax</em></strong>:</li>
+</ul>
+
+<pre><code class="language-javascript">        { eval: 'object.id' }
+
+        //OR
+
+        { eval: 'db.user[0]' }
+
+        //OR
+
+        { eval: 'faker.lorem.words()' }
+</code></pre>
+
+<ul>
+<li><p><strong><em>hasOne</em></strong>: You can pass 2 parameters:</p>
+
+<ul>
+<li><strong><em>hasOne</em></strong>: the name of the related entity, get one random.</li>
+<li><strong><em>get</em></strong> (Optional): String that will be evaluated over the random related entity.</li>
+</ul>
+
+<pre><code class="language-javascript">    {
+        hasOne: 'user' //this populate the field with one random user
+    }
+
+    //OR:
+
+    {
+        hasOne: 'user',
+        get: 'id' //this populate the field with one id of a random user
+    }
+</code></pre></li>
+
+<li><p><strong><em>hasMany</em></strong>: You can pass 4 parameters:</p>
+
+<ul>
+<li><strong><em>hasMany</em></strong>: the name of the related entity, get one random.</li>
+<li><strong><em>amount</em></strong> (Optional): Fixed number of related entities to get.</li>
+<li><strong><em>min</em></strong> (Optional): Minimum entities to get.</li>
+<li><strong><em>max</em></strong> (Optional): Maximum entities to get.</li>
+<li><strong><em>get</em></strong> (Optional): String that will be evaluated over the random related entity.</li>
+</ul>
+
+<pre><code class="language-javascript">    // In this case we will get 1 user (hasMany)
+    {
+        hasMany: 'user' //this populate the field with one random user
+    }
+
+    //OR:
+    // In this case we will get 1 (amount) user (hasMany)
+
+    {
+        hasMany: 'user',
+        amount: 1, //optional
+    }
+
+    //OR:
+    // In this case we will get as max 3 (max) users (hasMany)
+
+    {
+        hasMany: 'user',
+        max: 3 //optional
+    }
+
+    //OR:
+    // In this case we will get bettween min 1 (min) and max 3 (max) users (hasMany)
+
+    {
+        hasMany: 'user',
+        min: 1 //optional
+        max: 3 //optional
+    }
+
+    //OR:
+    // In this case we will get the id (get) from 1 random user (hasMany)
+
+    {
+        hasMany: 'user',
+        get: 'id'
+    }
+</code></pre></li>
+
+<li><p><strong><em>incrementalId</em></strong>: For incremental numeric ids, pass the start number to increment. If you put incrementalId = true it takes from 0 the ids.</p></li>
+</ul>
+
+<pre><code class="language-javascript">        { incrementalId: 0 }
+</code></pre>
+
+<ul>
+<li><strong><em>funcion</em></strong>: No params are passed, only context (<code>this</code>), in this you have <code>{db, object, faker, chance}</code>, and you can use faker or chance functions, object (the specified model), db (actual data generated)</li>
+</ul>
+
+<pre><code class="language-javascript">        { function: function(){
+            //this.db
+            //this.object
+            //this.faker
+            //this.chance
+            //this.casual
+            return yourValue
+        } }
+
+        //OR:
+
+        { function(){
+            //this.db
+            //this.object
+            //this.faker
+            //this.chance
+            //this.casual
+            return yourValue
+        } }
+</code></pre>
+
+<ul>
+<li><strong><em>faker</em></strong>: you can use directly faker functions like: (note that, db (actual entities generated), object (actual entity generated) are injected), <strong><em>you must pass an exactly JSON syntax</em></strong>:</li>
+</ul>
+
+<pre><code class="language-javascript">        { faker: 'lorem.words' }                            //Run faker.lorem.words()
+        { faker: 'lorem.words()' }                          //Run faker.lorem.words()
+        { faker: 'lorem.words(1)' }                         //Run faker.lorem.words(1)
+        { faker: 'integer({&quot;min&quot;: 1, &quot;max&quot;: 10})' }         //Run faker.lorem.words(1) and take the first
+        { faker: 'random.arrayElement(db.users)' }          //Run faker.arrayElement over a generated user entity
+        { faker: 'random.arrayElement(db.users)[&quot;userId&quot;]' }  //Run faker.arrayElement over a generated user entity and take the userId only
+</code></pre>
+
+<ul>
+<li><strong><em>chance</em></strong>: you can use directly chance functions, you can do: (note that, db (actual entities generated), object (actual entity generated) are injected), <strong><em>you must pass an exactly JSON syntax</em></strong>:</li>
+</ul>
+
+<pre><code class="language-javascript">        { chance: 'integer' }                                //Run chance.integer()
+        { chance: 'integer()' }                              //Run chance.integer()
+        { chance: 'integer({&quot;min&quot;: 1, &quot;max&quot;: 10})' }         //Run chance.integer({&quot;min&quot;: 1, &quot;max&quot;: 10})
+        { chance: 'street_suffixes()[0][&quot;name&quot;]' }           //Run chance.street_suffixes() takes first result and the name inside
+</code></pre>
+
+<ul>
+<li><strong><em>casual</em></strong>: you can use directly use casualJs functions, you can do: (note that, db (actual entities generated), object (actual entity generated) are injected), <strong><em>you must pass an exactly JSON syntax</em></strong>:</li>
+</ul>
+
+<pre><code class="language-javascript">        { casual: 'country' }
+        { chance: 'array_of_digits()' }
+        { casual: 'array_of_digits(3)[0]' }
+</code></pre>
+
+<ul>
+<li><strong><em>randexp</em></strong>: pass a regexp string to use randexp generator.</li>
+</ul>
+
+<pre><code class="language-javascript">        { randexp: /hello+ (world|to you)/ }
+</code></pre>
+
+<ul>
+<li><p><strong><em>[Array]</em></strong>: you can pass an array that indicates an array of data you can create, passing in the first field the generator (function, faker, or array(not Tested)), and in the second field pass a config object (length, fixedLentgh)</p>
+
+<ul>
+<li><strong><em>length</em></strong>: to know how many values</li>
+<li><strong><em>fixedLength</em></strong> (Optional): true to create always same amount of values in the array, false to generate a random number between 0 and &lsquo;length&rsquo; value. False by default.</li>
+<li><strong><em>concat</em></strong> (Optional): An stringuified array ex: &lsquo;[object.id, db.users.id]&lsquo;. This should be an evaluable string to concat with the array that are generating. Also takes in mind that if you have a fixedLength, should not increase the length.</li>
+<li><strong><em>strictConcat</em></strong> (Optional): true to remove duplicates in the concatenated string array, when it is calculated. False by default.</li>
+</ul>
+
+<pre><code class="language-javascript">[{
+   //Any generator
+       //Faker
+   faker: 'random.arrayElement(db.users).userId'
+       //Chance
+   chance: 'integer'
+       //Function that has included index, length and self that refers at the actual array generation
+   function: function (index, length, self){ return /**/ }
+
+   //Array config
+   length: 10,
+   fixedLength: true
+
+   //Concat
+   concat: '[db.users[0].userId, db.users[1].userId]'
+   strictConcat: true
+}]
+</code></pre></li>
+</ul>
+
+<h3 id="optional-fields">Optional fields</h3>
+
+<ul>
+<li><strong><em>[virtual]</em></strong>: Boolean, if you pass this option, this mean that this field will not appear at the output entity. But you can use during the generation.</li>
+</ul>
+
+<pre><code class="language-javascript">    {
+        //Any generator
+            //Faker
+        faker: 'random.arrayElement(db.users)[userId]'
+            //Chance
+        chance: 'integer'
+            //static
+        static: 'any static field'
+            //Function
+        function: function (){ return /**/ }
+
+        //with the virtual option
+        virtual: true
+
+    }
+</code></pre>
+
+<h3 id="data-generation">Data generation</h3>
+
+<p>Initialize mocker with the config, and then generate any entity with promises style, use generate function that accepts the name of the model and the amount of data to generate. Like the example:</p>
+
+<pre><code class="language-javascript">mocker()
+    .schema('user', user, 2)
+    .schema('group', group, 2)
+    .schema('conditionalField', conditionalField, 2)
+    .build(function(data) {
+        console.log(util.inspect(data, { depth: 10 }))
+//This returns an object
+// {
+//      user:[array of users],
+//      group: [array of groups],
+//      conditionalField: [array of conditionalFields]
+// }
+        })
+</code></pre>
+
+<p>You can also pass instead of the number, an object with the a config, from now <code>{uniqueField}</code>. If this field exists tells to the generator that instead of init a fixed length of data, generate an amount of data depending of the values of the field you will specify. You have 2 way to deal with this, check the examples See the output of this example:</p>
+
+<pre><code class="language-javascript">//
+// First way, using an 'values' embedded object
+//
+
+var cat = {
+    name: {
+        values: ['txuri', 'pitxi', 'kitty']
+    }
+};
+var m = mocker()
+    .schema('cat', cat, 10)
+    .schema('cat2', cat, {uniqueField: 'name'})
+    .build(function(data){
+        console.log(util.inspect(data, {depth:10}))
+    })
+
+//
+// Second way, without 'values' embedded.
+//
+
+var cat = {
+    name: ['txuri', 'pitxi', 'kitty']
+};
+var m = mocker()
+    .schema('cat', cat, 10)
+    .schema('cat2', cat, {uniqueField: 'name'})
+    .build(function(data){
+        console.log(util.inspect(data, {depth:10}))
+    })
+</code></pre>
+
+<h3 id="more-coming-soon">More, Coming soon</h3>
+
+<h2 id="online-api">Online API</h2>
+
+<p>You can visit the repo url here: <a href="https://github.com/danibram/mocker-api-tester">https://github.com/danibram/mocker-api-tester</a></p>
+
+<p>Or visit the api directly: <a href="https://mocker-api.herokuapp.com/">https://mocker-api.herokuapp.com/</a></p>
+
+<h2 id="development">Development</h2>
+
+<p>Run <code>npm install;npm run dev</code> to watch the project, webpack compile the code automatically. Run <code>npm build</code> to build the normal and minified version.</p>
+
+<h2 id="why-not-use-json-schema-faker">Why not use json-schema-faker?</h2>
+
+<p>json-schema-faker is awesome and works really nice, but i need a simplified and fast way to generate mock data for my projects, so i created this.</p>
+
+<h2 id="credits">Credits</h2>
+
+<p>I couldn&rsquo;t do this without this awesome libraries, so thanks to all:
+- Faker:  [<a href="https://github.com/Marak/faker.js">https://github.com/Marak/faker.js</a>]
+- Chance:  [<a href="https://github.com/victorquinn/chancejs">https://github.com/victorquinn/chancejs</a>]
+- Casual:  [<a href="https://github.com/boo1ean/casual">https://github.com/boo1ean/casual</a>]
+- RandExpJs: [<a href="https://github.com/fent/randexp.js">https://github.com/fent/randexp.js</a>]
+- typescript-starter: [<a href="https://github.com/bitjson/typescript-starter">https://github.com/bitjson/typescript-starter</a>]</p>
+
+<h2 id="license">License</h2>
+
+<p>Licensed under the MIT license. 2015</p>
+
+                </section>
+            </article>
+
+            <div class="row post-meta">
+                <div class="column column-25">
+                    <img class="avatar" src="http://blog.dbr.io/images/avatar.jpg">
+                </div>
+                <div class="column">
+                    <span class="dark">Daniel Biedma</span>
+                    <span>Overpowered full-stack developer</span>
+                </div>
+                <div class="column column-33"><ul class="share-list">
+<li class="share-item">
+    <a class="share-dialog" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fblog.dbr.io%2fproject%2fmocker-data-generator%2f" title="Share mocker data generator on Facebook" target="blank">
+        <i class="icon fa fa-facebook share-icon"></i>
+    </a>
+</li>
+<li class="share-item">
+    <a class="share-dialog" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fblog.dbr.io%2fproject%2fmocker-data-generator%2f - mocker%20data%20generator by @danibram" title="Share mocker data generator on Twitter" target="blank">
+        <i class="icon fa fa-twitter share-icon"></i>
+    </a>
+</li>
+<li class="share-item">
+    <a class="share-dialog" href="https://plus.google.com/share?url=http%3a%2f%2fblog.dbr.io%2fproject%2fmocker-data-generator%2f" title="Share mocker data generator on Google+" target="blank">
+        <i class="icon fa fa-google-plus share-icon"></i>
+    </a>
+</li>
+<li class="share-item only-mobile">
+    <a href="whatsapp://send?text=mocker%20data%20generator http%3a%2f%2fblog.dbr.io%2fproject%2fmocker-data-generator%2f" title="Share mocker data generator on Whatsapp" target="blank">
+        <i class="icon fa fa-whatsapp share-icon"></i>
+    </a>
+</li>
+<li class="share-item">
+    <a class="share-dialog" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fblog.dbr.io%2fproject%2fmocker-data-generator%2f&amp;title=mocker%20data%20generator" title="Share mocker data generator on LinkedIn" target="blank">
+        <i class="icon fa fa-linkedin share-icon"></i>
+    </a>
+</li>
+</ul>
+</div>
+            </div>
+
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'dbropensource';
+    var disqus_identifier = 'http:\/\/blog.dbr.io\/project\/mocker-data-generator\/';
+    var disqus_title = 'mocker data generator';
+    var disqus_url = 'http:\/\/blog.dbr.io\/project\/mocker-data-generator\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </section>
+
+        <footer class="footer">
+	<section class="container">
+        
+            
+<p id="social">
+    
+    <a class="symbol" href="https://dbr.io">
+        
+            https://dbr.io&nbsp;&nbsp;
+        
+    </a>
+    
+    <a class="symbol" href="https://www.facebook.com/danibram">
+        
+            circlefacebook
+        
+    </a>
+    
+    <a class="symbol" href="https://www.github.com/danibram">
+        
+            circlegithub
+        
+    </a>
+    
+    <a class="symbol" href="https://www.linkedin.com/in/danielbiedma">
+        
+            circlelinkedin
+        
+    </a>
+    
+    <a class="symbol" href="./index.xml">
+        
+            circlerss
+        
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/danibram">
+        
+            circletwitterbird
+        
+    </a>
+    
+</p>
+
+        
+
+        <p>
+        
+            © Copyright 2017 Daniel Biedma
+        
+        </p>
+	</section>
+</footer>
+
+    </main>
+
+    <script src="http://blog.dbr.io/js/highlight.js"></script>
+<script src="http://blog.dbr.io/js/script.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
+</html>

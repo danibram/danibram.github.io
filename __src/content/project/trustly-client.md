@@ -3,14 +3,13 @@ date = "2015-06-05T20:24:40+01:00"
 description = "A node client to comunicate with trustly."
 project_url = "https://github.com/danibram/trustly-client"
 title = "trustly client"
-version = "v1.1.3"
+version = "v1.3.0"
 
 +++
 
-Node.js client for trusty integrations. Right now it doesn´t includes the withdrawal, feel free to submit a pull request. You can use callback style or promises.
+Node.js client for trusty integrations.
 
-
-##Getting started
+## Getting started
 
 Install the module with: `npm install trustly-client`
 
@@ -48,8 +47,7 @@ Install the module with: `npm install trustly-client`
             Amount: '1.00',
             Currency: 'EUR',
             SuccessURL: 'http://127.0.0.1:4343/success',
-            FailURL: 'http://127.0.0.1:4343/fail',
-            HoldNotifications: 1
+            FailURL: 'http://127.0.0.1:4343/fail'
         },function(err, response){
             if (err){
                 console.log(util.inspect(err, false, 20, true));
@@ -110,7 +108,16 @@ If *trustlyError* is filled, it will catch all information about the trustly err
 More information about the errors [here (trustly docs)](https://trustly.com/en/developer/api#/errormessages)
 
 ## Release History
-####(1.1.3 Lastest)
+####(1.3.0 Lastest)
+- Added withdraw (thanks @rizr)
+- Added approveWithdrawal (thanks @rizr)
+- Added denyWithdrawal (thanks @rizr)
+
+####(1.2.0)
+- Added charge (thanks @Iteam1337)
+- Added select account (thanks @Iteam1337)
+
+####(1.1.3)
 - Working for Deposit, Refund and management of notifications.
 - Better management of the errors.
 - Correct and fix refund.
@@ -132,4 +139,4 @@ More information about the errors [here (trustly docs)](https://trustly.com/en/d
 - Sign, verify and compose requests, and responses done.
 
 ## License
-Licensed under the MIT license. 2015
+Licensed under the MIT license. 2017

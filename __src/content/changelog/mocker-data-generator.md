@@ -1,45 +1,94 @@
 +++
 date = "2015-12-29T17:37:56+01:00"
 title = "mocker data generator"
-version = "v1.2.2"
+version = "v2.1.0"
 project_url = "https://github.com/danibram/mocker-data-generator"
 section= "changelog"
 +++
 
-## (1.2.2)
+# Change Log
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+<a name="2.1.0"></a>
+# [2.1.0](https://github.com/danibram/mocker-data-generator/compare/v2.0.2...v2.1.0) (2017-05-27)
+
+
+### Features
+
+* Added a way to obtain actual array while the generation, [@zamnuts](https://github.com/zamnuts) suggestion ([2588a34](https://github.com/danibram/mocker-data-generator/commit/2588a34))
+* Added length on the array function generator, thanks [@zamnuts](https://github.com/zamnuts) ([1f17519](https://github.com/danibram/mocker-data-generator/commit/1f17519))
+* added PR #16 Add parameter to hasMany generator, thanks [@justinbarry](https://github.com/justinbarry) ([71d947f](https://github.com/danibram/mocker-data-generator/commit/71d947f))
+
+
+
+<a name="2.0.2"></a>
+## [2.0.2](https://github.com/danibram/mocker-data-generator/compare/v2.0.1...v2.0.2) (2017-05-24)
+
+
+### Bug Fixes
+
+* **browserify:** fix browserify builds changing casual to browserify-casual ([de93262](https://github.com/danibram/mocker-data-generator/commit/de93262))
+
+
+
+<a name="2.0.1"></a>
+## [2.0.1](https://github.com/danibram/mocker-data-generator/compare/v2.0.0...v2.0.1) (2017-05-24)
+
+### Changes
+* **fix:** tslib fix for ES5 builds
+* **updates:** updates on dependencies
+
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/danibram/mocker-data-generator/compare/v1.2.7...v2.0.0) (2017-03-18)
+
+
+### Features
+
+* **build:** new build using Typescript, breaking change in imports, adapted import to be used with es6 ([6114eaf](https://github.com/danibram/mocker-data-generator/commit/6114eaf))
+
+### OLD Release History
+
+#### (1.2.7)
+- Fix little issue with array generators, now parse well the index inside, add a test for that
+- Fix string issue with fakerJs
+- Fixed babel polyfill issues
+- updates on dev packages
+
+#### (1.2.2)
 - Better error management
 - Added eval methods
 - Update docs with the online mocker-api: https://mocker-api.herokuapp.com/
 
-## (1.2.1)
+#### (1.2.1)
 - Start to parse better the errors
 
-## (1.2.0)
+#### (1.2.0)
 - New internal reorganization
 - Added hasOne (related is deprecated) and hasMany
 - ***Breaking Change***: related config is deprecated, instead of related use hasOne.
 
-## (1.1.1)
+#### (1.1.1)
 - Added RandExpJs generator
 - Improve test system (I know im improving it! =P)
 - ***Breaking Change***: the older versions aren´t compatible with this module, the way to generate the data are changed:
-## (1.1.0)
+#### (1.1.0)
 - Added casualJs
 - Added self option
 - Added db option
 - Added related option
 
-## (1.0.6)
+#### (1.0.6)
 - Updated chance.js to 1.0
 
-## (1.0.5)
+#### (1.0.5)
 - Added the concat option, and the strictConcat on Array generator.
 
-## (1.0.4)
+#### (1.0.4)
 - Added on uniqueField two ways to generate the data
 - Starting to add errors
 
-## (1.0.3)
+#### (1.0.3)
 - Fix Arrays
 - ***Breaking Change***: the older versions aren´t compatible with this module, the way to generate the data are changed:
 
@@ -57,7 +106,7 @@ section= "changelog"
         })
     ```
 
-## (0.7.0)
+#### (0.7.0)
 
 - ***Breaking Change***: Added the posibility to enable the pluralize on the output entity. Now if you want to pluralize the output follow the example in the doc, ***by defatult is not anymore pluralized***.
 
@@ -95,21 +144,21 @@ section= "changelog"
             })
     ```
 
-## (0.6.0)
+#### (0.6.0)
 - ***Breaking Change***: Added the posibility to enable the pluralize on the output entity. Now if you want to pluralize the output follow the example in the doc, ***by defatult is not anymore pluralized***.
 
-## (0.5.0)
+#### (0.5.0)
 - ***Breaking Change***: Break Point with array config. Now is more clear.
 
     Old array configuration:
     ```javascript
         [{
             //Any generator
-                //Faker  
+                //Faker
             faker: 'random.arrayElement(db.users)[userId]'
-                //Chance  
+                //Chance
             chance: 'integer'
-                //Function  
+                //Function
             function: function (){ return /**/ }
 
         }, //Array config
@@ -120,11 +169,11 @@ section= "changelog"
     ```javascript
         [{
             //Any generator
-                //Faker  
+                //Faker
             faker: 'random.arrayElement(db.users)[userId]'
-                //Chance  
+                //Chance
             chance: 'integer'
-                //Function  
+                //Function
             function: function (){ return /**/ }
 
             //Array config
@@ -133,37 +182,37 @@ section= "changelog"
         }]
     ```
 
-## (0.4.7)
+#### (0.4.7)
 - Add virtual fields
 
-## (0.4.5)
+#### (0.4.5)
 - Add incrementalId config
 - Some tweaks on dev config to start to use generators on typescript
 - Performance tweaks for large data generation
 
-## (0.4.1)
+#### (0.4.1)
 - Show in console the errors. (I will improve this)
 - Add support to chanceJs, exactly like FakerJs (see "Model definition" ***Chance***)
 
-## (0.3.0)
+#### (0.3.0)
 - Fix errors on iteration over nested structures (new improved interator)
 - Added support to call more naturally to FackerJs fields (see "Model definition" ***Faker***)
 
-## (0.2.2)
+#### (0.2.2)
 - Added a pluralization function
 - Fixed a little issue with the roots schemas (now you can do really crazy things, see test/mocker.example.js)
 - Fix errors introduced in 0.2.0
 
-## (0.1.6)
+#### (0.1.6)
 - Fix an error: (Clean initial data field)
 - Fix some memory errors adding inmutableJS for the model
 - Add new tests
 
-## (0.1.1)
+#### (0.1.1)
 - Real Refractor of the code
 - Add support multi-level schemas
 - Add tests
 - Add travis support
 
-## (0.0.4)
+#### (0.0.4)
 - First release i will update soon with tests and more examples, stay tuned!

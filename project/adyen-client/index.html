@@ -10,25 +10,25 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="author" content="Daniel Biedma">
 		<meta name="description" content="My opensource projects">
-        <link rel="canonical" href="http://blog.danibram.es/">
+        <link rel="canonical" href="http://localhost:1313/">
 
-		<meta name="generator" content="Hugo 0.15" />
+		<meta name="generator" content="Hugo 0.21" />
 		<title>adyen client &middot; Opensource projects</title>
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-		<link rel="shortcut icon" href="http://blog.danibram.es/images/favicon.ico">
+		<link rel="shortcut icon" href="http://localhost:1313/images/favicon.ico">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
-        <link rel="stylesheet" href="http://blog.danibram.es/css/milligram.min.css">
-		<link rel="stylesheet" href="http://blog.danibram.es/css/style.css">
-		<link rel="stylesheet" href="http://blog.danibram.es/css/highlight.css">
-		<link rel="stylesheet" href="http://blog.danibram.es/css/monosocialiconsfont.css">
+        <link rel="stylesheet" href="http://localhost:1313/css/milligram.min.css">
+		<link rel="stylesheet" href="http://localhost:1313/css/style.css">
+		<link rel="stylesheet" href="http://localhost:1313/css/highlight.css">
+		<link rel="stylesheet" href="http://localhost:1313/css/monosocialiconsfont.css">
 
 
-		<link rel="icon" href="http://blog.danibram.es/images/favicon.ico">
+		<link rel="icon" href="http://localhost:1313/images/favicon.ico">
 
 		
-		<link href="http://blog.danibram.es/index.xml" rel="alternate" type="application/rss+xml" title="Opensource projects" />
+		<link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="Opensource projects" />
 		
 	</head>
 
@@ -39,10 +39,10 @@
     <section class="container">
         
         <div class="navigation-item left-back-arrow">
-            <a class="navigation-link" href='http://blog.danibram.es/'><i class="fa fa-arrow-left"></i></a>
+            <a class="navigation-link" href='http://localhost:1313/'><i class="fa fa-arrow-left"></i></a>
         </div>
         
-        <a class="navigation-title" href="http://blog.danibram.es/">
+        <a class="navigation-title" href="http://localhost:1313/">
             <h1 class="title">
                 <span style="font-family: 'Mono Social Icons Font';font-size:40px;">dbr</span>
                 · adyen client 
@@ -97,6 +97,11 @@
                             <a class="popover-link"  href='project/object-cleaner/' title="Project object cleaner">object cleaner</a>
                         </li>
                     
+                        
+                        <li class="popover-item">
+                            <a class="popover-link"  href='project/' title="Project Projects">Projects</a>
+                        </li>
+                    
                     </ul>
                 </div>
             </li>
@@ -117,7 +122,7 @@
                 <header>
                     <h2 class="post">
                         adyen client
-                        <span class="headline h2">v2.0.7</span>
+                        <span class="headline h2">v2.0.9</span>
                     </h2>
                     <div class="buttons">
 
@@ -132,7 +137,7 @@
                 <section id="post-body">
                     
 
-<h2 id="getting-started:75a5fd5372c64e32c6254a1cbf4a6d2a">Getting started</h2>
+<h2 id="getting-started">Getting started</h2>
 
 <p>Install the module with: <code>npm install adyen-client</code></p>
 
@@ -158,7 +163,7 @@ aClient
     });
 </code></pre>
 
-<h2 id="documentation:75a5fd5372c64e32c6254a1cbf4a6d2a">Documentation</h2>
+<h2 id="documentation">Documentation</h2>
 
 <p>First of all you need to initialize the client passing your merchant account, username, password and front end key (only if you need to do the frontend initialization).</p>
 
@@ -209,6 +214,21 @@ var aClient = adyenClient(opts);
     },
     &quot;additionalData&quot;: {
         &quot;card.encrypted.json&quot;: &quot;adyenjs_0_1_15$......&quot;
+    }
+})
+    .then(function(data){
+        console.log(data)
+    })
+</code></pre></li>
+
+<li><p><strong><em>authorize3dPayment</em></strong></p>
+
+<pre><code class="language-javascript">aClient.authorize3dPayment({
+    &quot;md&quot;: 'nOw6sWy2Kbu+bmg......'
+    &quot;paResponse&quot;:&quot;eNqtmFmTo7iygN/5FRU9......&quot;,
+    &quot;browserInfo&quot;: {
+        &quot;userAgent&quot;: &quot;Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.75 Safari/537.36&quot;,
+        &quot;acceptHeader&quot;: &quot;application/json, text/plain, */*&quot;
     }
 })
     .then(function(data){
@@ -280,11 +300,11 @@ var aClient = adyenClient(opts);
 </code></pre></li>
 </ul>
 
-<h2 id="responses:75a5fd5372c64e32c6254a1cbf4a6d2a">Responses</h2>
+<h2 id="responses">Responses</h2>
 
 <p>The initCCForm returns the data example and the others returns this:</p>
 
-<pre><code class="language-javascript">{   
+<pre><code class="language-javascript">{
     success: Boolean, //TRUE or FALSE
     data: {},//The Response from Adyen
     lastResponse: {}, //Axios RAW response
@@ -292,14 +312,21 @@ var aClient = adyenClient(opts);
 }
 </code></pre>
 
-<h2 id="development:75a5fd5372c64e32c6254a1cbf4a6d2a">Development</h2>
+<h2 id="development">Development</h2>
 
 <p>Run <code>npm install;npm run dev</code> to watch the proyect, and compile the code automatically.
 Run <code>npm build</code> to build the module.</p>
 
-<h2 id="release-history:75a5fd5372c64e32c6254a1cbf4a6d2a">Release History</h2>
+<h2 id="release-history">Release History</h2>
 
-<h4 id="2-0-7:75a5fd5372c64e32c6254a1cbf4a6d2a">(2.0.7)</h4>
+<h4 id="2-0-9">(2.0.9)</h4>
+
+<ul>
+<li>Update dependecies (Axios ^0.10)</li>
+<li>Added <code>authorize3dPayment</code> for handling 3D Secure authorization (Thanks @grimor)</li>
+</ul>
+
+<h4 id="2-0-7">(2.0.7)</h4>
 
 <ul>
 <li>Update dependencies</li>
@@ -310,7 +337,7 @@ Run <code>npm build</code> to build the module.</p>
 <li>Responses now returns the RAW request, and response</li>
 </ul>
 
-<h4 id="1-0-8:75a5fd5372c64e32c6254a1cbf4a6d2a">(1.0.8)</h4>
+<h4 id="1-0-8">(1.0.8)</h4>
 
 <ul>
 <li>Internal Refactor</li>
@@ -318,7 +345,7 @@ Run <code>npm build</code> to build the module.</p>
 <li>Better docs</li>
 </ul>
 
-<h4 id="1-0-7:75a5fd5372c64e32c6254a1cbf4a6d2a">(1.0.7)</h4>
+<h4 id="1-0-7">(1.0.7)</h4>
 
 <ul>
 <li>Fix dependencies</li>
@@ -326,7 +353,7 @@ Run <code>npm build</code> to build the module.</p>
 <li>Added basic methods</li>
 </ul>
 
-<h2 id="license:75a5fd5372c64e32c6254a1cbf4a6d2a">License</h2>
+<h2 id="license">License</h2>
 
 <p>Licensed under the MIT license. 2015</p>
 
@@ -335,7 +362,7 @@ Run <code>npm build</code> to build the module.</p>
 
             <div class="row post-meta">
                 <div class="column column-25">
-                    <img class="avatar" src="http://blog.danibram.es/images/avatar.jpg">
+                    <img class="avatar" src="http://localhost:1313/images/avatar.jpg">
                 </div>
                 <div class="column">
                     <span class="dark">Daniel Biedma</span>
@@ -343,27 +370,27 @@ Run <code>npm build</code> to build the module.</p>
                 </div>
                 <div class="column column-33"><ul class="share-list">
 <li class="share-item">
-    <a class="share-dialog" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fblog.danibram.es%2fproject%2fadyen-client%2f" title="Share adyen client on Facebook" target="blank">
+    <a class="share-dialog" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fproject%2fadyen-client%2f" title="Share adyen client on Facebook" target="blank">
         <i class="icon fa fa-facebook share-icon"></i>
     </a>
 </li>
 <li class="share-item">
-    <a class="share-dialog" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fblog.danibram.es%2fproject%2fadyen-client%2f - adyen%20client by @danibram" title="Share adyen client on Twitter" target="blank">
+    <a class="share-dialog" href="https://twitter.com/intent/tweet?text=http%3a%2f%2flocalhost%3a1313%2fproject%2fadyen-client%2f - adyen%20client by @danibram" title="Share adyen client on Twitter" target="blank">
         <i class="icon fa fa-twitter share-icon"></i>
     </a>
 </li>
 <li class="share-item">
-    <a class="share-dialog" href="https://plus.google.com/share?url=http%3a%2f%2fblog.danibram.es%2fproject%2fadyen-client%2f" title="Share adyen client on Google+" target="blank">
+    <a class="share-dialog" href="https://plus.google.com/share?url=http%3a%2f%2flocalhost%3a1313%2fproject%2fadyen-client%2f" title="Share adyen client on Google+" target="blank">
         <i class="icon fa fa-google-plus share-icon"></i>
     </a>
 </li>
 <li class="share-item only-mobile">
-    <a href="whatsapp://send?text=adyen%20client http%3a%2f%2fblog.danibram.es%2fproject%2fadyen-client%2f" title="Share adyen client on Whatsapp" target="blank">
+    <a href="whatsapp://send?text=adyen%20client http%3a%2f%2flocalhost%3a1313%2fproject%2fadyen-client%2f" title="Share adyen client on Whatsapp" target="blank">
         <i class="icon fa fa-whatsapp share-icon"></i>
     </a>
 </li>
 <li class="share-item">
-    <a class="share-dialog" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fblog.danibram.es%2fproject%2fadyen-client%2f&amp;title=adyen%20client" title="Share adyen client on LinkedIn" target="blank">
+    <a class="share-dialog" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2flocalhost%3a1313%2fproject%2fadyen-client%2f&amp;title=adyen%20client" title="Share adyen client on LinkedIn" target="blank">
         <i class="icon fa fa-linkedin share-icon"></i>
     </a>
 </li>
@@ -374,9 +401,9 @@ Run <code>npm build</code> to build the module.</p>
             <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'dbropensource';
-    var disqus_identifier = 'http:\/\/blog.danibram.es\/project\/adyen-client\/';
+    var disqus_identifier = 'http:\/\/localhost:1313\/project\/adyen-client\/';
     var disqus_title = 'adyen client';
-    var disqus_url = 'http:\/\/blog.danibram.es\/project\/adyen-client\/';
+    var disqus_url = 'http:\/\/localhost:1313\/project\/adyen-client\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -436,7 +463,7 @@ Run <code>npm build</code> to build the module.</p>
 
         <p>
         
-            © Copyright 2016 Daniel Biedma
+            © Copyright 2017 Daniel Biedma
         
         </p>
 	</section>
@@ -444,10 +471,10 @@ Run <code>npm build</code> to build the module.</p>
 
     </main>
 
-    <script src="http://blog.danibram.es/js/highlight.js"></script>
-<script src="http://blog.danibram.es/js/script.js"></script>
+    <script src="http://localhost:1313/js/highlight.js"></script>
+<script src="http://localhost:1313/js/script.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
 
-</body>
+<script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10"></' + 'script>')</script></body>
 </html>

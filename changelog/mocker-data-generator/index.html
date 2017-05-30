@@ -10,25 +10,25 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="author" content="Daniel Biedma">
 		<meta name="description" content="My opensource projects">
-        <link rel="canonical" href="http://blog.danibram.es/">
+        <link rel="canonical" href="http://localhost:1313/">
 
-		<meta name="generator" content="Hugo 0.15" />
+		<meta name="generator" content="Hugo 0.21" />
 		<title>mocker data generator &middot; Opensource projects</title>
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-		<link rel="shortcut icon" href="http://blog.danibram.es/images/favicon.ico">
+		<link rel="shortcut icon" href="http://localhost:1313/images/favicon.ico">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
-        <link rel="stylesheet" href="http://blog.danibram.es/css/milligram.min.css">
-		<link rel="stylesheet" href="http://blog.danibram.es/css/style.css">
-		<link rel="stylesheet" href="http://blog.danibram.es/css/highlight.css">
-		<link rel="stylesheet" href="http://blog.danibram.es/css/monosocialiconsfont.css">
+        <link rel="stylesheet" href="http://localhost:1313/css/milligram.min.css">
+		<link rel="stylesheet" href="http://localhost:1313/css/style.css">
+		<link rel="stylesheet" href="http://localhost:1313/css/highlight.css">
+		<link rel="stylesheet" href="http://localhost:1313/css/monosocialiconsfont.css">
 
 
-		<link rel="icon" href="http://blog.danibram.es/images/favicon.ico">
+		<link rel="icon" href="http://localhost:1313/images/favicon.ico">
 
 		
-		<link href="http://blog.danibram.es/index.xml" rel="alternate" type="application/rss+xml" title="Opensource projects" />
+		<link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="Opensource projects" />
 		
 	</head>
 
@@ -39,10 +39,10 @@
     <section class="container">
         
         <div class="navigation-item left-back-arrow">
-            <a class="navigation-link" href='http://blog.danibram.es/'><i class="fa fa-arrow-left"></i></a>
+            <a class="navigation-link" href='http://localhost:1313/'><i class="fa fa-arrow-left"></i></a>
         </div>
         
-        <a class="navigation-title" href="http://blog.danibram.es/">
+        <a class="navigation-title" href="http://localhost:1313/">
             <h1 class="title">
                 <span style="font-family: 'Mono Social Icons Font';font-size:40px;">dbr</span>
                 · mocker data generator 
@@ -97,6 +97,11 @@
                             <a class="popover-link"  href='project/object-cleaner/' title="Project object cleaner">object cleaner</a>
                         </li>
                     
+                        
+                        <li class="popover-item">
+                            <a class="popover-link"  href='project/' title="Project Projects">Projects</a>
+                        </li>
+                    
                     </ul>
                 </div>
             </li>
@@ -117,12 +122,12 @@
                 <header>
                     <h2 class="post">
                         mocker data generator
-                        <span class="headline h2">v1.2.2</span>
+                        <span class="headline h2">v2.1.0</span>
                     </h2>
                     <div class="buttons">
 
 
-                    <a class="button button-outline" href="http://blog.danibram.es/project/mocker-data-generator">Project</a>
+                    <a class="button button-outline" href="http://localhost:1313/project/mocker-data-generator">Project</a>
 
                     
                         <a class="button button-outline" href="https://github.com/danibram/mocker-data-generator">More Info</a>
@@ -132,7 +137,65 @@
                 <section id="post-body">
                     
 
-<h2 id="1-2-2:61d9ea6aafd3833dee3243d6f0a4abf1">(1.2.2)</h2>
+<h1 id="change-log">Change Log</h1>
+
+<p>All notable changes to this project will be documented in this file. See <a href="https://github.com/conventional-changelog/standard-version">standard-version</a> for commit guidelines.</p>
+
+<p><a name="2.1.0"></a></p>
+
+<h1 id="2-1-0-https-github-com-danibram-mocker-data-generator-compare-v2-0-2-v2-1-0-2017-05-27"><a href="https://github.com/danibram/mocker-data-generator/compare/v2.0.2...v2.1.0">2.1.0</a> (2017-05-27)</h1>
+
+<h3 id="features">Features</h3>
+
+<ul>
+<li>Added a way to obtain actual array while the generation, <a href="https://github.com/zamnuts">@zamnuts</a> suggestion (<a href="https://github.com/danibram/mocker-data-generator/commit/2588a34">2588a34</a>)</li>
+<li>Added length on the array function generator, thanks <a href="https://github.com/zamnuts">@zamnuts</a> (<a href="https://github.com/danibram/mocker-data-generator/commit/1f17519">1f17519</a>)</li>
+<li>added PR #16 Add parameter to hasMany generator, thanks <a href="https://github.com/justinbarry">@justinbarry</a> (<a href="https://github.com/danibram/mocker-data-generator/commit/71d947f">71d947f</a>)</li>
+</ul>
+
+<p><a name="2.0.2"></a></p>
+
+<h2 id="2-0-2-https-github-com-danibram-mocker-data-generator-compare-v2-0-1-v2-0-2-2017-05-24"><a href="https://github.com/danibram/mocker-data-generator/compare/v2.0.1...v2.0.2">2.0.2</a> (2017-05-24)</h2>
+
+<h3 id="bug-fixes">Bug Fixes</h3>
+
+<ul>
+<li><strong>browserify:</strong> fix browserify builds changing casual to browserify-casual (<a href="https://github.com/danibram/mocker-data-generator/commit/de93262">de93262</a>)</li>
+</ul>
+
+<p><a name="2.0.1"></a></p>
+
+<h2 id="2-0-1-https-github-com-danibram-mocker-data-generator-compare-v2-0-0-v2-0-1-2017-05-24"><a href="https://github.com/danibram/mocker-data-generator/compare/v2.0.0...v2.0.1">2.0.1</a> (2017-05-24)</h2>
+
+<h3 id="changes">Changes</h3>
+
+<ul>
+<li><strong>fix:</strong> tslib fix for ES5 builds</li>
+<li><strong>updates:</strong> updates on dependencies</li>
+</ul>
+
+<p><a name="2.0.0"></a></p>
+
+<h1 id="2-0-0-https-github-com-danibram-mocker-data-generator-compare-v1-2-7-v2-0-0-2017-03-18"><a href="https://github.com/danibram/mocker-data-generator/compare/v1.2.7...v2.0.0">2.0.0</a> (2017-03-18)</h1>
+
+<h3 id="features-1">Features</h3>
+
+<ul>
+<li><strong>build:</strong> new build using Typescript, breaking change in imports, adapted import to be used with es6 (<a href="https://github.com/danibram/mocker-data-generator/commit/6114eaf">6114eaf</a>)</li>
+</ul>
+
+<h3 id="old-release-history">OLD Release History</h3>
+
+<h4 id="1-2-7">(1.2.7)</h4>
+
+<ul>
+<li>Fix little issue with array generators, now parse well the index inside, add a test for that</li>
+<li>Fix string issue with fakerJs</li>
+<li>Fixed babel polyfill issues</li>
+<li>updates on dev packages</li>
+</ul>
+
+<h4 id="1-2-2">(1.2.2)</h4>
 
 <ul>
 <li>Better error management</li>
@@ -140,13 +203,13 @@
 <li>Update docs with the online mocker-api: <a href="https://mocker-api.herokuapp.com/">https://mocker-api.herokuapp.com/</a></li>
 </ul>
 
-<h2 id="1-2-1:61d9ea6aafd3833dee3243d6f0a4abf1">(1.2.1)</h2>
+<h4 id="1-2-1">(1.2.1)</h4>
 
 <ul>
 <li>Start to parse better the errors</li>
 </ul>
 
-<h2 id="1-2-0:61d9ea6aafd3833dee3243d6f0a4abf1">(1.2.0)</h2>
+<h4 id="1-2-0">(1.2.0)</h4>
 
 <ul>
 <li>New internal reorganization</li>
@@ -154,7 +217,7 @@
 <li><strong><em>Breaking Change</em></strong>: related config is deprecated, instead of related use hasOne.</li>
 </ul>
 
-<h2 id="1-1-1:61d9ea6aafd3833dee3243d6f0a4abf1">(1.1.1)</h2>
+<h4 id="1-1-1">(1.1.1)</h4>
 
 <ul>
 <li>Added RandExpJs generator</li>
@@ -162,7 +225,7 @@
 
 <li><p><strong><em>Breaking Change</em></strong>: the older versions aren´t compatible with this module, the way to generate the data are changed:</p>
 
-<h2 id="1-1-0:61d9ea6aafd3833dee3243d6f0a4abf1">(1.1.0)</h2></li>
+<h4 id="1-1-0">(1.1.0)</h4></li>
 
 <li><p>Added casualJs</p></li>
 
@@ -173,26 +236,26 @@
 <li><p>Added related option</p></li>
 </ul>
 
-<h2 id="1-0-6:61d9ea6aafd3833dee3243d6f0a4abf1">(1.0.6)</h2>
+<h4 id="1-0-6">(1.0.6)</h4>
 
 <ul>
 <li>Updated chance.js to 1.0</li>
 </ul>
 
-<h2 id="1-0-5:61d9ea6aafd3833dee3243d6f0a4abf1">(1.0.5)</h2>
+<h4 id="1-0-5">(1.0.5)</h4>
 
 <ul>
 <li>Added the concat option, and the strictConcat on Array generator.</li>
 </ul>
 
-<h2 id="1-0-4:61d9ea6aafd3833dee3243d6f0a4abf1">(1.0.4)</h2>
+<h4 id="1-0-4">(1.0.4)</h4>
 
 <ul>
 <li>Added on uniqueField two ways to generate the data</li>
 <li>Starting to add errors</li>
 </ul>
 
-<h2 id="1-0-3:61d9ea6aafd3833dee3243d6f0a4abf1">(1.0.3)</h2>
+<h4 id="1-0-3">(1.0.3)</h4>
 
 <ul>
 <li>Fix Arrays</li>
@@ -213,7 +276,7 @@ var m = mocker()
 </code></pre></li>
 </ul>
 
-<h2 id="0-7-0:61d9ea6aafd3833dee3243d6f0a4abf1">(0.7.0)</h2>
+<h4 id="0-7-0">(0.7.0)</h4>
 
 <ul>
 <li><p><strong><em>Breaking Change</em></strong>: Added the posibility to enable the pluralize on the output entity. Now if you want to pluralize the output follow the example in the doc, <strong><em>by defatult is not anymore pluralized</em></strong>.</p>
@@ -253,13 +316,13 @@ m.generate('user', 2)
 </code></pre></li>
 </ul>
 
-<h2 id="0-6-0:61d9ea6aafd3833dee3243d6f0a4abf1">(0.6.0)</h2>
+<h4 id="0-6-0">(0.6.0)</h4>
 
 <ul>
 <li><strong><em>Breaking Change</em></strong>: Added the posibility to enable the pluralize on the output entity. Now if you want to pluralize the output follow the example in the doc, <strong><em>by defatult is not anymore pluralized</em></strong>.</li>
 </ul>
 
-<h2 id="0-5-0:61d9ea6aafd3833dee3243d6f0a4abf1">(0.5.0)</h2>
+<h4 id="0-5-0">(0.5.0)</h4>
 
 <ul>
 <li><p><strong><em>Breaking Change</em></strong>: Break Point with array config. Now is more clear.</p>
@@ -268,13 +331,12 @@ m.generate('user', 2)
 
 <pre><code class="language-javascript">    [{
         //Any generator
-            //Faker  
+            //Faker
         faker: 'random.arrayElement(db.users)[userId]'
-            //Chance  
+            //Chance
         chance: 'integer'
-            //Function  
+            //Function
         function: function (){ return /**/ }
-
 
     }, //Array config
     {length: 10, fixedLength: false}]
@@ -284,13 +346,12 @@ m.generate('user', 2)
 
 <pre><code class="language-javascript">    [{
         //Any generator
-            //Faker  
+            //Faker
         faker: 'random.arrayElement(db.users)[userId]'
-            //Chance  
+            //Chance
         chance: 'integer'
-            //Function  
+            //Function
         function: function (){ return /**/ }
-
 
         //Array config
         length: 10,
@@ -299,13 +360,13 @@ m.generate('user', 2)
 </code></pre></li>
 </ul>
 
-<h2 id="0-4-7:61d9ea6aafd3833dee3243d6f0a4abf1">(0.4.7)</h2>
+<h4 id="0-4-7">(0.4.7)</h4>
 
 <ul>
 <li>Add virtual fields</li>
 </ul>
 
-<h2 id="0-4-5:61d9ea6aafd3833dee3243d6f0a4abf1">(0.4.5)</h2>
+<h4 id="0-4-5">(0.4.5)</h4>
 
 <ul>
 <li>Add incrementalId config</li>
@@ -313,21 +374,21 @@ m.generate('user', 2)
 <li>Performance tweaks for large data generation</li>
 </ul>
 
-<h2 id="0-4-1:61d9ea6aafd3833dee3243d6f0a4abf1">(0.4.1)</h2>
+<h4 id="0-4-1">(0.4.1)</h4>
 
 <ul>
 <li>Show in console the errors. (I will improve this)</li>
 <li>Add support to chanceJs, exactly like FakerJs (see &ldquo;Model definition&rdquo; <strong><em>Chance</em></strong>)</li>
 </ul>
 
-<h2 id="0-3-0:61d9ea6aafd3833dee3243d6f0a4abf1">(0.3.0)</h2>
+<h4 id="0-3-0">(0.3.0)</h4>
 
 <ul>
 <li>Fix errors on iteration over nested structures (new improved interator)</li>
 <li>Added support to call more naturally to FackerJs fields (see &ldquo;Model definition&rdquo; <strong><em>Faker</em></strong>)</li>
 </ul>
 
-<h2 id="0-2-2:61d9ea6aafd3833dee3243d6f0a4abf1">(0.2.2)</h2>
+<h4 id="0-2-2">(0.2.2)</h4>
 
 <ul>
 <li>Added a pluralization function</li>
@@ -335,7 +396,7 @@ m.generate('user', 2)
 <li>Fix errors introduced in 0.2.0</li>
 </ul>
 
-<h2 id="0-1-6:61d9ea6aafd3833dee3243d6f0a4abf1">(0.1.6)</h2>
+<h4 id="0-1-6">(0.1.6)</h4>
 
 <ul>
 <li>Fix an error: (Clean initial data field)</li>
@@ -343,7 +404,7 @@ m.generate('user', 2)
 <li>Add new tests</li>
 </ul>
 
-<h2 id="0-1-1:61d9ea6aafd3833dee3243d6f0a4abf1">(0.1.1)</h2>
+<h4 id="0-1-1">(0.1.1)</h4>
 
 <ul>
 <li>Real Refractor of the code</li>
@@ -352,7 +413,7 @@ m.generate('user', 2)
 <li>Add travis support</li>
 </ul>
 
-<h2 id="0-0-4:61d9ea6aafd3833dee3243d6f0a4abf1">(0.0.4)</h2>
+<h4 id="0-0-4">(0.0.4)</h4>
 
 <ul>
 <li>First release i will update soon with tests and more examples, stay tuned!</li>
@@ -363,7 +424,7 @@ m.generate('user', 2)
 
             <div class="row post-meta">
                 <div class="column column-25">
-                    <img class="avatar" src="http://blog.danibram.es/images/avatar.jpg">
+                    <img class="avatar" src="http://localhost:1313/images/avatar.jpg">
                 </div>
                 <div class="column">
                     <span class="dark">Daniel Biedma</span>
@@ -371,27 +432,27 @@ m.generate('user', 2)
                 </div>
                 <div class="column column-33"><ul class="share-list">
 <li class="share-item">
-    <a class="share-dialog" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fblog.danibram.es%2fchangelog%2fmocker-data-generator%2f" title="Share mocker data generator on Facebook" target="blank">
+    <a class="share-dialog" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fchangelog%2fmocker-data-generator%2f" title="Share mocker data generator on Facebook" target="blank">
         <i class="icon fa fa-facebook share-icon"></i>
     </a>
 </li>
 <li class="share-item">
-    <a class="share-dialog" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fblog.danibram.es%2fchangelog%2fmocker-data-generator%2f - mocker%20data%20generator by @danibram" title="Share mocker data generator on Twitter" target="blank">
+    <a class="share-dialog" href="https://twitter.com/intent/tweet?text=http%3a%2f%2flocalhost%3a1313%2fchangelog%2fmocker-data-generator%2f - mocker%20data%20generator by @danibram" title="Share mocker data generator on Twitter" target="blank">
         <i class="icon fa fa-twitter share-icon"></i>
     </a>
 </li>
 <li class="share-item">
-    <a class="share-dialog" href="https://plus.google.com/share?url=http%3a%2f%2fblog.danibram.es%2fchangelog%2fmocker-data-generator%2f" title="Share mocker data generator on Google+" target="blank">
+    <a class="share-dialog" href="https://plus.google.com/share?url=http%3a%2f%2flocalhost%3a1313%2fchangelog%2fmocker-data-generator%2f" title="Share mocker data generator on Google+" target="blank">
         <i class="icon fa fa-google-plus share-icon"></i>
     </a>
 </li>
 <li class="share-item only-mobile">
-    <a href="whatsapp://send?text=mocker%20data%20generator http%3a%2f%2fblog.danibram.es%2fchangelog%2fmocker-data-generator%2f" title="Share mocker data generator on Whatsapp" target="blank">
+    <a href="whatsapp://send?text=mocker%20data%20generator http%3a%2f%2flocalhost%3a1313%2fchangelog%2fmocker-data-generator%2f" title="Share mocker data generator on Whatsapp" target="blank">
         <i class="icon fa fa-whatsapp share-icon"></i>
     </a>
 </li>
 <li class="share-item">
-    <a class="share-dialog" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fblog.danibram.es%2fchangelog%2fmocker-data-generator%2f&amp;title=mocker%20data%20generator" title="Share mocker data generator on LinkedIn" target="blank">
+    <a class="share-dialog" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2flocalhost%3a1313%2fchangelog%2fmocker-data-generator%2f&amp;title=mocker%20data%20generator" title="Share mocker data generator on LinkedIn" target="blank">
         <i class="icon fa fa-linkedin share-icon"></i>
     </a>
 </li>
@@ -402,9 +463,9 @@ m.generate('user', 2)
             <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'dbropensource';
-    var disqus_identifier = 'http:\/\/blog.danibram.es\/changelog\/mocker-data-generator\/';
+    var disqus_identifier = 'http:\/\/localhost:1313\/changelog\/mocker-data-generator\/';
     var disqus_title = 'mocker data generator';
-    var disqus_url = 'http:\/\/blog.danibram.es\/changelog\/mocker-data-generator\/';
+    var disqus_url = 'http:\/\/localhost:1313\/changelog\/mocker-data-generator\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -463,7 +524,7 @@ m.generate('user', 2)
 
         <p>
         
-            © Copyright 2016 Daniel Biedma
+            © Copyright 2017 Daniel Biedma
         
         </p>
 	</section>
@@ -471,10 +532,10 @@ m.generate('user', 2)
 
         </section>
 
-    <script src="http://blog.danibram.es/js/highlight.js"></script>
-<script src="http://blog.danibram.es/js/script.js"></script>
+    <script src="http://localhost:1313/js/highlight.js"></script>
+<script src="http://localhost:1313/js/script.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
 
-</body>
+<script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10"></' + 'script>')</script></body>
 </html>

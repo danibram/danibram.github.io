@@ -3,82 +3,133 @@ date = "2016-02-07T20:13:19+01:00"
 description = "Super tiny and ligthway time tracker for all cli lovers."
 project_url = "https://github.com/danibram/time-tracker-cli"
 title = "time tracker cli"
-version = "v1.1.2"
-changelog = true
+version = "v2.0.22"
+changelog = false
 +++
 
-Super tiny and ligthway time tracker for all cli lovers.
+## Installation
+
+```
+npm install -g time-tracker-cli
+```
+or
+```
+yarn global add time-tracker-cli
+```
+Now you can start to call `timer`command
 
 ## Usage
 
-[![asciicast](https://asciinema.org/a/dzegwhnwxvv28q84u8uvsgyas.png)](https://asciinema.org/a/dzegwhnwxvv28q84u8uvsgyas)
+[![asciicast](https://asciinema.org/a/100679.png)](https://asciinema.org/a/100679)
 
 ```
-±❩❩❩ timer --help
+└┘#! timer
 
-    Usage: timer [options]
+Usage: timer [options] [command]
 
-    Tiny time tracker for projects
 
-    Options:
+  Commands:
 
-      -h, --help                         output usage information
-      -V, --version                      output the version number
-      -s, --start <task> <description>   Start the timer task.
-      -f, --finish <task> <description>  Stops the timer task.
-      -d, --description <description>    Adds a description for the task only in start/stop methods.
-      -a, --add <task> <timeString>      Adds time to a task. Example: "1h2m3s"
-      --remove <task> <timeString>       Subtract time from a task. Example: "1h2m3s"
-      -l, --log <task>                   Logs the timer task.
-      -r, --report <task> <rate>         Report time of the tasks, searched by key, you can report all using all as key. Also you can pass a rate to calc an amount ex: 20h, calc the hours and mulpitly by 20
-      -e, --export                       Prints the json of all tasks.
+    start|s <task_key> [description]               Start task with a description.
+    pause|p <task_key>                             Pause task
+    unpause|up <task_key>                          Unpause task
+    finish|f <task_key> [description]              Stop task, you can add a description
+    description|d <task_key> <descriptionText...>  Add description to your task.
+    add <task_key> <stringTime>                    Adds time to a task. Example: "1h2m3s"
+    subtract|sub <task_key> <stringTime>           Subtract time to a task. Example: "1h2m3s"
+    report|r [task_string] [rate]                  Report time of the tasks, empty for select all tasks. Can pass a rate (1h).
+    log|l <task_key>                               Logs the time of the  task
+    export|e                                       Export the tasks in a JSON
+    delete|del [task_string]                       Remove tasks from the list. Empty for select all tasks
+    configure <key> <value>                        Configure the value of the config passing a key
+    configuration                                  Output configuration
+
+  Tiny time tracker for projects
+
+  Options:
+
+    -h, --help     output usage information
+    -V, --version  output the version number
+    --updateDB     Update the db if its neccesary
 ```
 
 - To start a task run:
 ```
-$ timer -s <key of the task> -d  <description>
+$ timer start <key of the task> <description>
 ```
 - To finish a task run:
 ```
-$ timer -s <key of the task> -d  <description>
+$ timer finish <key of the task> <description>
 ```
 - You can add a description adding:
 ```
-$ timer -s <key of the task> -d  <description>
-$ timer -h <key of the task> -d  <description>
+$ timer description <key of the task> <description>
 ```
 - You can also see the timer running:
 ```
-$ timer -l <key of the task>
+$ timer log <key of the task>
 ```
+
 ## How it works
 The data are stored inside ~/.config/time-tracker-cli.json
+The config need to be updated if you have the 1.x to the 2.x to do that, to update config run timer --updateDB
 If you open you should see:
 
 ```javascript
 {
-	"tasks": {
-		"work1.website.design": {
-			"start": "2016-02-19T10:00:36.393Z",
-			"stop": "2016-02-19T18:01:50.921Z"
-		},
-		"work1.website.deployServer": {
-			"start": "2016-02-19T10:01:59.116Z",
-			"stop": "2016-02-19T10:32:10.687Z"
-		},
-		"work1.api.develop.userController": {
-			"start": "2016-02-19T10:04:23.060Z",
-			"stop": "2016-02-19T20:04:36.836Z"
-		},
-		"work1.api.develop.loginController": {
-			"start": "2016-02-19T10:09:41.848Z",
-			"stop": "2016-02-19T13:11:54.059Z"
-		}
-	}
+    "tasks": {
+        "work1.website.design": {
+            "description": "If you added one",
+            "timings": [{
+                "start": "2016-02-19T10:00:36.393Z",
+                "stop": "2016-02-19T18:01:50.921Z"
+            }],
+            "log": [
+                "start#2016-02-19T10:00:36.393Z",
+                "stop#2016-02-19T18:01:50.921Z"
+            ]
+        },
+        "work1.website.deployServer": {
+            "timings": [{
+                "start": "2016-02-19T10:01:59.116Z",
+                "stop": "2016-02-19T10:32:10.687Z"
+            }],
+            "log": [
+                "start#2016-02-19T10:01:59.116Z",
+                "stop#2016-02-19T10:32:10.687Z"
+            ]
+        },
+        "work2.api.develop.userController": {
+            "timings": [{
+                "start": "2016-02-19T10:04:23.060Z",
+                "stop": "2016-02-19T20:04:36.836Z"
+            }],
+            "log": [
+                "start#2016-02-19T10:04:23.060Z",
+                "stop#2016-02-19T20:04:36.836Z"
+            ]
+        },
+        "work2.api.develop.loginController": {
+            "timings": [{
+                "start": "2016-02-19T10:09:41.848Z",
+                "stop": "2016-02-19T13:11:54.059Z"
+            }],
+            "log": [
+                "start#2016-02-19T10:09:41.848Z",
+                "stop#2016-02-19T13:11:54.059Z"
+            ]
+        }
+    },
+    "config": {
+        "format.output": "DD/MM",
+        "config.version": 2
+    }
 }
 ```
 
-The -r method, simply finds by regex and count the time.
+## Notes
+To use the autocomplete run `timer --setupCLI`
+If you have the version 1.x and you want to conserve the DB, run `timer --updateDB` to update the DB to version 2.x
 
 ## Development
 
@@ -87,3 +138,8 @@ Run ```npm build``` to build the module.
 
 ## License
 Licensed under the MIT license. 2015
+
+
+[paypal-badge]: https://img.shields.io/badge/❤%20support-paypal-blue.svg?style=flat-square
+[paypal-link]: https://www.paypal.me/danibram
+[npm-home-module]: https://www.npmjs.com/package/time-tracker-cli

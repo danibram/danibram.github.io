@@ -3,7 +3,7 @@ date = "2015-10-29T20:18:35+01:00"
 description = "Basic adyen client for nodeJs Integrations"
 project_url = "https://github.com/danibram/adyen-client"
 title = "adyen client"
-version = "v2.0.7"
+version = "v2.0.9"
 section= "project"
 +++
 
@@ -91,6 +91,23 @@ Then you have the client initialized, now you have access to this methods, every
             console.log(data)
         })
     ```
+
+- ***authorize3dPayment***
+
+    ```javascript
+    aClient.authorize3dPayment({
+        "md": 'nOw6sWy2Kbu+bmg......'
+        "paResponse":"eNqtmFmTo7iygN/5FRU9......",
+        "browserInfo": {
+            "userAgent": "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.75 Safari/537.36",
+            "acceptHeader": "application/json, text/plain, */*"
+        }
+    })
+        .then(function(data){
+            console.log(data)
+        })
+    ```
+
 - ***getRecurringData***
 
     ```javascript
@@ -164,7 +181,7 @@ Then you have the client initialized, now you have access to this methods, every
 The initCCForm returns the data example and the others returns this:
 
 ```javascript
-{   
+{
     success: Boolean, //TRUE or FALSE
     data: {},//The Response from Adyen
     lastResponse: {}, //Axios RAW response
@@ -178,6 +195,10 @@ Run ```npm install;npm run dev``` to watch the proyect, and compile the code aut
 Run ```npm build``` to build the module.
 
 ## Release History
+
+#### (2.0.9)
+- Update dependecies (Axios ^0.10)
+- Added `authorize3dPayment` for handling 3D Secure authorization (Thanks @grimor)
 
 #### (2.0.7)
 - Update dependencies

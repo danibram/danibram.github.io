@@ -2,15 +2,29 @@
 date = "2015-12-29T17:37:56+01:00"
 title = "mocker data generator"
 description = "A simplified way to generate massive mock data based on a schema, using the awesome fake/random data generators like (FakerJs, ChanceJs, CasualJs and RandExpJs), all in one tool to generate your fake data for testing."
-version = "v1.2.2"
+version = "v2.1.0"
 project_url = "https://github.com/danibram/mocker-data-generator"
 changelog = true
 +++
 
 A simplified way to generate massive mock data based on a schema, using the awesome fake/random data generators like (FakerJs, ChanceJs, CasualJs and RandExpJs), all in one tool to generate your fake data for testing.
 
+Now the library has been migrated 100% to typescript typing are included.
+
 ## Getting started
 Install the module with: `npm install mocker-data-generator`
+
+Import it
+
+```javascript
+var mocker = require('mocker-data-generator').default (vainilla way)
+
+or
+
+import mocker from 'mocker-data-generator' (ES6 or Typescript way)
+```
+
+Then use it:
 
 ```javascript
 var user = {
@@ -38,7 +52,7 @@ var group = {
     },
     users: [{
         function: function() {
-            return this.faker.random.arrayElement(this.db.users).username
+            return this.faker.random.arrayElement(this.db.user).username
         },
         length: 10,
         fixedLength: false
@@ -146,19 +160,45 @@ Data generation goes with model based composed by generators, the generators can
   - **_amount_** (Optional): Fixed number of related entities to get.
   - **_min_** (Optional): Minimum entities to get.
   - **_max_** (Optional): Maximum entities to get.
+  - **_get_** (Optional): String that will be evaluated over the random related entity.
 
     ```javascript
+        // In this case we will get 1 user (hasMany)
         {
             hasMany: 'user' //this populate the field with one random user
         }
 
         //OR:
+        // In this case we will get 1 (amount) user (hasMany)
 
         {
             hasMany: 'user',
             amount: 1, //optional
-            min: 1, //optional
-            max: 1 //optional
+        }
+
+        //OR:
+        // In this case we will get as max 3 (max) users (hasMany)
+
+        {
+            hasMany: 'user',
+            max: 3 //optional
+        }
+
+        //OR:
+        // In this case we will get bettween min 1 (min) and max 3 (max) users (hasMany)
+
+        {
+            hasMany: 'user',
+            min: 1 //optional
+            max: 3 //optional
+        }
+
+        //OR:
+        // In this case we will get the id (get) from 1 random user (hasMany)
+
+        {
+            hasMany: 'user',
+            get: 'id'
         }
     ```
 
@@ -235,12 +275,12 @@ Data generation goes with model based composed by generators, the generators can
     ```javascript
     [{
        //Any generator
-           //Faker  
+           //Faker
        faker: 'random.arrayElement(db.users).userId'
-           //Chance  
+           //Chance
        chance: 'integer'
-           //Function  
-       function: function (){ return /**/ }
+           //Function that has included index, length and self that refers at the actual array generation
+       function: function (index, length, self){ return /**/ }
 
        //Array config
        length: 10,
@@ -258,13 +298,13 @@ Data generation goes with model based composed by generators, the generators can
 ```javascript
     {
         //Any generator
-            //Faker  
+            //Faker
         faker: 'random.arrayElement(db.users)[userId]'
-            //Chance  
+            //Chance
         chance: 'integer'
             //static
         static: 'any static field'
-            //Function  
+            //Function
         function: function (){ return /**/ }
 
         //with the virtual option
@@ -340,26 +380,21 @@ json-schema-faker is awesome and works really nice, but i need a simplified and 
 
 ## Credits
 I couldn't do this without this awesome libraries, so thanks to all:
-
-- Faker:  [https://github.com/Marak/faker.js]
-- Chance:  [https://github.com/victorquinn/chancejs]
-- Casual:  [https://github.com/boo1ean/casual]
-- RandExpJs: [https://github.com/fent/randexp.js]
-
+- Faker:  [[https://github.com/Marak/faker.js](https://github.com/Marak/faker.js)]
+- Chance:  [[https://github.com/victorquinn/chancejs](https://github.com/victorquinn/chancejs)]
+- Casual:  [[https://github.com/boo1ean/casual](https://github.com/boo1ean/casual)]
+- RandExpJs: [[https://github.com/fent/randexp.js](https://github.com/fent/randexp.js)]
+- typescript-starter: [[https://github.com/bitjson/typescript-starter](https://github.com/bitjson/typescript-starter)]
 
 ## License
 Licensed under the MIT license. 2015
 
-
-
 [paypal-badge]: https://img.shields.io/badge/❤%20support-paypal-blue.svg?style=flat-square
 [paypal-link]: https://www.paypal.me/danibram
-
 [https://github.com/marak/faker.js]: https://github.com/Marak/faker.js
 [https://github.com/victorquinn/chancejs]: https://github.com/victorquinn/chancejs
 [https://github.com/boo1ean/casual]: https://github.com/boo1ean/casual
 [https://github.com/fent/randexp.js]: https://github.com/fent/randexp.js
-
 [coveralls-link]: https://coveralls.io/github/danibram/mocker-data-generator
 [coveralls-badge]: https://img.shields.io/coveralls/danibram/mocker-data-generator.svg?style=flat-square&label=coveralls%20coverage
 [codecov-badge]: https://img.shields.io/codecov/c/github/danibram/mocker-data-generator.svg?style=flat-square&label=codecov%20coverage

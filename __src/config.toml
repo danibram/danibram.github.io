@@ -1,5 +1,5 @@
 # Site settings
-baseurl = "http://blog.danibram.es/"
+baseurl = "http://blog.dbr.io/"
 languageCode = "en-us"
 title = "Opensource projects"
 
@@ -12,32 +12,32 @@ canonifyurls = true
 theme = "miligram"
 
 [params]
-	name = "Daniel Biedma"
-	description = "My opensource projects"
-	bio = "Developer - Photographer - Consultant"
-	# Enter optionally your twitter account
-	twitter = "danibram"
-	enableRSS = true
+    name = "Daniel Biedma"
+    description = "My opensource projects"
+    bio = "Developer - Photographer - Consultant"
+    # Enter optionally your twitter account
+    twitter = "danibram"
+    enableRSS = true
 
-	# The variables below are optionally too and can be used to
-	# translate or customize each string of the theme.
+    # The variables below are optionally too and can be used to
+    # translate or customize each string of the theme.
 
-	# Navigation links
-	home = ""
-	about = "https://dbr.io/"
-	subscribe = ""
-	# Pagination links
-	olderPosts = ""
-	newerPosts = ""
-	readMore = ""
-	copyright = ""
-	# Sharing options and author information in posts
-	aboutAuthor = "Overpowered full-stack developer"
-	tweet = ""
-	share = ""
-	# 404 page
-	title404 = ""
-	subtitle404 = ""
+    # Navigation links
+    home = ""
+    about = "https://dbr.io/"
+    subscribe = ""
+    # Pagination links
+    olderPosts = ""
+    newerPosts = ""
+    readMore = ""
+    copyright = ""
+    # Sharing options and author information in posts
+    aboutAuthor = "Overpowered full-stack developer"
+    tweet = ""
+    share = ""
+    # 404 page
+    title404 = ""
+    subtitle404 = ""
 
     # Social icons style - circle, rounded, or empty
     socialIconStyle = "circle"

@@ -10,25 +10,25 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="author" content="Daniel Biedma">
 		<meta name="description" content="My opensource projects">
-        <link rel="canonical" href="http://blog.danibram.es/">
+        <link rel="canonical" href="http://localhost:1313/">
 
-		<meta name="generator" content="Hugo 0.15" />
+		<meta name="generator" content="Hugo 0.21" />
 		<title>time tracker cli &middot; Opensource projects</title>
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-		<link rel="shortcut icon" href="http://blog.danibram.es/images/favicon.ico">
+		<link rel="shortcut icon" href="http://localhost:1313/images/favicon.ico">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
-        <link rel="stylesheet" href="http://blog.danibram.es/css/milligram.min.css">
-		<link rel="stylesheet" href="http://blog.danibram.es/css/style.css">
-		<link rel="stylesheet" href="http://blog.danibram.es/css/highlight.css">
-		<link rel="stylesheet" href="http://blog.danibram.es/css/monosocialiconsfont.css">
+        <link rel="stylesheet" href="http://localhost:1313/css/milligram.min.css">
+		<link rel="stylesheet" href="http://localhost:1313/css/style.css">
+		<link rel="stylesheet" href="http://localhost:1313/css/highlight.css">
+		<link rel="stylesheet" href="http://localhost:1313/css/monosocialiconsfont.css">
 
 
-		<link rel="icon" href="http://blog.danibram.es/images/favicon.ico">
+		<link rel="icon" href="http://localhost:1313/images/favicon.ico">
 
 		
-		<link href="http://blog.danibram.es/index.xml" rel="alternate" type="application/rss+xml" title="Opensource projects" />
+		<link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="Opensource projects" />
 		
 	</head>
 
@@ -39,10 +39,10 @@
     <section class="container">
         
         <div class="navigation-item left-back-arrow">
-            <a class="navigation-link" href='http://blog.danibram.es/'><i class="fa fa-arrow-left"></i></a>
+            <a class="navigation-link" href='http://localhost:1313/'><i class="fa fa-arrow-left"></i></a>
         </div>
         
-        <a class="navigation-title" href="http://blog.danibram.es/">
+        <a class="navigation-title" href="http://localhost:1313/">
             <h1 class="title">
                 <span style="font-family: 'Mono Social Icons Font';font-size:40px;">dbr</span>
                 · time tracker cli 
@@ -97,6 +97,11 @@
                             <a class="popover-link"  href='project/object-cleaner/' title="Project object cleaner">object cleaner</a>
                         </li>
                     
+                        
+                        <li class="popover-item">
+                            <a class="popover-link"  href='project/' title="Project Projects">Projects</a>
+                        </li>
+                    
                     </ul>
                 </div>
             </li>
@@ -117,13 +122,11 @@
                 <header>
                     <h2 class="post">
                         time tracker cli
-                        <span class="headline h2">v1.1.2</span>
+                        <span class="headline h2">v2.0.22</span>
                     </h2>
                     <div class="buttons">
 
 
-                    
-                        <a class="button button-outline" href="http://blog.danibram.es/changelog/time-tracker-cli">Changelog</a>
                     
 
                     
@@ -134,88 +137,139 @@
                 <section id="post-body">
                     
 
-<p>Super tiny and ligthway time tracker for all cli lovers.</p>
+<h2 id="installation">Installation</h2>
 
-<h2 id="usage:ea25401390a1c55dd6d300003f1b6086">Usage</h2>
+<pre><code>npm install -g time-tracker-cli
+</code></pre>
 
-<p><a href="https://asciinema.org/a/dzegwhnwxvv28q84u8uvsgyas"><img src="https://asciinema.org/a/dzegwhnwxvv28q84u8uvsgyas.png" alt="asciicast" /></a></p>
+<p>or</p>
 
-<pre><code>±❩❩❩ timer --help
+<pre><code>yarn global add time-tracker-cli
+</code></pre>
 
-    Usage: timer [options]
+<p>Now you can start to call <code>timer</code>command</p>
 
-    Tiny time tracker for projects
+<h2 id="usage">Usage</h2>
 
-    Options:
+<p><a href="https://asciinema.org/a/100679"><img src="https://asciinema.org/a/100679.png" alt="asciicast" /></a></p>
 
-      -h, --help                         output usage information
-      -V, --version                      output the version number
-      -s, --start &lt;task&gt; &lt;description&gt;   Start the timer task.
-      -f, --finish &lt;task&gt; &lt;description&gt;  Stops the timer task.
-      -d, --description &lt;description&gt;    Adds a description for the task only in start/stop methods.
-      -a, --add &lt;task&gt; &lt;timeString&gt;      Adds time to a task. Example: &quot;1h2m3s&quot;
-      --remove &lt;task&gt; &lt;timeString&gt;       Subtract time from a task. Example: &quot;1h2m3s&quot;
-      -l, --log &lt;task&gt;                   Logs the timer task.
-      -r, --report &lt;task&gt; &lt;rate&gt;         Report time of the tasks, searched by key, you can report all using all as key. Also you can pass a rate to calc an amount ex: 20h, calc the hours and mulpitly by 20
-      -e, --export                       Prints the json of all tasks.
+<pre><code>└┘#! timer
+
+Usage: timer [options] [command]
+
+
+  Commands:
+
+    start|s &lt;task_key&gt; [description]               Start task with a description.
+    pause|p &lt;task_key&gt;                             Pause task
+    unpause|up &lt;task_key&gt;                          Unpause task
+    finish|f &lt;task_key&gt; [description]              Stop task, you can add a description
+    description|d &lt;task_key&gt; &lt;descriptionText...&gt;  Add description to your task.
+    add &lt;task_key&gt; &lt;stringTime&gt;                    Adds time to a task. Example: &quot;1h2m3s&quot;
+    subtract|sub &lt;task_key&gt; &lt;stringTime&gt;           Subtract time to a task. Example: &quot;1h2m3s&quot;
+    report|r [task_string] [rate]                  Report time of the tasks, empty for select all tasks. Can pass a rate (1h).
+    log|l &lt;task_key&gt;                               Logs the time of the  task
+    export|e                                       Export the tasks in a JSON
+    delete|del [task_string]                       Remove tasks from the list. Empty for select all tasks
+    configure &lt;key&gt; &lt;value&gt;                        Configure the value of the config passing a key
+    configuration                                  Output configuration
+
+  Tiny time tracker for projects
+
+  Options:
+
+    -h, --help     output usage information
+    -V, --version  output the version number
+    --updateDB     Update the db if its neccesary
 </code></pre>
 
 <ul>
 <li>To start a task run:
 <code>
-$ timer -s &lt;key of the task&gt; -d  &lt;description&gt;
+$ timer start &lt;key of the task&gt; &lt;description&gt;
 </code></li>
 <li>To finish a task run:
 <code>
-$ timer -s &lt;key of the task&gt; -d  &lt;description&gt;
+$ timer finish &lt;key of the task&gt; &lt;description&gt;
 </code></li>
 <li>You can add a description adding:
 <code>
-$ timer -s &lt;key of the task&gt; -d  &lt;description&gt;
-$ timer -h &lt;key of the task&gt; -d  &lt;description&gt;
+$ timer description &lt;key of the task&gt; &lt;description&gt;
 </code></li>
-
-<li><p>You can also see the timer running:</p>
-
-<pre><code>$ timer -l &lt;key of the task&gt;
-</code></pre>
-
-<h2 id="how-it-works:ea25401390a1c55dd6d300003f1b6086">How it works</h2>
-
-<p>The data are stored inside ~/.config/time-tracker-cli.json
-If you open you should see:</p></li>
+<li>You can also see the timer running:
+<code>
+$ timer log &lt;key of the task&gt;
+</code></li>
 </ul>
 
+<h2 id="how-it-works">How it works</h2>
+
+<p>The data are stored inside ~/.config/time-tracker-cli.json
+The config need to be updated if you have the 1.x to the 2.x to do that, to update config run timer &ndash;updateDB
+If you open you should see:</p>
+
 <pre><code class="language-javascript">{
-	&quot;tasks&quot;: {
-		&quot;work1.website.design&quot;: {
-			&quot;start&quot;: &quot;2016-02-19T10:00:36.393Z&quot;,
-			&quot;stop&quot;: &quot;2016-02-19T18:01:50.921Z&quot;
-		},
-		&quot;work1.website.deployServer&quot;: {
-			&quot;start&quot;: &quot;2016-02-19T10:01:59.116Z&quot;,
-			&quot;stop&quot;: &quot;2016-02-19T10:32:10.687Z&quot;
-		},
-		&quot;work1.api.develop.userController&quot;: {
-			&quot;start&quot;: &quot;2016-02-19T10:04:23.060Z&quot;,
-			&quot;stop&quot;: &quot;2016-02-19T20:04:36.836Z&quot;
-		},
-		&quot;work1.api.develop.loginController&quot;: {
-			&quot;start&quot;: &quot;2016-02-19T10:09:41.848Z&quot;,
-			&quot;stop&quot;: &quot;2016-02-19T13:11:54.059Z&quot;
-		}
-	}
+    &quot;tasks&quot;: {
+        &quot;work1.website.design&quot;: {
+            &quot;description&quot;: &quot;If you added one&quot;,
+            &quot;timings&quot;: [{
+                &quot;start&quot;: &quot;2016-02-19T10:00:36.393Z&quot;,
+                &quot;stop&quot;: &quot;2016-02-19T18:01:50.921Z&quot;
+            }],
+            &quot;log&quot;: [
+                &quot;start#2016-02-19T10:00:36.393Z&quot;,
+                &quot;stop#2016-02-19T18:01:50.921Z&quot;
+            ]
+        },
+        &quot;work1.website.deployServer&quot;: {
+            &quot;timings&quot;: [{
+                &quot;start&quot;: &quot;2016-02-19T10:01:59.116Z&quot;,
+                &quot;stop&quot;: &quot;2016-02-19T10:32:10.687Z&quot;
+            }],
+            &quot;log&quot;: [
+                &quot;start#2016-02-19T10:01:59.116Z&quot;,
+                &quot;stop#2016-02-19T10:32:10.687Z&quot;
+            ]
+        },
+        &quot;work2.api.develop.userController&quot;: {
+            &quot;timings&quot;: [{
+                &quot;start&quot;: &quot;2016-02-19T10:04:23.060Z&quot;,
+                &quot;stop&quot;: &quot;2016-02-19T20:04:36.836Z&quot;
+            }],
+            &quot;log&quot;: [
+                &quot;start#2016-02-19T10:04:23.060Z&quot;,
+                &quot;stop#2016-02-19T20:04:36.836Z&quot;
+            ]
+        },
+        &quot;work2.api.develop.loginController&quot;: {
+            &quot;timings&quot;: [{
+                &quot;start&quot;: &quot;2016-02-19T10:09:41.848Z&quot;,
+                &quot;stop&quot;: &quot;2016-02-19T13:11:54.059Z&quot;
+            }],
+            &quot;log&quot;: [
+                &quot;start#2016-02-19T10:09:41.848Z&quot;,
+                &quot;stop#2016-02-19T13:11:54.059Z&quot;
+            ]
+        }
+    },
+    &quot;config&quot;: {
+        &quot;format.output&quot;: &quot;DD/MM&quot;,
+        &quot;config.version&quot;: 2
+    }
 }
 </code></pre>
 
-<p>The -r method, simply finds by regex and count the time.</p>
+<h2 id="notes">Notes</h2>
 
-<h2 id="development:ea25401390a1c55dd6d300003f1b6086">Development</h2>
+<p>To use the autocomplete run <code>timer --setupCLI</code>
+If you have the version 1.x and you want to conserve the DB, run <code>timer --updateDB</code> to update the DB to version 2.x</p>
+
+<h2 id="development">Development</h2>
 
 <p>Run <code>npm install;npm run dev</code> to watch the proyect, and compile the code automatically.
 Run <code>npm build</code> to build the module.</p>
 
-<h2 id="license:ea25401390a1c55dd6d300003f1b6086">License</h2>
+<h2 id="license">License</h2>
 
 <p>Licensed under the MIT license. 2015</p>
 
@@ -224,7 +278,7 @@ Run <code>npm build</code> to build the module.</p>
 
             <div class="row post-meta">
                 <div class="column column-25">
-                    <img class="avatar" src="http://blog.danibram.es/images/avatar.jpg">
+                    <img class="avatar" src="http://localhost:1313/images/avatar.jpg">
                 </div>
                 <div class="column">
                     <span class="dark">Daniel Biedma</span>
@@ -232,27 +286,27 @@ Run <code>npm build</code> to build the module.</p>
                 </div>
                 <div class="column column-33"><ul class="share-list">
 <li class="share-item">
-    <a class="share-dialog" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fblog.danibram.es%2fproject%2ftime-tracker-cli%2f" title="Share time tracker cli on Facebook" target="blank">
+    <a class="share-dialog" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fproject%2ftime-tracker-cli%2f" title="Share time tracker cli on Facebook" target="blank">
         <i class="icon fa fa-facebook share-icon"></i>
     </a>
 </li>
 <li class="share-item">
-    <a class="share-dialog" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fblog.danibram.es%2fproject%2ftime-tracker-cli%2f - time%20tracker%20cli by @danibram" title="Share time tracker cli on Twitter" target="blank">
+    <a class="share-dialog" href="https://twitter.com/intent/tweet?text=http%3a%2f%2flocalhost%3a1313%2fproject%2ftime-tracker-cli%2f - time%20tracker%20cli by @danibram" title="Share time tracker cli on Twitter" target="blank">
         <i class="icon fa fa-twitter share-icon"></i>
     </a>
 </li>
 <li class="share-item">
-    <a class="share-dialog" href="https://plus.google.com/share?url=http%3a%2f%2fblog.danibram.es%2fproject%2ftime-tracker-cli%2f" title="Share time tracker cli on Google+" target="blank">
+    <a class="share-dialog" href="https://plus.google.com/share?url=http%3a%2f%2flocalhost%3a1313%2fproject%2ftime-tracker-cli%2f" title="Share time tracker cli on Google+" target="blank">
         <i class="icon fa fa-google-plus share-icon"></i>
     </a>
 </li>
 <li class="share-item only-mobile">
-    <a href="whatsapp://send?text=time%20tracker%20cli http%3a%2f%2fblog.danibram.es%2fproject%2ftime-tracker-cli%2f" title="Share time tracker cli on Whatsapp" target="blank">
+    <a href="whatsapp://send?text=time%20tracker%20cli http%3a%2f%2flocalhost%3a1313%2fproject%2ftime-tracker-cli%2f" title="Share time tracker cli on Whatsapp" target="blank">
         <i class="icon fa fa-whatsapp share-icon"></i>
     </a>
 </li>
 <li class="share-item">
-    <a class="share-dialog" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fblog.danibram.es%2fproject%2ftime-tracker-cli%2f&amp;title=time%20tracker%20cli" title="Share time tracker cli on LinkedIn" target="blank">
+    <a class="share-dialog" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2flocalhost%3a1313%2fproject%2ftime-tracker-cli%2f&amp;title=time%20tracker%20cli" title="Share time tracker cli on LinkedIn" target="blank">
         <i class="icon fa fa-linkedin share-icon"></i>
     </a>
 </li>
@@ -263,9 +317,9 @@ Run <code>npm build</code> to build the module.</p>
             <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'dbropensource';
-    var disqus_identifier = 'http:\/\/blog.danibram.es\/project\/time-tracker-cli\/';
+    var disqus_identifier = 'http:\/\/localhost:1313\/project\/time-tracker-cli\/';
     var disqus_title = 'time tracker cli';
-    var disqus_url = 'http:\/\/blog.danibram.es\/project\/time-tracker-cli\/';
+    var disqus_url = 'http:\/\/localhost:1313\/project\/time-tracker-cli\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -325,7 +379,7 @@ Run <code>npm build</code> to build the module.</p>
 
         <p>
         
-            © Copyright 2016 Daniel Biedma
+            © Copyright 2017 Daniel Biedma
         
         </p>
 	</section>
@@ -333,10 +387,10 @@ Run <code>npm build</code> to build the module.</p>
 
     </main>
 
-    <script src="http://blog.danibram.es/js/highlight.js"></script>
-<script src="http://blog.danibram.es/js/script.js"></script>
+    <script src="http://localhost:1313/js/highlight.js"></script>
+<script src="http://localhost:1313/js/script.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
 
-</body>
+<script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10"></' + 'script>')</script></body>
 </html>
