@@ -4,7 +4,7 @@ languageCode = "en-us"
 title = "Opensource projects"
 
 # Enter your tracking code to enable Google Analytics
-googleAnalytics = ""
+googleAnalytics = "UA-63177304-2"
 # Disable comments by leaving disqusShortname empty
 disqusShortname = "dbropensource"
 canonifyurls = true
